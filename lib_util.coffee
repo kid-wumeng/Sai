@@ -1,7 +1,3 @@
-exports.ObservableObject = require('./ObservableObject')
-
-
-
 exports.padStart = ( value, len, char ) ->
 
    ########################################

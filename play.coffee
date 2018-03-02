@@ -48,7 +48,7 @@ require('colors')
 #   }).done(done).fail(fail)
 
 
-db = require('./src/db')
+db = require('./lib_db')
 
 mongo = new db.MongoDB({
    autoID: true
@@ -66,7 +66,7 @@ do ->
       opt =
          projection: 'name'
 
-      await mongo.close()
+      console.log await mongo.col('users').insertOne({})
 
    catch error
       console.log error

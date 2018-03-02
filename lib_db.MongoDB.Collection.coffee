@@ -1,5 +1,5 @@
 _     = require('lodash')
-array = require('../../array')
+array = require('./lib_array')
 
 
 

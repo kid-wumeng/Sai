@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <script src="node_modules/axios/dist/axios.js"></script>
+
+  <script>
+    ;(async function(){
+
+      const res = await axios.post('http://127.0.0.1:3000', {
+        name: 'kid',
+        age: 18,
+        now: new Date
+      })
+
+      console.log(res.data)
+
+    })()
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "hobbit.lib",
+  "version": "0.1.0",
+  "author": "KID <kid.wumeng@gmail.com>",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.0",
+    "coffeescript": "^2.2.2",
+    "colors": "^1.1.2",
+    "file-type": "^6.1.0",
+    "jsonwebtoken": "^8.0.1",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "koa2-cors": "^2.0.5",
+    "lodash": "^4.17.4",
+    "lodash.isplainobject": "^4.0.6",
+    "mongodb": "^2.2.31",
+    "path-to-regexp": "^2.0.0",
+    "redis": "^2.8.0",
+    "uuid": "^3.1.0",
+    "ws": "^3.2.0"
+  }
+}

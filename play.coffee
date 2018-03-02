@@ -1,6 +1,6 @@
-# require('colors')
-#
-#
+require('colors')
+
+
 # Server = require('./src/http/Server')
 # Client = require('./src/http/Client')
 #
@@ -48,8 +48,25 @@
 #   }).done(done).fail(fail)
 
 
+db = require('./src/db')
 
-time = require('./src/time')
+mongo = new db.MongoDB({
+   autoID: true
+   autoIDStore: 'autoIDStore'
+})
 
-date = time.date(2018, 3, 1, 8, 20, 25)
-console.log time.to(date)
+
+do ->
+
+   try
+
+      mongo.hide('users', 'pass')
+      await mongo.connect()
+
+      opt =
+         projection: 'name'
+
+      await mongo.close()
+
+   catch error
+      console.log error

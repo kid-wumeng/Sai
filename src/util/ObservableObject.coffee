@@ -23,8 +23,7 @@ module.exports = class ObservableObject
       ########################################
 
       if !@__events[name]
-         @__events[name] = []
-
+        @__events[name] = []
       @__events[name].push(callback)
 
       return this

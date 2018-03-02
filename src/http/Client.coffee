@@ -114,7 +114,7 @@ module.exports = class Client extends ObservableObject
 
       ########################################
       #|
-      #|  Set opt.data => opt.params when GET.
+      #|  Set opt.data to opt.params when GET.
       #|
       #|  @params {object} opt
       #|

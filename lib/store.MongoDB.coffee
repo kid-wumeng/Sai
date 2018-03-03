@@ -137,7 +137,8 @@ module.exports = class MongoDB
       ########################################
 
       if !@_autoIDStore
-         throw "db.MongoDB._ensureAutoIDStore: You should set an { autoIDStore } when open the { autoID }."
+         throw "store.MongoDB._ensureAutoIDStore >>>
+                You should set an { autoIDStore } when open the { autoID }."
 
       stores = await @col(@_autoIDStore).find()
 
@@ -168,7 +169,8 @@ module.exports = class MongoDB
       })
 
       if lastDoc and lastDoc.id > store.lastID
-         throw "db.MongoDB._ensureAutoIDStore: See the collection { #{col} },
+         throw "store.MongoDB._ensureAutoIDStore >>>
+                See the collection { #{col} },
                 the last-document's id is greater than { #{@_autoIDStore} }."
 
 

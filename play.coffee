@@ -48,25 +48,17 @@ require('colors')
 #   }).done(done).fail(fail)
 
 
-store = require('./lib/store')
+data = require('./lib/data')
 
-mongo = new store.MongoDB({
-   autoID: true
-   autoIDStore: 'autoIDStore'
-})
+
+schema = new data.Schema()
 
 
 do ->
 
    try
 
-      mongo.hide('users', 'pass')
-      await mongo.connect()
-
-      opt =
-         projection: 'name'
-
-      console.log await mongo.col('users').insertOne({})
+      schema.check(new data.Schema).is(data.Schema)
 
    catch error
       console.log error

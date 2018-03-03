@@ -1,5 +1,5 @@
 axios            = require('axios')
-ObservableObject = require('./ObservableObject')
+ObservableObject = require('../util/ObservableObject')
 
 
 

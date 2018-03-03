@@ -1,1 +1,0 @@
-exports.Schema = require('./data.Schema')

@@ -1,7 +1,7 @@
 _        = require('lodash')
 inspect  = require('util').inspect
-string   = require('./string')
 fileType = require('file-type')
+string   = require('../string')
 
 
 

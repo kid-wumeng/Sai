@@ -1,6 +1,6 @@
 _       = require('lodash')
-string  = require('./string')
-Checker = require('./data.Schema.Checker')
+string  = require('../string')
+Checker = require('./Schema.Checker')
 
 
 

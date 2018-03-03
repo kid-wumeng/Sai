@@ -1,4 +1,4 @@
-string = require('./string')
+string = require('../string')
 
 
 

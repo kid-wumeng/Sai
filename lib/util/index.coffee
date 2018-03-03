@@ -1,0 +1,1 @@
+exports.ObservableObject = require('./ObservableObject')

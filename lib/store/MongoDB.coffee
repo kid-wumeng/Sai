@@ -1,6 +1,6 @@
 _          = require('lodash')
 mongodb    = require('mongodb')
-Collection = require('./store.MongoDB.Collection')
+Collection = require('./MongoDB.Collection')
 
 
 

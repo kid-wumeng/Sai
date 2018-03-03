@@ -3,7 +3,7 @@ exports.count = ( items, callback ) =>
    ########################################
    #|
    #|  @params {*[]}      items
-   #|  @params {function} callback
+   #|  @params {function} callback(item)
    #|
    #|  @return {number}   count
    #|

@@ -1,4 +1,5 @@
 _       = require('lodash')
+string  = require('./string')
 Checker = require('./data.Schema.Checker')
 
 
@@ -11,6 +12,9 @@ module.exports = class Schema
 
       @_rules   = {}
       @_formats = {}
+
+      @format('email', string.isEmail)
+      @format('url',   string.isURL)
 
 
 
@@ -42,7 +46,7 @@ module.exports = class Schema
       ########################################
       #|
       #|  @params {string}   name
-      #|  @params {function} check
+      #|  @params {function} check(data)
       #|
       #|  @return {Schema} this
       #|
@@ -59,7 +63,7 @@ module.exports = class Schema
       ########################################
       #|
       #|  @params {string}   name
-      #|  @params {function} check
+      #|  @params {function} check(data)
       #|
       #|  @return {Schema} this
       #|

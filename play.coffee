@@ -57,8 +57,14 @@ schema = new data.Schema()
 do ->
 
    try
+      schema.rule 'user', (data)->
+         schema.check(data, 'name').rule('user.name')
 
-      schema.check(new data.Schema).is(data.Schema)
+      schema.rule 'user.name', (data)->
+         schema.check(data).string()
+
+
+      schema.check({name: 6}).rule('user')
 
    catch error
       console.log error

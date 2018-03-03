@@ -1,4 +1,4 @@
-util = require('./util')
+string = require('./string')
 
 
 
@@ -69,12 +69,12 @@ exports.format = ( date, format ) =>
    ii   = @minute( date )
    ss   = @second( date )
 
-   YYYY = util.padStart(yyyy, 4, '0')
-   MM   = util.padStart(mm,   2, '0')
-   DD   = util.padStart(dd,   2, '0')
-   HH   = util.padStart(hh,   2, '0')
-   II   = util.padStart(ii,   2, '0')
-   SS   = util.padStart(ss,   2, '0')
+   YYYY = string.padStart(yyyy, 4, '0')
+   MM   = string.padStart(mm,   2, '0')
+   DD   = string.padStart(dd,   2, '0')
+   HH   = string.padStart(hh,   2, '0')
+   II   = string.padStart(ii,   2, '0')
+   SS   = string.padStart(ss,   2, '0')
 
    return format.replace /(YYYY|MM|DD|HH|II|SS|yyyy|mm|dd|hh|ii|ss)/g, (placeholder) =>
       switch placeholder

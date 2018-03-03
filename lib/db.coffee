@@ -1,1 +1,0 @@
-exports.MongoDB = require('./db.MongoDB')

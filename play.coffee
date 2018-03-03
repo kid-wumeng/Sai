@@ -48,9 +48,9 @@ require('colors')
 #   }).done(done).fail(fail)
 
 
-db = require('./lib/db')
+store = require('./lib/store')
 
-mongo = new db.MongoDB({
+mongo = new store.MongoDB({
    autoID: true
    autoIDStore: 'autoIDStore'
 })

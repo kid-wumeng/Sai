@@ -14,6 +14,7 @@ module.exports = class Server
       ########################################
       #|
       #|  @params {object} opt
+      #|          {bool}   opt.cors
       #|
       ########################################
 
@@ -213,6 +214,8 @@ module.exports = class Server
       #|  @params {number} port
       #|
       ########################################
+
+      # @TODO To handle by opt.cors and more opt.
 
       @app.use(cors())
       @app.use(bodyParser())

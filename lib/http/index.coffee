@@ -1,2 +1,2 @@
-exports.Client = Client = require('./Client')
-exports.Server = Server = require('./Server')
+exports.Client = require('./Client')
+exports.Server = require('./Server')

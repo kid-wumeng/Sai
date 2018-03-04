@@ -17,9 +17,11 @@ client.on 'before-send', (opt) ->
 
 
 server.get('/', (data)->
-  aaa = new Date
+  console.log @abc
   return new Date
 )
+
+server.mount('abc', 'ghg')
 
 
 server.listen(3000)

@@ -21,10 +21,12 @@ module.exports = class Server
       defaults =
          cors: false
 
-      @opt    = Object.assign(defaults, opt)
+      @opt     = Object.assign(defaults, opt)
 
-      @app    = new Koa
-      @router = new Router
+      @app     = new Koa
+      @router  = new Router
+
+      @_mounts = {}
 
 
 
@@ -67,6 +69,27 @@ module.exports = class Server
 
 
 
+   mount: ( name, value ) =>
+
+      ########################################
+      #|
+      #|  Mount something to context.
+      #|
+      #|  @params {string} name
+      #|  @params {*}      value
+      #|
+      #|  @return {Server} this
+      #|
+      ########################################
+
+      @_mounts[name] = value
+
+      return this
+
+
+
+
+
    _wrapMiddleware: ( callback ) =>
 
       ########################################
@@ -99,10 +122,14 @@ module.exports = class Server
       #|
       ########################################
 
-      return
+      ctx =
          raw: ctx
          req: {}
          res: {}
+
+      Object.assign(ctx, @_mounts)
+
+      return ctx
 
 
 

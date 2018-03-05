@@ -1,3 +1,3 @@
-Sai = require('./dist/index.js')
+Sai = require('./')
 
 console.log Sai

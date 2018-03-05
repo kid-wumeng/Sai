@@ -1,1 +1,2 @@
-exports.Schema = require('./Schema')
+exports.isNumber = require('./isNumber')
+exports.Schema   = require('./Schema')

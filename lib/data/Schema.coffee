@@ -1,5 +1,4 @@
-_       = require('lodash')
-string  = require('../string')
+get     = require('./get')
 Checker = require('./Schema.Checker')
 
 
@@ -29,7 +28,7 @@ module.exports = class Schema
       ########################################
 
       if path
-         data = _.get(data, path)
+         data = get(data, path)
 
       return new Checker({
          rules:   @_rules

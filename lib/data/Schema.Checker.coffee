@@ -1,7 +1,13 @@
-_        = require('lodash')
-inspect  = require('util').inspect
-fileType = require('file-type')
-string   = require('../string')
+isNil         = require('./isNil')
+isBool        = require('./isBool')
+isNumber      = require('./isNumber')
+isString      = require('./isString')
+isBuffer      = require('./isBuffer')
+isDate        = require('./isDate')
+isArray       = require('./isArray')
+isObject      = require('./isObject')
+isPlainObject = require('./isPlainObject')
+mime          = require('./mime')
 
 
 
@@ -38,7 +44,7 @@ module.exports = class Checker
       #|
       ########################################
 
-      if _.isNil(@_data)
+      if isNil(@_data)
 
          throw error ? "data.Schema.Checker.required >>>
                         Sorry, the data is required,
@@ -60,7 +66,7 @@ module.exports = class Checker
       #|
       ########################################
 
-      if @_data? and !_.isBoolean(@_data)
+      if @_data? and !isBool(@_data)
 
          throw error ? "data.Schema.Checker.bool >>>
                         Sorry, the data should be a bool,
@@ -82,7 +88,7 @@ module.exports = class Checker
       #|
       ########################################
 
-      if @_data? and !_.isFinite(@_data)
+      if @_data? and !isNumber(@_data)
 
          throw error ? "data.Schema.Checker.number >>>
                         Sorry, the data should be a number,
@@ -104,7 +110,7 @@ module.exports = class Checker
       #|
       ########################################
 
-      if @_data? and !_.isString(@_data)
+      if @_data? and !isString(@_data)
 
          throw error ? "data.Schema.Checker.string >>>
                         Sorry, the data should be a string,
@@ -126,7 +132,7 @@ module.exports = class Checker
       #|
       ########################################
 
-      if @_data? and !_.isBuffer(@_data)
+      if @_data? and !isBuffer(@_data)
 
          throw error ? "data.Schema.Checker.buffer >>>
                         Sorry, the data should be a Buffer,
@@ -148,7 +154,7 @@ module.exports = class Checker
       #|
       ########################################
 
-      if @_data? and !_.isDate(@_data)
+      if @_data? and !isDate(@_data)
 
          throw error ? "data.Schema.Checker.date >>>
                         Sorry, the data should be a Date,
@@ -170,7 +176,7 @@ module.exports = class Checker
       #|
       ########################################
 
-      if @_data? and !_.isArray(@_data)
+      if @_data? and !isArray(@_data)
 
          throw error ? "data.Schema.Checker.array >>>
                         Sorry, the data should be an Array,
@@ -192,7 +198,7 @@ module.exports = class Checker
       #|
       ########################################
 
-      if @_data? and !_.isPlainObject(@_data)
+      if @_data? and !isPlainObject(@_data)
 
          throw error ? "data.Schema.Checker.plainObject >>>
                         Sorry, the data should be a plain-object,
@@ -266,9 +272,9 @@ module.exports = class Checker
       if @_data?
 
          switch
-            when _.isNumber(@_data) then @_min_number(min)
-            when _.isString(@_data) then @_min_string(min)
-            when _.isBuffer(@_data) then @_min_buffer(min)
+            when isNumber(@_data) then @_min_number(min)
+            when isString(@_data) then @_min_string(min)
+            when isBuffer(@_data) then @_min_buffer(min)
 
       return @
 
@@ -290,9 +296,9 @@ module.exports = class Checker
       if @_data?
 
          switch
-            when _.isNumber(@_data) then @_max_number(max)
-            when _.isString(@_data) then @_max_string(max)
-            when _.isBuffer(@_data) then @_max_buffer(max)
+            when isNumber(@_data) then @_max_number(max)
+            when isString(@_data) then @_max_string(max)
+            when isBuffer(@_data) then @_max_buffer(max)
 
       return @
 
@@ -313,27 +319,27 @@ module.exports = class Checker
                         current is #{@_data}."
 
    _min_string: ( min ) =>
-      if string.size(@_data) < min
+      if @_data.length < min
          throw error ? "data.Schema.Checker._min_string >>>
-                        Sorry, the string's size should be ≥ #{min},
-                        current is #{string.size(@_data)}."
+                        Sorry, the string's length should be ≥ #{min},
+                        current is #{@_data.length}."
 
    _max_string: ( max ) =>
-      if string.size(@_data) > max
+      if @_data.length > max
          throw error ? "data.Schema.Checker._max_string >>>
-                        Sorry, the string's size should be ≤ #{max},
-                        current is #{string.size(@_data)}."
+                        Sorry, the string's length should be ≤ #{max},
+                        current is #{@_data.length}."
 
    _min_buffer: ( min ) =>
       if @_data.length < min
          throw error ? "data.Schema.Checker._min_buffer >>>
-                        Sorry, the buffer's size should be ≥ #{min},
+                        Sorry, the buffer's length should be ≥ #{min},
                         current is #{@_data.length}."
 
    _max_buffer: ( max ) =>
       if @_data.length > max
          throw error ? "data.Schema.Checker._max_buffer >>>
-                        Sorry, the buffer's size should be ≤ #{max},
+                        Sorry, the buffer's length should be ≤ #{max},
                         current is #{@_data.length}."
 
 
@@ -353,7 +359,7 @@ module.exports = class Checker
 
       if @_data?
 
-         mime = fileType(@_data).mime
+         mime = mime(@_data)
 
          if !mimes.includes(mime)
 
@@ -417,7 +423,7 @@ module.exports = class Checker
          return @
 
       catch error
-         if _.isString(error) then error += " <<< the rule { #{rule} }"
+         if isString(error) then error += " <<< the rule { #{rule} }"
          throw error
 
 
@@ -436,9 +442,9 @@ module.exports = class Checker
       ########################################
 
       switch
-         when _.isBoolean(data)     then "{ " + data + " }"
-         when _.isString(data)      then "'" + data + "'"
-         when _.isArray(data)       then "[ " + data.join(', ') + " ]"
-         when _.isPlainObject(data) then inspect(data)
-         when _.isObject(data)      then "< " + data.constructor.name + " >"
+         when isBool(data)        then "{ " + data + " }"
+         when isString(data)      then "'" + data + "'"
+         when isArray(data)       then "[ " + data.join(', ') + " ]"
+         when isPlainObject(data) then data
+         when isObject(data)      then "< " + data.constructor.name + " >"
          else data

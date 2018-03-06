@@ -1,4 +1,4 @@
-childProcess = require('child_process')
+childProcess  = require('child_process')
 fs            = require('fs-extra-promise')
 path          = require('path')
 bluebird      = require('bluebird')

@@ -4,7 +4,7 @@
   "author": "KID <kid.wumeng@gmail.com>",
   "main": "dist",
   "scripts": {
-    "build": "coffee build.coffee",
+    "build": "coffee build",
     "play": "coffee play",
     "test": "mocha --ui tdd --require coffeescript/register test/index.coffee",
     "dev": "serve -p 8080"

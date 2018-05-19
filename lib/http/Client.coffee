@@ -43,6 +43,8 @@ module.exports = class Client extends ObservableObject
 
    ########################################
    #|
+   #|  @async-function
+   #|
    #|  @params {string} path
    #|  @params {object} data
    #|  @params {object} opt
@@ -63,6 +65,8 @@ module.exports = class Client extends ObservableObject
       ########################################
       #|
       #|  Send the request.
+      #|
+      #|  @async-function
       #|
       #|  @params {string} method
       #|  @params {string} path

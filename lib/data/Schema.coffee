@@ -1,7 +1,7 @@
+isEmail = require('validator/lib/isEmail')
+isURL   = require('validator/lib/isURL')
 get     = require('./get')
 Checker = require('./Schema.Checker')
-isEmail = require('../string/isEmail')
-isURL   = require('../string/isURL')
 
 
 

@@ -2,12 +2,12 @@ module.exports = len = ( string, mode = 'length' ) =>
 
    ########################################
    #|
-   #|  @params {string} string
-   #|  @params {string} mode
+   #|   @params {string} string
+   #|   @params {string} mode
    #|
-   #|  @errors
+   #|   @errors
    #|
-   #|  @return {number} len
+   #|   @return {number} len
    #|
    ########################################
 
@@ -28,8 +28,8 @@ _cjk = ( string ) =>
 
    ########################################
    #|
-   #|  @params {string}
-   #|  @return {number} len
+   #|   @params {string}
+   #|   @return {number} len
    #|
    ########################################
 
@@ -52,9 +52,9 @@ _utf8 = ( string ) =>
 
    ########################################
    #|
-   #|  @params {string}
-   #|  @errors
-   #|  @return {number} len
+   #|   @params {string}
+   #|   @errors
+   #|   @return {number} len
    #|
    ########################################
 

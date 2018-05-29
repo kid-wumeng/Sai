@@ -2,8 +2,8 @@ module.exports = hour = ( date ) =>
 
    ########################################
    #|
-   #|  @params {Date}
-   #|  @return {number} hour ( 0 - 23 )
+   #|   @params {Date}
+   #|   @return {number} hour ( 0 - 23 )
    #|
    ########################################
 

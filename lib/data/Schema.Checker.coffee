@@ -19,10 +19,10 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {object} opt
-      #|          {object} opt.rules   - {name: check(function)}
-      #|          {object} opt.formats - {name: check(function)}
-      #|          {*}      opt.data
+      #|   @params {object} opt
+      #|           {object} opt.rules   - {name: check(function)}
+      #|           {object} opt.formats - {name: check(function)}
+      #|           {*}      opt.data
       #|
       ########################################
 
@@ -38,9 +38,9 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {*} error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {*} error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -60,9 +60,9 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {*} error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {*} error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -82,9 +82,9 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {*} error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {*} error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -104,9 +104,9 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {*} error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {*} error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -126,9 +126,9 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {*} error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {*} error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -148,9 +148,9 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {*} error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {*} error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -170,9 +170,9 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {*} error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {*} error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -192,9 +192,9 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {*} error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {*} error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -214,10 +214,10 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {Class} constructor
-      #|  @params {*}     error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {Class} constructor
+      #|   @params {*}     error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -237,10 +237,10 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {*[]} enums
-      #|  @params {*}   error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {*[]} enums
+      #|   @params {*}   error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -262,10 +262,10 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {number} min
-      #|  @params {*}      error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {number} min
+      #|   @params {*}      error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -286,10 +286,10 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {number} max
-      #|  @params {*}      error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {number} max
+      #|   @params {*}      error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -350,10 +350,10 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {string[]} mimes
-      #|  @params {*}        error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {string[]} mimes
+      #|   @params {*}        error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -379,10 +379,10 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {string} format
-      #|  @params {*}      error
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {string} format
+      #|   @params {*}      error
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -407,9 +407,9 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  @params {string}  rule
-      #|  @errors
-      #|  @return {Checker} this
+      #|   @params {string}  rule
+      #|   @errors
+      #|   @return {Checker} this
       #|
       ########################################
 
@@ -434,10 +434,10 @@ module.exports = class Checker
 
       ########################################
       #|
-      #|  Format the data for error's message.
+      #|   Format the data for error's message.
       #|
-      #|  @params {*} data
-      #|  @return {string}
+      #|   @params {*} data
+      #|   @return {string}
       #|
       ########################################
 

@@ -2,7 +2,7 @@ module.exports = isNumber = require('lodash/isNumber')
 
    ########################################
    #|
-   #|  @params {*}
-   #|  @return {bool}
+   #|   @params {*}
+   #|   @return {bool}
    #|
    ########################################

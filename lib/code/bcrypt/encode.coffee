@@ -6,10 +6,10 @@ module.exports = encode = ( data ) =>
 
    ########################################
    #|
-   #|  @async-function
+   #|   @async-function
    #|
-   #|  @params {string} data
-   #|  @return {string} hash
+   #|   @params {string} data
+   #|   @return {string} hash
    #|
    ########################################
 

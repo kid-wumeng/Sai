@@ -7,7 +7,7 @@
     "build": "coffee build",
     "play": "coffee play",
     "test": "mocha --ui tdd --require coffeescript/register test/index.coffee",
-    "dev": "serve -p 8080",
+    "dev": "serve -p 8080"
   },
   "dependencies": {
     "axios": "^0.16.2",

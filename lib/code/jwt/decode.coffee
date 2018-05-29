@@ -6,10 +6,10 @@ module.exports = decode = ( token, secret ) =>
 
    ########################################
    #|
-   #|  @params {string} token
-   #|  @params {string} secret
+   #|   @params {string} token
+   #|   @params {string} secret
    #|
-   #|  @return {object} payload
+   #|   @return {object} payload
    #|
    ########################################
 

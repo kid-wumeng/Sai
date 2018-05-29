@@ -2,8 +2,8 @@ module.exports = year = ( date ) =>
 
    ########################################
    #|
-   #|  @params {Date}
-   #|  @return {number} year
+   #|   @params {Date}
+   #|   @return {number} year
    #|
    ########################################
 

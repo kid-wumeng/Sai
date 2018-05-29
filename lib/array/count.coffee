@@ -2,10 +2,10 @@ module.exports = count = ( items, callback ) =>
 
    ########################################
    #|
-   #|  @params {*[]}      items
-   #|  @params {function} callback(item)
+   #|   @params {*[]}      items
+   #|   @params {function} callback(item)
    #|
-   #|  @return {number}   count
+   #|   @return {number}   count
    #|
    ########################################
 

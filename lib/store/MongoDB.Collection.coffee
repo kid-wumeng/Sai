@@ -11,12 +11,12 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @params {object}     opt
-      #|          {mongodb.Db} opt.db
-      #|          {object}     opt.hides - { user: ['email', 'pass', ...], ... }
-      #|          {bool}       opt.autoID
-      #|          {string}     opt.autoIDStore
-      #|          {string}     opt.name
+      #|   @params {object}     opt
+      #|           {mongodb.Db} opt.db
+      #|           {object}     opt.hides - { user: ['email', 'pass', ...], ... }
+      #|           {bool}       opt.autoID
+      #|           {string}     opt.autoIDStore
+      #|           {string}     opt.name
       #|
       ########################################
 
@@ -35,12 +35,12 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @async-function
+      #|   @async-function
       #|
-      #|  @params {object} query
-      #|  @params {object} opt
+      #|   @params {object} query
+      #|   @params {object} opt
       #|
-      #|  @return {object} doc
+      #|   @return {object} doc
       #|
       ########################################
 
@@ -58,12 +58,12 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @async-function
+      #|   @async-function
       #|
-      #|  @params {object}   query
-      #|  @params {object}   opt
+      #|   @params {object}   query
+      #|   @params {object}   opt
       #|
-      #|  @return {object[]} docs
+      #|   @return {object[]} docs
       #|
       ########################################
 
@@ -81,12 +81,12 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @async-function
+      #|   @async-function
       #|
-      #|  @params {object} query
-      #|  @params {object} opt
+      #|   @params {object} query
+      #|   @params {object} opt
       #|
-      #|  @return {number} count
+      #|   @return {number} count
       #|
       ########################################
 
@@ -104,8 +104,8 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @params {object|number} query | doc's id
-      #|  @return {object}        query
+      #|   @params {object|number} query | doc's id
+      #|   @return {object}        query
       #|
       ########################################
 
@@ -123,8 +123,8 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @params {object|string} opt | projection
-      #|  @return {object}        opt
+      #|   @params {object|string} opt | projection
+      #|   @return {object}        opt
       #|
       ########################################
 
@@ -147,7 +147,7 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @params {object|string} opt
+      #|   @params {object|string} opt
       #|
       ########################################
 
@@ -165,7 +165,7 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @params {object} opt
+      #|   @params {object} opt
       #|
       ########################################
 
@@ -187,7 +187,7 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @params {object} opt
+      #|   @params {object} opt
       #|
       ########################################
 
@@ -225,10 +225,10 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  Call this method must after @_formatOptions_projection(),
-      #|  because it is depend on {opt.projection}
+      #|   Call this method must after @_formatOptions_projection(),
+      #|   because it is depend on {opt.projection}
       #|
-      #|  @params {object} opt
+      #|   @params {object} opt
       #|
       ########################################
 
@@ -256,10 +256,10 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @async-function
+      #|   @async-function
       #|
-      #|  @params {object} doc
-      #|  @return {object} doc ( includes _id, id and createDate )
+      #|   @params {object} doc
+      #|   @return {object} doc ( includes _id, id and createDate )
       #|
       ########################################
 
@@ -281,10 +281,10 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @async-function
+      #|   @async-function
       #|
-      #|  @params {object} docs
-      #|  @return {object} docs ( includes _id, id and createDate )
+      #|   @params {object} docs
+      #|   @return {object} docs ( includes _id, id and createDate )
       #|
       ########################################
 
@@ -313,12 +313,12 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  Make one or some auto-increment ids and return the first.
+      #|   Make one or some auto-increment ids and return the first.
       #|
-      #|  @async-function
+      #|   @async-function
       #|
-      #|  @params {number} count
-      #|  @return {number} startID
+      #|   @params {number} count
+      #|   @return {number} startID
       #|
       ########################################
 
@@ -345,12 +345,12 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @async-function
+      #|   @async-function
       #|
-      #|  @params {object} query
-      #|  @params {object} modifier
+      #|   @params {object} query
+      #|   @params {object} modifier
       #|
-      #|  @return {object} new-doc
+      #|   @return {object} new-doc
       #|
       ########################################
 
@@ -372,12 +372,12 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @async-function
+      #|   @async-function
       #|
-      #|  @params {object} query
-      #|  @params {object} modifiedCount
+      #|   @params {object} query
+      #|   @params {object} modifier
       #|
-      #|  @return {object} new-doc
+      #|   @return {number} modifiedCount
       #|
       ########################################
 
@@ -397,12 +397,12 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @async-function
+      #|   @async-function
       #|
-      #|  @params {object} query
-      #|  @params {object} modifier
+      #|   @params {object} query
+      #|   @params {object} modifier
       #|
-      #|  @return {number} modifiedCount
+      #|   @return {number} modifiedCount
       #|
       ########################################
 
@@ -422,8 +422,8 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @params {object} modifier
-      #|  @return {object} modifier
+      #|   @params {object} modifier
+      #|   @return {object} modifier
       #|
       ########################################
 
@@ -455,9 +455,9 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @params {object} query
+      #|   @params {object} query
       #|
-      #|  @return {number} deletedCount
+      #|   @return {number} deletedCount
       #|
       ########################################
 
@@ -475,9 +475,9 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @params {object} query
+      #|   @params {object} query
       #|
-      #|  @return {number} deletedCount
+      #|   @return {number} deletedCount
       #|
       ########################################
 
@@ -495,10 +495,10 @@ module.exports = class Collection
 
       ########################################
       #|
-      #|  @params {object[]} pipeline
-      #|  @params {object}   opt
+      #|   @params {object[]} pipeline
+      #|   @params {object}   opt
       #|
-      #|  @return {object[]} results
+      #|   @return {object[]} results
       #|
       ########################################
 

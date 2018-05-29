@@ -6,8 +6,8 @@ module.exports = mime = ( data ) =>
 
    ########################################
    #|
-   #|  @params {Uint8Array|node.Buffer}
-   #|  @return {bool}
+   #|   @params {Uint8Array|node.Buffer}
+   #|   @return {string} mime - 'image/png' ... 
    #|
    ########################################
 

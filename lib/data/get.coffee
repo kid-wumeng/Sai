@@ -2,7 +2,10 @@ module.exports = get = require('lodash/get')
 
    ########################################
    #|
-   #|  @params {*}
-   #|  @return {bool}
+   #|   @params {object} data
+   #|   @params {string} path
+   #|   @params {*}      default
+   #|
+   #|   @return {*}      value
    #|
    ########################################

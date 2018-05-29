@@ -6,12 +6,12 @@ module.exports = compare = ( data, hash ) =>
 
    ########################################
    #|
-   #|  @async-function
+   #|   @async-function
    #|
-   #|  @params {string} data
-   #|  @params {string} hash
+   #|   @params {string} data
+   #|   @params {string} hash
    #|
-   #|  @return {bool} isMatched
+   #|   @return {bool} isMatched
    #|
    ########################################
 

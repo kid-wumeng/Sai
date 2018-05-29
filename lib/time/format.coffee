@@ -6,14 +6,16 @@ module.exports = format = ( date, format ) =>
 
    ########################################
    #|
-   #|  Format date to string.
+   #|   Format date to string.
    #|
-   #|  eq:
-   #|     date = time.date(2016, 3, 8, 6, 12, 45)
-   #|     time.format(date, 'YYYY-MM-DD HH:II:SS') => '2016-03-08 06:12:45'
+   #|   eq:
+   #|      date = time.date(2016, 3, 8, 6, 12, 45)
+   #|      time.format(date, 'YYYY-MM-DD HH:II:SS') => '2016-03-08 06:12:45'
    #|
-   #|  @params {string} format
-   #|  @params {string} string
+   #|   @params {Date}   date
+   #|   @params {string} format
+   #|
+   #|   @return {string} string
    #|
    ########################################
 

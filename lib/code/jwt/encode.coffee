@@ -6,11 +6,11 @@ module.exports = encode = ( payload, secret, maxAge = 0 ) =>
 
    ########################################
    #|
-   #|  @params {object} payload
-   #|  @params {string} secret
-   #|  @params {number} maxAge
+   #|   @params {object} payload
+   #|   @params {string} secret
+   #|   @params {number} maxAge
    #|
-   #|  @return {string} token
+   #|   @return {string} token
    #|
    ########################################
 

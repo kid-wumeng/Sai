@@ -13,8 +13,8 @@ module.exports = class Server
 
       ########################################
       #|
-      #|  @params {object} opt
-      #|          {bool}   opt.cors
+      #|   @params {object} opt
+      #|           {bool}   opt.cors
       #|
       ########################################
 
@@ -34,8 +34,8 @@ module.exports = class Server
 
    ########################################
    #|
-   #|  @params {string}   path
-   #|  @params {function} callback(data)
+   #|   @params {string}   path
+   #|   @params {function} callback(data)
    #|
    ########################################
 
@@ -51,11 +51,11 @@ module.exports = class Server
 
       ########################################
       #|
-      #|  Register a route.
+      #|   Register a route.
       #|
-      #|  @params {string}   method
-      #|  @params {string}   path
-      #|  @params {function} callback(data)
+      #|   @params {string}   method
+      #|   @params {string}   path
+      #|   @params {function} callback(data)
       #|
       ########################################
 
@@ -73,12 +73,12 @@ module.exports = class Server
 
       ########################################
       #|
-      #|  Mount something to context.
+      #|   Mount something to context.
       #|
-      #|  @params {string} name
-      #|  @params {*}      value
+      #|   @params {string} name
+      #|   @params {*}      value
       #|
-      #|  @return {Server} this
+      #|   @return {Server} this
       #|
       ########################################
 
@@ -94,10 +94,10 @@ module.exports = class Server
 
       ########################################
       #|
-      #|  Wrap a callback to koa's middleware.
+      #|   Wrap a callback to koa's middleware.
       #|
-      #|  @params {function} callback(data)
-      #|  @return {function} middleware(ctx, next)
+      #|   @params {function} callback(data)
+      #|   @return {function} middleware(ctx, next)
       #|
       ########################################
 
@@ -115,10 +115,10 @@ module.exports = class Server
 
       ########################################
       #|
-      #|  Wrap a context from koa's context.
+      #|   Wrap a context from koa's context.
       #|
-      #|  @params {object} koa-ctx
-      #|  @return {object} ctx
+      #|   @params {object} koa-ctx
+      #|   @return {object} ctx
       #|
       ########################################
 
@@ -139,10 +139,10 @@ module.exports = class Server
 
       ########################################
       #|
-      #|  Run the callback to handle request and response.
+      #|   Run the callback to handle request and response.
       #|
-      #|  @params {object}   ctx
-      #|  @params {function} callback(data)
+      #|   @params {object}   ctx
+      #|   @params {function} callback(data)
       #|
       ########################################
 
@@ -166,7 +166,7 @@ module.exports = class Server
 
       ########################################
       #|
-      #|  @params {object} ctx
+      #|   @params {object} ctx
       #|
       ########################################
 
@@ -183,10 +183,10 @@ module.exports = class Server
 
       ########################################
       #|
-      #|  Get the data from query(GET) or body(non-GET)
+      #|   Get the data from query(GET) or body(non-GET)
       #|
-      #|  @params {object} ctx
-      #|  @return {object} data
+      #|   @params {object} ctx
+      #|   @return {object} data
       #|
       ########################################
 
@@ -206,8 +206,8 @@ module.exports = class Server
 
       ########################################
       #|
-      #|  @params {object} ctx
-      #|  @params {*}      error
+      #|   @params {object} ctx
+      #|   @params {*}      error
       #|
       ########################################
 
@@ -221,7 +221,7 @@ module.exports = class Server
 
       ########################################
       #|
-      #|  @params {object} ctx
+      #|   @params {object} ctx
       #|
       ########################################
 
@@ -236,9 +236,9 @@ module.exports = class Server
 
       ########################################
       #|
-      #|  Use common middlewares and start server.
+      #|   Use common middlewares and start server.
       #|
-      #|  @params {number} port
+      #|   @params {number} port
       #|
       ########################################
 

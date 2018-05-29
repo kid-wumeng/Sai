@@ -23,7 +23,8 @@ module.exports = class Schema
 
       ########################################
       #|
-      #|  @params {object} opt
+      #|   @params {object} opt
+      #|   @return {Checker}
       #|
       ########################################
 
@@ -44,10 +45,10 @@ module.exports = class Schema
 
       ########################################
       #|
-      #|  @params {string}   name
-      #|  @params {function} check(data)
+      #|   @params {string}   name
+      #|   @params {function} check(data)
       #|
-      #|  @return {Schema} this
+      #|   @return {Schema} this
       #|
       ########################################
 
@@ -63,10 +64,10 @@ module.exports = class Schema
 
       ########################################
       #|
-      #|  @params {string}   name
-      #|  @params {function} check(data)
+      #|   @params {string}   name
+      #|   @params {function} check(data)
       #|
-      #|  @return {Schema} this
+      #|   @return {Schema} this
       #|
       ########################################
 

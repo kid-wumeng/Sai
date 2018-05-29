@@ -6,10 +6,10 @@ module.exports = to = ( end ) =>
 
    ########################################
    #|
-   #|  Count the duration to end.
+   #|   Count the duration to end.
    #|
-   #|  @params {Date}   end
-   #|  @return {object} duration - the attributes same as time.between()
+   #|   @params {Date}   end
+   #|   @return {object} duration - the attributes same as time.between()
    #|
    ########################################
 

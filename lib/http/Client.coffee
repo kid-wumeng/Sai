@@ -11,7 +11,7 @@ module.exports = class Client extends ObservableObject
 
       ########################################
       #|
-      #|  @params {object} opt
+      #|   @params {object} opt
       #|
       ########################################
 
@@ -30,8 +30,8 @@ module.exports = class Client extends ObservableObject
 
       ########################################
       #|
-      #|  @params {string} path
-      #|  @return {string} url
+      #|   @params {string} path
+      #|   @return {string} url
       #|
       ########################################
 
@@ -43,13 +43,11 @@ module.exports = class Client extends ObservableObject
 
    ########################################
    #|
-   #|  @async-function
+   #|   @params {string} path
+   #|   @params {object} data
+   #|   @params {object} opt
    #|
-   #|  @params {string} path
-   #|  @params {object} data
-   #|  @params {object} opt
-   #|
-   #|  @return {Promise} axios-promise
+   #|   @return {Promise} axios-promise
    #|
    ########################################
 
@@ -64,18 +62,16 @@ module.exports = class Client extends ObservableObject
 
       ########################################
       #|
-      #|  Send the request.
+      #|   Send the request.
       #|
-      #|  @async-function
+      #|   @params {string} method
+      #|   @params {string} path
+      #|   @params {object} data
+      #|   @params {object} opt
       #|
-      #|  @params {string} method
-      #|  @params {string} path
-      #|  @params {object} data
-      #|  @params {object} opt
+      #|   @events {'before-send'}(opt)
       #|
-      #|  @events {'before-send'}(opt)
-      #|
-      #|  @return {Promise} axios-promise
+      #|   @return {Promise} axios-promise
       #|
       ########################################
 
@@ -95,12 +91,12 @@ module.exports = class Client extends ObservableObject
 
       ########################################
       #|
-      #|  Ready the opt for call axios(opt).
+      #|   Ready the opt for call axios(opt).
       #|
-      #|  @params {object} opt
-      #|  @params {string} method
-      #|  @params {string} path
-      #|  @params {object} data
+      #|   @params {object} opt
+      #|   @params {string} method
+      #|   @params {string} path
+      #|   @params {object} data
       #|
       ########################################
 
@@ -118,9 +114,9 @@ module.exports = class Client extends ObservableObject
 
       ########################################
       #|
-      #|  Set opt.data to opt.params when GET.
+      #|   Set opt.data to opt.params when GET.
       #|
-      #|  @params {object} opt
+      #|   @params {object} opt
       #|
       ########################################
 

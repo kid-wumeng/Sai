@@ -12,14 +12,14 @@ module.exports = class MongoDB
 
       ########################################
       #|
-      #|  @params {object} opt
-      #|          {string} opt.host = '0.0.0.0'
-      #|          {number} opt.port =  27017
-      #|          {string} opt.name = 'test'
-      #|          {string} opt.user
-      #|          {string} opt.pass
-      #|          {bool}   opt.autoID = false
-      #|          {string} opt.autoIDCol
+      #|   @params {object} opt
+      #|           {string} opt.host = '0.0.0.0'
+      #|           {number} opt.port =  27017
+      #|           {string} opt.name = 'test'
+      #|           {string} opt.user
+      #|           {string} opt.pass
+      #|           {bool}   opt.autoID = false
+      #|           {string} opt.autoIDCol
       #|
       ########################################
 
@@ -44,18 +44,18 @@ module.exports = class MongoDB
 
       ########################################
       #|
-      #|  Connect the database.
+      #|   Connect the database.
       #|
-      #|  @async-function
+      #|   @async-function
       #|
-      #|  @params {object} opt
-      #|          {string} opt.host = '0.0.0.0'
-      #|          {number} opt.port = 27017
-      #|          {string} opt.name = 'test'
-      #|          {string} opt.user
-      #|          {string} opt.pass
-      #|          {bool}   opt.autoID = false
-      #|          {string} opt.autoIDCol
+      #|   @params {object} opt
+      #|           {string} opt.host = '0.0.0.0'
+      #|           {number} opt.port = 27017
+      #|           {string} opt.name = 'test'
+      #|           {string} opt.user
+      #|           {string} opt.pass
+      #|           {bool}   opt.autoID = false
+      #|           {string} opt.autoIDCol
       #|
       ########################################
 
@@ -78,10 +78,10 @@ module.exports = class MongoDB
 
       ########################################
       #|
-      #|  Format and return a mongo's uri, reference:
-      #|     https://docs.mongodb.com/manual/reference/connection-string/
+      #|   Format and return a mongo's uri, reference:
+      #|      https://docs.mongodb.com/manual/reference/connection-string/
       #|
-      #|  @return {string} uri
+      #|   @return {string} uri
       #|
       ########################################
 
@@ -98,10 +98,10 @@ module.exports = class MongoDB
 
       ########################################
       #|
-      #|  Format and return a mongo's uri, reference:
-      #|     https://docs.mongodb.com/manual/reference/connection-string/
+      #|   Format and return a mongo's uri, reference:
+      #|      https://docs.mongodb.com/manual/reference/connection-string/
       #|
-      #|  @return {string} uri
+      #|   @return {string} uri
       #|
       ########################################
 
@@ -115,9 +115,9 @@ module.exports = class MongoDB
 
       ########################################
       #|
-      #|  Drop the database ( the connection will be kept ).
+      #|   Drop the database ( the connection will be kept ).
       #|
-      #|  @async-function
+      #|   @async-function
       #|
       ########################################
 
@@ -131,8 +131,8 @@ module.exports = class MongoDB
 
       ########################################
       #|
-      #|  @async-function
-      #|  @errors
+      #|   @async-function
+      #|   @errors
       #|
       ########################################
 
@@ -153,8 +153,8 @@ module.exports = class MongoDB
 
       ########################################
       #|
-      #|  @async-function
-      #|  @errors
+      #|   @async-function
+      #|   @errors
       #|
       ########################################
 
@@ -181,11 +181,11 @@ module.exports = class MongoDB
 
       ########################################
       #|
-      #|  Hide the field when query.
+      #|   Hide the field when query.
       #|
-      #|  @params {string} col
-      #|  @params {string} key
-      #|  @return {DB}     this
+      #|   @params {string} col
+      #|   @params {string} key
+      #|   @return {DB}     this
       #|
       ########################################
 
@@ -203,10 +203,10 @@ module.exports = class MongoDB
 
       ########################################
       #|
-      #|  Select the collection ( singleton, create it at first ).
+      #|   Select the collection ( singleton, create it at first ).
       #|
-      #|  @params {string} name
-      #|  @return {Collection}
+      #|   @params {string} name
+      #|   @return {Collection}
       #|
       ########################################
 

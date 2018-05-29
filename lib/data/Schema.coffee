@@ -1,5 +1,7 @@
 get     = require('./get')
 Checker = require('./Schema.Checker')
+isEmail = require('../string/isEmail')
+isURL   = require('../string/isURL')
 
 
 
@@ -12,8 +14,8 @@ module.exports = class Schema
       @_rules   = {}
       @_formats = {}
 
-      @format('email', string.isEmail)
-      @format('url',   string.isURL)
+      @format('email', isEmail)
+      @format('url',   isURL)
 
 
 

@@ -19,7 +19,7 @@ module.exports = class MongoDB
       #|           {string} opt.user
       #|           {string} opt.pass
       #|           {bool}   opt.autoID = false
-      #|           {string} opt.autoIDCol
+      #|           {string} opt.autoIDStore
       #|
       ########################################
 

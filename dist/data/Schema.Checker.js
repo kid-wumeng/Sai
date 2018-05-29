@@ -347,7 +347,7 @@
         return this;
       } catch (error1) {
         error = error1;
-        if (isString(error) && /^data\.Schema\.Checker\.\w+ >>> a/.test(error)) {
+        if (isString(error) && /^data\.Schema\.Checker\.\w+ >>> /.test(error)) {
           error += ` <<< the rule { ${rule} }`;
         }
         throw error;

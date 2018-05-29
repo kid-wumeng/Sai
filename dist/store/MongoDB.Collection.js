@@ -29,12 +29,12 @@
       this.aggregate = this.aggregate.bind(this);
       //#######################################
       //|
-      //|  @params {object}     opt
-      //|          {mongodb.Db} opt.db
-      //|          {object}     opt.hides - { user: ['email', 'pass', ...], ... }
-      //|          {bool}       opt.autoID
-      //|          {string}     opt.autoIDStore
-      //|          {string}     opt.name
+      //|   @params {object}     opt
+      //|           {mongodb.Db} opt.db
+      //|           {object}     opt.hides - { user: ['email', 'pass', ...], ... }
+      //|           {bool}       opt.autoID
+      //|           {string}     opt.autoIDStore
+      //|           {string}     opt.name
       //|
       //#######################################
       this._db = opt.db;
@@ -48,12 +48,12 @@
     async findOne(query = {}, opt = {}) {
       //#######################################
       //|
-      //|  @async-function
+      //|   @async-function
       //|
-      //|  @params {object} query
-      //|  @params {object} opt
+      //|   @params {object} query
+      //|   @params {object} opt
       //|
-      //|  @return {object} doc
+      //|   @return {object} doc
       //|
       //#######################################
       query = this._formatQuery(query);
@@ -64,12 +64,12 @@
     async find(query = {}, opt = {}) {
       //#######################################
       //|
-      //|  @async-function
+      //|   @async-function
       //|
-      //|  @params {object}   query
-      //|  @params {object}   opt
+      //|   @params {object}   query
+      //|   @params {object}   opt
       //|
-      //|  @return {object[]} docs
+      //|   @return {object[]} docs
       //|
       //#######################################
       query = this._formatQuery(query);
@@ -80,12 +80,12 @@
     async count(query = {}, opt = {}) {
       //#######################################
       //|
-      //|  @async-function
+      //|   @async-function
       //|
-      //|  @params {object} query
-      //|  @params {object} opt
+      //|   @params {object} query
+      //|   @params {object} opt
       //|
-      //|  @return {number} count
+      //|   @return {number} count
       //|
       //#######################################
       query = this._formatQuery(query);
@@ -96,8 +96,8 @@
     _formatQuery(query = {}) {
       //#######################################
       //|
-      //|  @params {object|number} query | doc's id
-      //|  @return {object}        query
+      //|   @params {object|number} query | doc's id
+      //|   @return {object}        query
       //|
       //#######################################
       if (_.isFinite(query)) {
@@ -111,8 +111,8 @@
     _formatOptions(opt = {}) {
       //#######################################
       //|
-      //|  @params {object|string} opt | projection
-      //|  @return {object}        opt
+      //|   @params {object|string} opt | projection
+      //|   @return {object}        opt
       //|
       //#######################################
       if (_.isString(opt)) {
@@ -131,7 +131,7 @@
     _formatOptions_sort(opt) {
       //#######################################
       //|
-      //|  @params {object|string} opt
+      //|   @params {object|string} opt
       //|
       //#######################################
       if (_.isNumber(opt.sort)) {
@@ -145,7 +145,7 @@
       var page, ref, ref1, ref2, size, skip;
       //#######################################
       //|
-      //|  @params {object} opt
+      //|   @params {object} opt
       //|
       //#######################################
       page = (ref = opt.page) != null ? ref : 1;
@@ -161,7 +161,7 @@
       var dict, i, key, len, string;
       //#######################################
       //|
-      //|  @params {object} opt
+      //|   @params {object} opt
       //|
       //#######################################
       if (opt.projection == null) {
@@ -192,10 +192,10 @@
       var hideKeys, i, key, len;
       //#######################################
       //|
-      //|  Call this method must after @_formatOptions_projection(),
-      //|  because it is depend on {opt.projection}
+      //|   Call this method must after @_formatOptions_projection(),
+      //|   because it is depend on {opt.projection}
       //|
-      //|  @params {object} opt
+      //|   @params {object} opt
       //|
       //#######################################
       hideKeys = this._hides[this._name];
@@ -230,10 +230,10 @@
       var count, doc, i, len, result, start;
       //#######################################
       //|
-      //|  @async-function
+      //|   @async-function
       //|
-      //|  @params {object} docs
-      //|  @return {object} docs ( includes _id, id and createDate )
+      //|   @params {object} docs
+      //|   @return {object} docs ( includes _id, id and createDate )
       //|
       //#######################################
       if (this._autoID) {
@@ -260,12 +260,12 @@
       var lastID, result, startID;
       //#######################################
       //|
-      //|  Make one or some auto-increment ids and return the first.
+      //|   Make one or some auto-increment ids and return the first.
       //|
-      //|  @async-function
+      //|   @async-function
       //|
-      //|  @params {number} count
-      //|  @return {number} startID
+      //|   @params {number} count
+      //|   @return {number} startID
       //|
       //#######################################
       result = (await this._db.collection(this._autoIDStore).findOneAndUpdate({
@@ -287,12 +287,12 @@
       var opt, result;
       //#######################################
       //|
-      //|  @async-function
+      //|   @async-function
       //|
-      //|  @params {object} query
-      //|  @params {object} modifier
+      //|   @params {object} query
+      //|   @params {object} modifier
       //|
-      //|  @return {object} new-doc
+      //|   @return {object} new-doc
       //|
       //#######################################
       query = this._formatQuery(query);
@@ -308,12 +308,12 @@
       var result;
       //#######################################
       //|
-      //|  @async-function
+      //|   @async-function
       //|
-      //|  @params {object} query
-      //|  @params {object} modifiedCount
+      //|   @params {object} query
+      //|   @params {object} modifier
       //|
-      //|  @return {object} new-doc
+      //|   @return {number} modifiedCount
       //|
       //#######################################
       query = this._formatQuery(query);
@@ -326,12 +326,12 @@
       var result;
       //#######################################
       //|
-      //|  @async-function
+      //|   @async-function
       //|
-      //|  @params {object} query
-      //|  @params {object} modifier
+      //|   @params {object} query
+      //|   @params {object} modifier
       //|
-      //|  @return {number} modifiedCount
+      //|   @return {number} modifiedCount
       //|
       //#######################################
       query = this._formatQuery(query);
@@ -344,8 +344,8 @@
       var key, value;
       //#######################################
       //|
-      //|  @params {object} modifier
-      //|  @return {object} modifier
+      //|   @params {object} modifier
+      //|   @return {object} modifier
       //|
       //#######################################
       modifier = Object.assign({}, modifier);
@@ -372,9 +372,9 @@
       var result;
       //#######################################
       //|
-      //|  @params {object} query
+      //|   @params {object} query
       //|
-      //|  @return {number} deletedCount
+      //|   @return {number} deletedCount
       //|
       //#######################################
       query = this._formatQuery(query);
@@ -386,9 +386,9 @@
       var result;
       //#######################################
       //|
-      //|  @params {object} query
+      //|   @params {object} query
       //|
-      //|  @return {number} deletedCount
+      //|   @return {number} deletedCount
       //|
       //#######################################
       query = this._formatQuery(query);
@@ -399,10 +399,10 @@
     async aggregate(pipeline, opt = {}) {
       //#######################################
       //|
-      //|  @params {object[]} pipeline
-      //|  @params {object}   opt
+      //|   @params {object[]} pipeline
+      //|   @params {object}   opt
       //|
-      //|  @return {object[]} results
+      //|   @return {object[]} results
       //|
       //#######################################
       return (await this._col.aggregate(pipeline, opt).toArray());

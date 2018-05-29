@@ -6,10 +6,10 @@
     var i, item, len;
     //#######################################
     //|
-    //|  @params {*[]}      items
-    //|  @params {function} callback(item)
+    //|   @params {*[]}      items
+    //|   @params {function} callback(item)
     //|
-    //|  @return {number}   count
+    //|   @return {number}   count
     //|
     //#######################################
     count = 0;

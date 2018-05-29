@@ -14,11 +14,11 @@
       this.url = this.url.bind(this);
       //#######################################
       //|
-      //|  @params {string} path
-      //|  @params {object} data
-      //|  @params {object} opt
+      //|   @params {string} path
+      //|   @params {object} data
+      //|   @params {object} opt
       //|
-      //|  @return {Promise} axios-promise
+      //|   @return {Promise} axios-promise
       //|
       //#######################################
       this.get = this.get.bind(this);
@@ -39,8 +39,8 @@
       boundMethodCheck(this, Client);
       //#######################################
       //|
-      //|  @params {string} path
-      //|  @return {string} url
+      //|   @params {string} path
+      //|   @return {string} url
       //|
       //#######################################
       return this.opt.urlBase + path;
@@ -75,16 +75,16 @@
       boundMethodCheck(this, Client);
       //#######################################
       //|
-      //|  Send the request.
+      //|   Send the request.
       //|
-      //|  @params {string} method
-      //|  @params {string} path
-      //|  @params {object} data
-      //|  @params {object} opt
+      //|   @params {string} method
+      //|   @params {string} path
+      //|   @params {object} data
+      //|   @params {object} opt
       //|
-      //|  @events {'before-send'}(opt)
+      //|   @events {'before-send'}(opt)
       //|
-      //|  @return {Promise} axios-promise
+      //|   @return {Promise} axios-promise
       //|
       //#######################################
       this._readyOptions(opt, method, path, data);
@@ -98,12 +98,12 @@
       boundMethodCheck(this, Client);
       //#######################################
       //|
-      //|  Ready the opt for call axios(opt).
+      //|   Ready the opt for call axios(opt).
       //|
-      //|  @params {object} opt
-      //|  @params {string} method
-      //|  @params {string} path
-      //|  @params {object} data
+      //|   @params {object} opt
+      //|   @params {string} method
+      //|   @params {string} path
+      //|   @params {object} data
       //|
       //#######################################
       url = this.url(path);
@@ -114,9 +114,9 @@
       boundMethodCheck(this, Client);
       //#######################################
       //|
-      //|  Set opt.data to opt.params when GET.
+      //|   Set opt.data to opt.params when GET.
       //|
-      //|  @params {object} opt
+      //|   @params {object} opt
       //|
       //#######################################
       if (opt.method === 'get') {

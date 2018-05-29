@@ -5,12 +5,12 @@
   module.exports = len = (string, mode = 'length') => {
     //#######################################
     //|
-    //|  @params {string} string
-    //|  @params {string} mode
+    //|   @params {string} string
+    //|   @params {string} mode
     //|
-    //|  @errors
+    //|   @errors
     //|
-    //|  @return {number} len
+    //|   @return {number} len
     //|
     //#######################################
     switch (mode) {
@@ -29,8 +29,8 @@
     var char, i, len1;
     //#######################################
     //|
-    //|  @params {string}
-    //|  @return {number} len
+    //|   @params {string}
+    //|   @return {number} len
     //|
     //#######################################
     len = 0;
@@ -49,9 +49,9 @@
     var char, code, i, len1;
     //#######################################
     //|
-    //|  @params {string}
-    //|  @errors
-    //|  @return {number} len
+    //|   @params {string}
+    //|   @errors
+    //|   @return {number} len
     //|
     //#######################################
     len = 0;

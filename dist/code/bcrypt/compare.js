@@ -7,12 +7,12 @@
   module.exports = compare = async(data, hash) => {
     //#######################################
     //|
-    //|  @async-function
+    //|   @async-function
     //|
-    //|  @params {string} data
-    //|  @params {string} hash
+    //|   @params {string} data
+    //|   @params {string} hash
     //|
-    //|  @return {bool} isMatched
+    //|   @return {bool} isMatched
     //|
     //#######################################
     return (await new Promise((resolve, reject) => {

@@ -48,10 +48,10 @@
       this._display = this._display.bind(this);
       //#######################################
       //|
-      //|  @params {object} opt
-      //|          {object} opt.rules   - {name: check(function)}
-      //|          {object} opt.formats - {name: check(function)}
-      //|          {*}      opt.data
+      //|   @params {object} opt
+      //|           {object} opt.rules   - {name: check(function)}
+      //|           {object} opt.formats - {name: check(function)}
+      //|           {*}      opt.data
       //|
       //#######################################
       this._rules = opt.rules;
@@ -62,9 +62,9 @@
     required(error) {
       //#######################################
       //|
-      //|  @params {*} error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {*} error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if (isNil(this._data)) {
@@ -76,9 +76,9 @@
     bool(error) {
       //#######################################
       //|
-      //|  @params {*} error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {*} error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if ((this._data != null) && !isBool(this._data)) {
@@ -90,9 +90,9 @@
     number(error) {
       //#######################################
       //|
-      //|  @params {*} error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {*} error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if ((this._data != null) && !isNumber(this._data)) {
@@ -104,9 +104,9 @@
     string(error) {
       //#######################################
       //|
-      //|  @params {*} error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {*} error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if ((this._data != null) && !isString(this._data)) {
@@ -118,9 +118,9 @@
     buffer(error) {
       //#######################################
       //|
-      //|  @params {*} error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {*} error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if ((this._data != null) && !isBuffer(this._data)) {
@@ -132,9 +132,9 @@
     date(error) {
       //#######################################
       //|
-      //|  @params {*} error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {*} error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if ((this._data != null) && !isDate(this._data)) {
@@ -146,9 +146,9 @@
     array(error) {
       //#######################################
       //|
-      //|  @params {*} error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {*} error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if ((this._data != null) && !isArray(this._data)) {
@@ -160,9 +160,9 @@
     plainObject(error) {
       //#######################################
       //|
-      //|  @params {*} error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {*} error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if ((this._data != null) && !isPlainObject(this._data)) {
@@ -174,10 +174,10 @@
     is(constructor, error) {
       //#######################################
       //|
-      //|  @params {Class} constructor
-      //|  @params {*}     error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {Class} constructor
+      //|   @params {*}     error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if ((this._data != null) && !(this._data instanceof constructor)) {
@@ -189,10 +189,10 @@
     in(enums, error) {
       //#######################################
       //|
-      //|  @params {*[]} enums
-      //|  @params {*}   error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {*[]} enums
+      //|   @params {*}   error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if ((this._data != null) && !enums.includes(this._data)) {
@@ -207,10 +207,10 @@
     min(min, error) {
       //#######################################
       //|
-      //|  @params {number} min
-      //|  @params {*}      error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {number} min
+      //|   @params {*}      error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if (this._data != null) {
@@ -231,10 +231,10 @@
     max(max, error) {
       //#######################################
       //|
-      //|  @params {number} max
-      //|  @params {*}      error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {number} max
+      //|   @params {*}      error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if (this._data != null) {
@@ -291,10 +291,10 @@
     mime(mimes, error) {
       //#######################################
       //|
-      //|  @params {string[]} mimes
-      //|  @params {*}        error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {string[]} mimes
+      //|   @params {*}        error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       if (this._data != null) {
@@ -313,10 +313,10 @@
       var check;
       //#######################################
       //|
-      //|  @params {string} format
-      //|  @params {*}      error
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {string} format
+      //|   @params {*}      error
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       check = this._formats[format];
@@ -333,9 +333,9 @@
       var check, error;
       //#######################################
       //|
-      //|  @params {string}  rule
-      //|  @errors
-      //|  @return {Checker} this
+      //|   @params {string}  rule
+      //|   @errors
+      //|   @return {Checker} this
       //|
       //#######################################
       check = this._rules[rule];
@@ -358,10 +358,10 @@
       switch (false) {
         //#######################################
         //|
-        //|  Format the data for error's message.
+        //|   Format the data for error's message.
         //|
-        //|  @params {*} data
-        //|  @return {string}
+        //|   @params {*} data
+        //|   @return {string}
         //|
         //#######################################
         case !isBool(data):

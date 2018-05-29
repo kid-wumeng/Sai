@@ -8,11 +8,11 @@
     var opt;
     //#######################################
     //|
-    //|  @params {object} payload
-    //|  @params {string} secret
-    //|  @params {number} maxAge
+    //|   @params {object} payload
+    //|   @params {string} secret
+    //|   @params {number} maxAge
     //|
-    //|  @return {string} token
+    //|   @return {string} token
     //|
     //#######################################
     opt = {

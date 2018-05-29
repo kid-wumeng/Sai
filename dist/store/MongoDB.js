@@ -21,14 +21,14 @@
       this.col = this.col.bind(this);
       //#######################################
       //|
-      //|  @params {object} opt
-      //|          {string} opt.host = '0.0.0.0'
-      //|          {number} opt.port =  27017
-      //|          {string} opt.name = 'test'
-      //|          {string} opt.user
-      //|          {string} opt.pass
-      //|          {bool}   opt.autoID = false
-      //|          {string} opt.autoIDCol
+      //|   @params {object} opt
+      //|           {string} opt.host = '0.0.0.0'
+      //|           {number} opt.port =  27017
+      //|           {string} opt.name = 'test'
+      //|           {string} opt.user
+      //|           {string} opt.pass
+      //|           {bool}   opt.autoID = false
+      //|           {string} opt.autoIDStore
       //|
       //#######################################
       this._host = (ref = opt.host) != null ? ref : '0.0.0.0';
@@ -48,18 +48,18 @@
       var uri;
       //#######################################
       //|
-      //|  Connect the database.
+      //|   Connect the database.
       //|
-      //|  @async-function
+      //|   @async-function
       //|
-      //|  @params {object} opt
-      //|          {string} opt.host = '0.0.0.0'
-      //|          {number} opt.port = 27017
-      //|          {string} opt.name = 'test'
-      //|          {string} opt.user
-      //|          {string} opt.pass
-      //|          {bool}   opt.autoID = false
-      //|          {string} opt.autoIDCol
+      //|   @params {object} opt
+      //|           {string} opt.host = '0.0.0.0'
+      //|           {number} opt.port = 27017
+      //|           {string} opt.name = 'test'
+      //|           {string} opt.user
+      //|           {string} opt.pass
+      //|           {bool}   opt.autoID = false
+      //|           {string} opt.autoIDCol
       //|
       //#######################################
       uri = this._uri();
@@ -73,10 +73,10 @@
     _uri() {
       //#######################################
       //|
-      //|  Format and return a mongo's uri, reference:
-      //|     https://docs.mongodb.com/manual/reference/connection-string/
+      //|   Format and return a mongo's uri, reference:
+      //|      https://docs.mongodb.com/manual/reference/connection-string/
       //|
-      //|  @return {string} uri
+      //|   @return {string} uri
       //|
       //#######################################
       if (this._user) {
@@ -89,10 +89,10 @@
     async close() {
       //#######################################
       //|
-      //|  Format and return a mongo's uri, reference:
-      //|     https://docs.mongodb.com/manual/reference/connection-string/
+      //|   Format and return a mongo's uri, reference:
+      //|      https://docs.mongodb.com/manual/reference/connection-string/
       //|
-      //|  @return {string} uri
+      //|   @return {string} uri
       //|
       //#######################################
       return (await this._client.close());
@@ -101,9 +101,9 @@
     async drop() {
       //#######################################
       //|
-      //|  Drop the database ( the connection will be kept ).
+      //|   Drop the database ( the connection will be kept ).
       //|
-      //|  @async-function
+      //|   @async-function
       //|
       //#######################################
       return (await this._db.dropDatabase());
@@ -127,8 +127,8 @@
       var col, lastDoc, lastID;
       //#######################################
       //|
-      //|  @async-function
-      //|  @errors
+      //|   @async-function
+      //|   @errors
       //|
       //#######################################
       col = store._id;

@@ -15,8 +15,8 @@
       var defaults;
       //#######################################
       //|
-      //|  @params {string}   path
-      //|  @params {function} callback(data)
+      //|   @params {string}   path
+      //|   @params {function} callback(data)
       //|
       //#######################################
       this.all = this.all.bind(this);
@@ -37,8 +37,8 @@
       this.listen = this.listen.bind(this);
       //#######################################
       //|
-      //|  @params {object} opt
-      //|          {bool}   opt.cors
+      //|   @params {object} opt
+      //|           {bool}   opt.cors
       //|
       //#######################################
       defaults = {
@@ -78,11 +78,11 @@
       var mid;
       //#######################################
       //|
-      //|  Register a route.
+      //|   Register a route.
       //|
-      //|  @params {string}   method
-      //|  @params {string}   path
-      //|  @params {function} callback(data)
+      //|   @params {string}   method
+      //|   @params {string}   path
+      //|   @params {function} callback(data)
       //|
       //#######################################
       mid = this._wrapMiddleware(callback);
@@ -92,12 +92,12 @@
     mount(name, value) {
       //#######################################
       //|
-      //|  Mount something to context.
+      //|   Mount something to context.
       //|
-      //|  @params {string} name
-      //|  @params {*}      value
+      //|   @params {string} name
+      //|   @params {*}      value
       //|
-      //|  @return {Server} this
+      //|   @return {Server} this
       //|
       //#######################################
       this._mounts[name] = value;
@@ -107,10 +107,10 @@
     _wrapMiddleware(callback) {
       //#######################################
       //|
-      //|  Wrap a callback to koa's middleware.
+      //|   Wrap a callback to koa's middleware.
       //|
-      //|  @params {function} callback(data)
-      //|  @return {function} middleware(ctx, next)
+      //|   @params {function} callback(data)
+      //|   @return {function} middleware(ctx, next)
       //|
       //#######################################
       return async(ctx, next) => {
@@ -122,10 +122,10 @@
     _wrapContent(ctx) {
       //#######################################
       //|
-      //|  Wrap a context from koa's context.
+      //|   Wrap a context from koa's context.
       //|
-      //|  @params {object} koa-ctx
-      //|  @return {object} ctx
+      //|   @params {object} koa-ctx
+      //|   @return {object} ctx
       //|
       //#######################################
       ctx = {
@@ -142,10 +142,10 @@
       try {
         //#######################################
         //|
-        //|  Run the callback to handle request and response.
+        //|   Run the callback to handle request and response.
         //|
-        //|  @params {object}   ctx
-        //|  @params {function} callback(data)
+        //|   @params {object}   ctx
+        //|   @params {function} callback(data)
         //|
         //#######################################
         this._handleRequest(ctx);
@@ -161,7 +161,7 @@
     _handleRequest(ctx) {
       //#######################################
       //|
-      //|  @params {object} ctx
+      //|   @params {object} ctx
       //|
       //#######################################
       ctx.req.method = ctx.raw.method;
@@ -172,10 +172,10 @@
       var ref, ref1;
       //#######################################
       //|
-      //|  Get the data from query(GET) or body(non-GET)
+      //|   Get the data from query(GET) or body(non-GET)
       //|
-      //|  @params {object} ctx
-      //|  @return {object} data
+      //|   @params {object} ctx
+      //|   @return {object} data
       //|
       //#######################################
       if (ctx.raw.method === 'GET') {
@@ -188,8 +188,8 @@
     _handleError(ctx, error) {
       //#######################################
       //|
-      //|  @params {object} ctx
-      //|  @params {*}      error
+      //|   @params {object} ctx
+      //|   @params {*}      error
       //|
       //#######################################
       return ctx.res.data = error;
@@ -199,7 +199,7 @@
       var ref;
       //#######################################
       //|
-      //|  @params {object} ctx
+      //|   @params {object} ctx
       //|
       //#######################################
       ctx.raw.body = ctx.res.data;
@@ -209,9 +209,9 @@
     listen(port = 80) {
       //#######################################
       //|
-      //|  Use common middlewares and start server.
+      //|   Use common middlewares and start server.
       //|
-      //|  @params {number} port
+      //|   @params {number} port
       //|
       //#######################################
 

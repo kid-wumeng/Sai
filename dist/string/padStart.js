@@ -6,17 +6,17 @@
     var count, string;
     //#######################################
     //|
-    //|  Padding the char to value's start.
+    //|   Padding the char to value's start.
     //|
-    //|  eg:
-    //|     padStart(7, 3, '0') => '007'
-    //|     padStart(7, 3, ' ') => '  7'
+    //|   eg:
+    //|      padStart(7, 3, '0') => '007'
+    //|      padStart(7, 3, ' ') => '  7'
     //|
-    //|  @params {*}      value - will convert to string
-    //|  @params {number} len   - expected overall-length
-    //|  @params {string} char  - the monocase used to padding
+    //|   @params {*}      value - will convert to string
+    //|   @params {number} len   - expected overall-length
+    //|   @params {string} char  - the monocase used to padding
     //|
-    //|  @return {string}
+    //|   @return {string}
     //|
     //#######################################
     string = value.toString();

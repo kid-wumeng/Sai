@@ -7,10 +7,10 @@
   module.exports = encode = async(data) => {
     //#######################################
     //|
-    //|  @async-function
+    //|   @async-function
     //|
-    //|  @params {string} data
-    //|  @return {string} hash
+    //|   @params {string} data
+    //|   @return {string} hash
     //|
     //#######################################
     return (await new Promise((resolve, reject) => {

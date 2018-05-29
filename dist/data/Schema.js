@@ -2,13 +2,13 @@
 (function() {
   var Checker, Schema, get, isEmail, isURL;
 
+  isEmail = require('validator/lib/isEmail');
+
+  isURL = require('validator/lib/isURL');
+
   get = require('./get');
 
   Checker = require('./Schema.Checker');
-
-  isEmail = require('../string/isEmail');
-
-  isURL = require('../string/isURL');
 
   module.exports = Schema = class Schema {
     constructor() {

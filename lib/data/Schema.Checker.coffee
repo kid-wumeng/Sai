@@ -272,9 +272,9 @@ module.exports = class Checker
       if @_data?
 
          switch
-            when isNumber(@_data) then @_min_number(min)
-            when isString(@_data) then @_min_string(min)
-            when isBuffer(@_data) then @_min_buffer(min)
+            when isNumber(@_data) then @_min_number(min, error)
+            when isString(@_data) then @_min_string(min, error)
+            when isBuffer(@_data) then @_min_buffer(min, error)
 
       return @
 
@@ -296,9 +296,9 @@ module.exports = class Checker
       if @_data?
 
          switch
-            when isNumber(@_data) then @_max_number(max)
-            when isString(@_data) then @_max_string(max)
-            when isBuffer(@_data) then @_max_buffer(max)
+            when isNumber(@_data) then @_max_number(max, error)
+            when isString(@_data) then @_max_string(max, error)
+            when isBuffer(@_data) then @_max_buffer(max, error)
 
       return @
 
@@ -306,37 +306,37 @@ module.exports = class Checker
 
 
 
-   _min_number: ( min ) =>
+   _min_number: ( min, error ) =>
       if @_data < min
          throw error ? "data.Schema.Checker._min_number >>>
                         Sorry, the number should be ≥ #{min},
                         current is #{@_data}."
 
-   _max_number: ( max ) =>
+   _max_number: ( max, error ) =>
       if @_data > max
          throw error ? "data.Schema.Checker._max_number >>>
                         Sorry, the number should be ≤ #{max},
                         current is #{@_data}."
 
-   _min_string: ( min ) =>
+   _min_string: ( min, error ) =>
       if @_data.length < min
          throw error ? "data.Schema.Checker._min_string >>>
                         Sorry, the string's length should be ≥ #{min},
                         current is #{@_data.length}."
 
-   _max_string: ( max ) =>
+   _max_string: ( max, error ) =>
       if @_data.length > max
          throw error ? "data.Schema.Checker._max_string >>>
                         Sorry, the string's length should be ≤ #{max},
                         current is #{@_data.length}."
 
-   _min_buffer: ( min ) =>
+   _min_buffer: ( min, error ) =>
       if @_data.length < min
          throw error ? "data.Schema.Checker._min_buffer >>>
                         Sorry, the buffer's length should be ≥ #{min},
                         current is #{@_data.length}."
 
-   _max_buffer: ( max ) =>
+   _max_buffer: ( max, error ) =>
       if @_data.length > max
          throw error ? "data.Schema.Checker._max_buffer >>>
                         Sorry, the buffer's length should be ≤ #{max},

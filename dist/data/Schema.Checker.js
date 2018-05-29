@@ -216,13 +216,13 @@
       if (this._data != null) {
         switch (false) {
           case !isNumber(this._data):
-            this._min_number(min);
+            this._min_number(min, error);
             break;
           case !isString(this._data):
-            this._min_string(min);
+            this._min_string(min, error);
             break;
           case !isBuffer(this._data):
-            this._min_buffer(min);
+            this._min_buffer(min, error);
         }
       }
       return this;
@@ -240,51 +240,51 @@
       if (this._data != null) {
         switch (false) {
           case !isNumber(this._data):
-            this._max_number(max);
+            this._max_number(max, error);
             break;
           case !isString(this._data):
-            this._max_string(max);
+            this._max_string(max, error);
             break;
           case !isBuffer(this._data):
-            this._max_buffer(max);
+            this._max_buffer(max, error);
         }
       }
       return this;
     }
 
-    _min_number(min) {
+    _min_number(min, error) {
       if (this._data < min) {
-        throw typeof error !== "undefined" && error !== null ? error : `data.Schema.Checker._min_number >>> Sorry, the number should be ≥ ${min}, current is ${this._data}.`;
+        throw error != null ? error : `data.Schema.Checker._min_number >>> Sorry, the number should be ≥ ${min}, current is ${this._data}.`;
       }
     }
 
-    _max_number(max) {
+    _max_number(max, error) {
       if (this._data > max) {
-        throw typeof error !== "undefined" && error !== null ? error : `data.Schema.Checker._max_number >>> Sorry, the number should be ≤ ${max}, current is ${this._data}.`;
+        throw error != null ? error : `data.Schema.Checker._max_number >>> Sorry, the number should be ≤ ${max}, current is ${this._data}.`;
       }
     }
 
-    _min_string(min) {
+    _min_string(min, error) {
       if (this._data.length < min) {
-        throw typeof error !== "undefined" && error !== null ? error : `data.Schema.Checker._min_string >>> Sorry, the string's length should be ≥ ${min}, current is ${this._data.length}.`;
+        throw error != null ? error : `data.Schema.Checker._min_string >>> Sorry, the string's length should be ≥ ${min}, current is ${this._data.length}.`;
       }
     }
 
-    _max_string(max) {
+    _max_string(max, error) {
       if (this._data.length > max) {
-        throw typeof error !== "undefined" && error !== null ? error : `data.Schema.Checker._max_string >>> Sorry, the string's length should be ≤ ${max}, current is ${this._data.length}.`;
+        throw error != null ? error : `data.Schema.Checker._max_string >>> Sorry, the string's length should be ≤ ${max}, current is ${this._data.length}.`;
       }
     }
 
-    _min_buffer(min) {
+    _min_buffer(min, error) {
       if (this._data.length < min) {
-        throw typeof error !== "undefined" && error !== null ? error : `data.Schema.Checker._min_buffer >>> Sorry, the buffer's length should be ≥ ${min}, current is ${this._data.length}.`;
+        throw error != null ? error : `data.Schema.Checker._min_buffer >>> Sorry, the buffer's length should be ≥ ${min}, current is ${this._data.length}.`;
       }
     }
 
-    _max_buffer(max) {
+    _max_buffer(max, error) {
       if (this._data.length > max) {
-        throw typeof error !== "undefined" && error !== null ? error : `data.Schema.Checker._max_buffer >>> Sorry, the buffer's length should be ≤ ${max}, current is ${this._data.length}.`;
+        throw error != null ? error : `data.Schema.Checker._max_buffer >>> Sorry, the buffer's length should be ≤ ${max}, current is ${this._data.length}.`;
       }
     }
 

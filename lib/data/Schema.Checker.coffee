@@ -423,7 +423,8 @@ module.exports = class Checker
          return @
 
       catch error
-         if isString(error) then error += " <<< the rule { #{rule} }"
+         if isString(error) and /^data\.Schema\.Checker\.\w+ >>> a/.test(error)
+            error += " <<< the rule { #{rule} }"
          throw error
 
 

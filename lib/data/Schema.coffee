@@ -21,11 +21,13 @@ module.exports = class Schema
 
 
 
-   data: ( data, path ) =>
+   test: ( data, path ) =>
 
       ########################################
       #|
-      #|   @params {object} opt
+      #|   @params {*}      data
+      #|   @params {string} path
+      #|
       #|   @return {Checker}
       #|
       ########################################

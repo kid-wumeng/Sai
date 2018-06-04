@@ -24,6 +24,7 @@
 
   module.exports = Checker = class Checker {
     constructor(opt = {}) {
+      this.name = this.name.bind(this);
       this.required = this.required.bind(this);
       this.bool = this.bool.bind(this);
       this.number = this.number.bind(this);
@@ -45,7 +46,8 @@
       this.mime = this.mime.bind(this);
       this.format = this.format.bind(this);
       this.rule = this.rule.bind(this);
-      this._display = this._display.bind(this);
+      this._displayName = this._displayName.bind(this);
+      this._displayData = this._displayData.bind(this);
       //#######################################
       //|
       //|   @params {object} opt
@@ -57,6 +59,18 @@
       this._rules = opt.rules;
       this._formats = opt.formats;
       this._data = opt.data;
+      this._name = '';
+    }
+
+    name(name) {
+      //#######################################
+      //|
+      //|   @params {string}  name
+      //|   @return {Checker} this
+      //|
+      //#######################################
+      this._name = name;
+      return this;
     }
 
     required(error) {
@@ -69,7 +83,7 @@
       //#######################################
       if (isNil(this._data)) {
         if (error == null) {
-          error = `Sorry, the data is required, current is ${this._display(this._data)}.`;
+          error = `Sorry, the ${this._displayName()} is required, current is ${this._displayData()}.`;
         }
         throw new Error(error);
       }
@@ -85,7 +99,7 @@
       //|
       //#######################################
       if ((this._data != null) && !isBool(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.bool >>> Sorry, the data should be a bool, current is ${this._display(this._data)}.`;
+        throw error != null ? error : `data.Schema.Checker.bool >>> Sorry, the data should be a bool, current is ${this._displayData(this._data)}.`;
       }
       return this;
     }
@@ -99,7 +113,7 @@
       //|
       //#######################################
       if ((this._data != null) && !isNumber(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.number >>> Sorry, the data should be a number, current is ${this._display(this._data)}.`;
+        throw error != null ? error : `data.Schema.Checker.number >>> Sorry, the data should be a number, current is ${this._displayData(this._data)}.`;
       }
       return this;
     }
@@ -113,7 +127,7 @@
       //|
       //#######################################
       if ((this._data != null) && !isString(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.string >>> Sorry, the data should be a string, current is ${this._display(this._data)}.`;
+        throw error != null ? error : `data.Schema.Checker.string >>> Sorry, the data should be a string, current is ${this._displayData(this._data)}.`;
       }
       return this;
     }
@@ -127,7 +141,7 @@
       //|
       //#######################################
       if ((this._data != null) && !isBuffer(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.buffer >>> Sorry, the data should be a Buffer, current is ${this._display(this._data)}.`;
+        throw error != null ? error : `data.Schema.Checker.buffer >>> Sorry, the data should be a Buffer, current is ${this._displayData(this._data)}.`;
       }
       return this;
     }
@@ -141,7 +155,7 @@
       //|
       //#######################################
       if ((this._data != null) && !isDate(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.date >>> Sorry, the data should be a Date, current is ${this._display(this._data)}.`;
+        throw error != null ? error : `data.Schema.Checker.date >>> Sorry, the data should be a Date, current is ${this._displayData(this._data)}.`;
       }
       return this;
     }
@@ -155,7 +169,7 @@
       //|
       //#######################################
       if ((this._data != null) && !isArray(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.array >>> Sorry, the data should be an Array, current is ${this._display(this._data)}.`;
+        throw error != null ? error : `data.Schema.Checker.array >>> Sorry, the data should be an Array, current is ${this._displayData(this._data)}.`;
       }
       return this;
     }
@@ -169,7 +183,7 @@
       //|
       //#######################################
       if ((this._data != null) && !isPlainObject(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.plainObject >>> Sorry, the data should be a plain-object, current is ${this._display(this._data)}.`;
+        throw error != null ? error : `data.Schema.Checker.plainObject >>> Sorry, the data should be a plain-object, current is ${this._displayData(this._data)}.`;
       }
       return this;
     }
@@ -184,7 +198,7 @@
       //|
       //#######################################
       if ((this._data != null) && !(this._data instanceof constructor)) {
-        throw error != null ? error : `data.Schema.Checker.is >>> Sorry, the data should be a < ${constructor.name} >, current data is ${this._display(this._data)}.`;
+        throw error != null ? error : `data.Schema.Checker.is >>> Sorry, the data should be a < ${constructor.name} >, current data is ${this._displayData(this._data)}.`;
       }
       return this;
     }
@@ -200,9 +214,9 @@
       //#######################################
       if ((this._data != null) && !enums.includes(this._data)) {
         enums = enums.map((e) => {
-          return this._display(e);
+          return this._displayData(e);
         });
-        throw error != null ? error : `data.Schema.Checker.in >>> Sorry, the data should be in ${enums.join(', ')}, current is ${this._display(this._data)}.`;
+        throw error != null ? error : `data.Schema.Checker.in >>> Sorry, the data should be in ${enums.join(', ')}, current is ${this._displayData(this._data)}.`;
       }
       return this;
     }
@@ -327,7 +341,7 @@
         throw `data.Schema.Checker.format: The format { ${format} } hasn't registered yet.`;
       }
       if (this._data && check(this._data) !== true) {
-        throw error != null ? error : `data.Schema.Checker.format >>> Sorry, the data's format should be { ${format} }, current data is ${this._display(this._data)}.`;
+        throw error != null ? error : `data.Schema.Checker.format >>> Sorry, the data's format should be { ${format} }, current data is ${this._displayData(this._data)}.`;
       }
       return this;
     }
@@ -357,16 +371,34 @@
       }
     }
 
-    _display(data) {
+    _displayName() {
+      var name;
+      //#######################################
+      //|
+      //|   Format the name for error's message.
+      //|
+      //|   @return {string} displayName
+      //|
+      //#######################################
+      name = this._name;
+      if (name) {
+        return "{ " + name + " }";
+      } else {
+        return "data";
+      }
+    }
+
+    _displayData() {
+      var data;
+      //#######################################
+      //|
+      //|   Format the data for error's message.
+      //|
+      //|   @return {string} displayData
+      //|
+      //#######################################
+      data = this._data;
       switch (false) {
-        //#######################################
-        //|
-        //|   Format the data for error's message.
-        //|
-        //|   @params {*} data
-        //|   @return {string}
-        //|
-        //#######################################
         case !isBool(data):
           return "{ " + data + " }";
         case !isString(data):

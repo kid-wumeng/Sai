@@ -29,6 +29,24 @@ module.exports = class Checker
       @_rules   = opt.rules
       @_formats = opt.formats
       @_data    = opt.data
+      @_name    = ''
+
+
+
+
+
+   name: ( name ) =>
+
+      ########################################
+      #|
+      #|   @params {string}  name
+      #|   @return {Checker} this
+      #|
+      ########################################
+
+      @_name = name
+
+      return @
 
 
 
@@ -46,8 +64,8 @@ module.exports = class Checker
 
       if isNil(@_data)
 
-         error ?= "Sorry, the data is required,
-                   current is #{@_display(@_data)}."
+         error ?= "Sorry, the #{@_displayName()} is required,
+                   current is #{@_displayData()}."
 
          throw new Error(error)
 
@@ -71,7 +89,7 @@ module.exports = class Checker
 
          throw error ? "data.Schema.Checker.bool >>>
                         Sorry, the data should be a bool,
-                        current is #{@_display(@_data)}."
+                        current is #{@_displayData(@_data)}."
 
       return @
 
@@ -93,7 +111,7 @@ module.exports = class Checker
 
          throw error ? "data.Schema.Checker.number >>>
                         Sorry, the data should be a number,
-                        current is #{@_display(@_data)}."
+                        current is #{@_displayData(@_data)}."
 
       return @
 
@@ -115,7 +133,7 @@ module.exports = class Checker
 
          throw error ? "data.Schema.Checker.string >>>
                         Sorry, the data should be a string,
-                        current is #{@_display(@_data)}."
+                        current is #{@_displayData(@_data)}."
 
       return @
 
@@ -137,7 +155,7 @@ module.exports = class Checker
 
          throw error ? "data.Schema.Checker.buffer >>>
                         Sorry, the data should be a Buffer,
-                        current is #{@_display(@_data)}."
+                        current is #{@_displayData(@_data)}."
 
       return @
 
@@ -159,7 +177,7 @@ module.exports = class Checker
 
          throw error ? "data.Schema.Checker.date >>>
                         Sorry, the data should be a Date,
-                        current is #{@_display(@_data)}."
+                        current is #{@_displayData(@_data)}."
 
       return @
 
@@ -181,7 +199,7 @@ module.exports = class Checker
 
          throw error ? "data.Schema.Checker.array >>>
                         Sorry, the data should be an Array,
-                        current is #{@_display(@_data)}."
+                        current is #{@_displayData(@_data)}."
 
       return @
 
@@ -203,7 +221,7 @@ module.exports = class Checker
 
          throw error ? "data.Schema.Checker.plainObject >>>
                         Sorry, the data should be a plain-object,
-                        current is #{@_display(@_data)}."
+                        current is #{@_displayData(@_data)}."
 
       return @
 
@@ -226,7 +244,7 @@ module.exports = class Checker
 
          throw error ? "data.Schema.Checker.is >>>
                         Sorry, the data should be a < #{constructor.name} >,
-                        current data is #{@_display(@_data)}."
+                        current data is #{@_displayData(@_data)}."
 
       return @
 
@@ -247,11 +265,11 @@ module.exports = class Checker
 
       if @_data? and !enums.includes(@_data)
 
-         enums = enums.map (e) => @_display(e)
+         enums = enums.map (e) => @_displayData(e)
 
          throw error ? "data.Schema.Checker.in >>>
                         Sorry, the data should be in #{enums.join(', ')},
-                        current is #{@_display(@_data)}."
+                        current is #{@_displayData(@_data)}."
 
       return @
 
@@ -396,7 +414,7 @@ module.exports = class Checker
 
          throw error ? "data.Schema.Checker.format >>>
                         Sorry, the data's format should be { #{format} },
-                        current data is #{@_display(@_data)}."
+                        current data is #{@_displayData(@_data)}."
 
       return @
 
@@ -432,16 +450,38 @@ module.exports = class Checker
 
 
 
-   _display: ( data ) =>
+   _displayName: =>
+
+      ########################################
+      #|
+      #|   Format the name for error's message.
+      #|
+      #|   @return {string} displayName
+      #|
+      ########################################
+
+      name = @_name
+
+      if name
+         return "{ " + name + " }"
+      else
+         return "data"
+
+
+
+
+
+   _displayData: =>
 
       ########################################
       #|
       #|   Format the data for error's message.
       #|
-      #|   @params {*} data
-      #|   @return {string}
+      #|   @return {string} displayData
       #|
       ########################################
+
+      data = @_data
 
       switch
          when isBool(data)        then "{ " + data + " }"

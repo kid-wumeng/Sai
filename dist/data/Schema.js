@@ -12,7 +12,7 @@
 
   module.exports = Schema = class Schema {
     constructor() {
-      this.check = this.check.bind(this);
+      this.data = this.data.bind(this);
       this.rule = this.rule.bind(this);
       this.format = this.format.bind(this);
       this._rules = {};
@@ -21,7 +21,7 @@
       this.format('url', isURL);
     }
 
-    check(data, path) {
+    data(data, path) {
       //#######################################
       //|
       //|   @params {object} opt

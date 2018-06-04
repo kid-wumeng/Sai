@@ -64,8 +64,7 @@ module.exports = class Checker
 
       if isNil(@_data)
 
-         error ?= "Sorry, the #{@_displayName()} is required,
-                   current is #{@_displayData()}."
+         error ?= "Sorry, the #{@_displayName()} is required"
 
          throw new Error(error)
 
@@ -463,7 +462,7 @@ module.exports = class Checker
       name = @_name
 
       if name
-         return "{ " + name + " }"
+         return "'" + name + "'"
       else
          return "data"
 

@@ -83,7 +83,7 @@
       //#######################################
       if (isNil(this._data)) {
         if (error == null) {
-          error = `Sorry, the ${this._displayName()} is required, current is ${this._displayData()}.`;
+          error = `Sorry, the ${this._displayName()} is required`;
         }
         throw new Error(error);
       }
@@ -382,7 +382,7 @@
       //#######################################
       name = this._name;
       if (name) {
-        return "{ " + name + " }";
+        return "'" + name + "'";
       } else {
         return "data";
       }

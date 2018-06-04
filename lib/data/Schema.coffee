@@ -21,7 +21,7 @@ module.exports = class Schema
 
 
 
-   check: ( data, path ) =>
+   data: ( data, path ) =>
 
       ########################################
       #|

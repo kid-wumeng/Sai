@@ -1,8 +1,8 @@
 <api jade>
    item
-      name check(data, path)
+      name test(data, path)
       type -> checker
-      desc 验证数据 ( 创建并返回 Checker 对象 )
+      desc 测试数据 ( 创建并返回 Checker 对象 )
    item
       name rule(name, check)
       type -> (this)

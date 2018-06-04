@@ -1,5 +1,9 @@
 <api jade>
    item
+      name name(name)
+      type -> (this)
+      desc 为本条测试的数据命名
+   item
       name required(error)
       type -> (this)
       desc 是否存在 ( 不为空 )
@@ -55,6 +59,10 @@
       name format(format, error)
       type -> (this)
       desc 是否符合某个格式
+   item
+      name check(check, error)
+      type -> (this)
+      desc 自定义测试
    item
       name rule(rule, error)
       type -> (this)

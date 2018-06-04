@@ -45,6 +45,7 @@
       this._max_buffer = this._max_buffer.bind(this);
       this.mime = this.mime.bind(this);
       this.format = this.format.bind(this);
+      this.check = this.check.bind(this);
       this.rule = this.rule.bind(this);
       this._displayName = this._displayName.bind(this);
       this._displayData = this._displayData.bind(this);
@@ -99,7 +100,10 @@
       //|
       //#######################################
       if ((this._data != null) && !isBool(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.bool >>> Sorry, the data should be a bool, current is ${this._displayData(this._data)}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} should be a bool, current is ${this._displayData()}`;
+        }
+        throw new Error(error);
       }
       return this;
     }
@@ -113,7 +117,10 @@
       //|
       //#######################################
       if ((this._data != null) && !isNumber(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.number >>> Sorry, the data should be a number, current is ${this._displayData(this._data)}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} should be a number, current is ${this._displayData()}`;
+        }
+        throw new Error(error);
       }
       return this;
     }
@@ -127,7 +134,10 @@
       //|
       //#######################################
       if ((this._data != null) && !isString(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.string >>> Sorry, the data should be a string, current is ${this._displayData(this._data)}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} should be a string, current is ${this._displayData()}`;
+        }
+        throw new Error(error);
       }
       return this;
     }
@@ -141,7 +151,10 @@
       //|
       //#######################################
       if ((this._data != null) && !isBuffer(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.buffer >>> Sorry, the data should be a Buffer, current is ${this._displayData(this._data)}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} should be a Buffer, current is ${this._displayData()}`;
+        }
+        throw new Error(error);
       }
       return this;
     }
@@ -155,7 +168,10 @@
       //|
       //#######################################
       if ((this._data != null) && !isDate(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.date >>> Sorry, the data should be a Date, current is ${this._displayData(this._data)}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} should be a Date, current is ${this._displayData()}`;
+        }
+        throw new Error(error);
       }
       return this;
     }
@@ -169,7 +185,10 @@
       //|
       //#######################################
       if ((this._data != null) && !isArray(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.array >>> Sorry, the data should be an Array, current is ${this._displayData(this._data)}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} should be an Array, current is ${this._displayData()}`;
+        }
+        throw new Error(error);
       }
       return this;
     }
@@ -183,7 +202,10 @@
       //|
       //#######################################
       if ((this._data != null) && !isPlainObject(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.plainObject >>> Sorry, the data should be a plain-object, current is ${this._displayData(this._data)}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} should be a plain-object, current is ${this._displayData()}`;
+        }
+        throw new Error(error);
       }
       return this;
     }
@@ -198,7 +220,10 @@
       //|
       //#######################################
       if ((this._data != null) && !(this._data instanceof constructor)) {
-        throw error != null ? error : `data.Schema.Checker.is >>> Sorry, the data should be a < ${constructor.name} >, current data is ${this._displayData(this._data)}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} should be a < ${constructor.name} >, current is ${this._displayData()}`;
+        }
+        throw new Error(error);
       }
       return this;
     }
@@ -216,7 +241,10 @@
         enums = enums.map((e) => {
           return this._displayData(e);
         });
-        throw error != null ? error : `data.Schema.Checker.in >>> Sorry, the data should be in ${enums.join(', ')}, current is ${this._displayData(this._data)}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} should be in ${enums.join(', ')}, current is ${this._displayData()}`;
+        }
+        throw new Error(error);
       }
       return this;
     }
@@ -271,37 +299,55 @@
 
     _min_number(min, error) {
       if (this._data < min) {
-        throw error != null ? error : `data.Schema.Checker._min_number >>> Sorry, the number should be ≥ ${min}, current is ${this._data}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} should be ≥ ${min}, current is ${this._data}`;
+        }
+        throw new Error(error);
       }
     }
 
     _max_number(max, error) {
       if (this._data > max) {
-        throw error != null ? error : `data.Schema.Checker._max_number >>> Sorry, the number should be ≤ ${max}, current is ${this._data}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} should be ≤ ${max}, current is ${this._data}`;
+        }
+        throw new Error(error);
       }
     }
 
     _min_string(min, error) {
       if (this._data.length < min) {
-        throw error != null ? error : `data.Schema.Checker._min_string >>> Sorry, the string's length should be ≥ ${min}, current is ${this._data.length}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} length should be ≥ ${min}, current is ${this._data.length}`;
+        }
+        throw new Error(error);
       }
     }
 
     _max_string(max, error) {
       if (this._data.length > max) {
-        throw error != null ? error : `data.Schema.Checker._max_string >>> Sorry, the string's length should be ≤ ${max}, current is ${this._data.length}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} length should be ≤ ${max}, current is ${this._data.length}`;
+        }
+        throw new Error(error);
       }
     }
 
     _min_buffer(min, error) {
       if (this._data.length < min) {
-        throw error != null ? error : `data.Schema.Checker._min_buffer >>> Sorry, the buffer's length should be ≥ ${min}, current is ${this._data.length}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} length should be ≥ ${min}, current is ${this._data.length}`;
+        }
+        throw new Error(error);
       }
     }
 
     _max_buffer(max, error) {
       if (this._data.length > max) {
-        throw error != null ? error : `data.Schema.Checker._max_buffer >>> Sorry, the buffer's length should be ≤ ${max}, current is ${this._data.length}.`;
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} length should be ≤ ${max}, current is ${this._data.length}`;
+        }
+        throw new Error(error);
       }
     }
 
@@ -320,7 +366,10 @@
           mimes = mimes.map((m) => {
             return `'${m}'`;
           });
-          throw error != null ? error : `data.Schema.Checker.mime >>> Sorry, the data's mime should be in ${mimes.join(', ')}, current is ${mime}.`;
+          if (error == null) {
+            error = `Sorry, the ${this._displayName()} MIME should be in ${mimes.join(', ')}, current is ${mime}`;
+          }
+          throw new Error(error);
         }
       }
       return this;
@@ -336,18 +385,36 @@
       //|   @return {Checker} this
       //|
       //#######################################
-      check = this._formats[format];
-      if (!check) {
-        throw `data.Schema.Checker.format: The format { ${format} } hasn't registered yet.`;
+      if (this._data != null) {
+        check = this._formats[format];
+        if (!_.isFunction(check)) {
+          throw new Error(`The format '${format}' hasn't registered yet`);
+        }
+        if (check(this._data) !== true) {
+          if (error == null) {
+            error = `Sorry, the ${this._displayName()} format should be '${format}', current is ${this._displayData()}`;
+          }
+          throw new Error(error);
+        }
       }
-      if (this._data && check(this._data) !== true) {
-        throw error != null ? error : `data.Schema.Checker.format >>> Sorry, the data's format should be { ${format} }, current data is ${this._displayData(this._data)}.`;
+      return this;
+    }
+
+    check(check, error) {
+      if (!_.isFunction(check)) {
+        throw new Error("The check isn't a function");
+      }
+      if (check(this._data) !== true) {
+        if (error == null) {
+          error = `Sorry, the ${this._displayName()} check fail`;
+        }
+        throw new Error(error);
       }
       return this;
     }
 
     rule(rule) {
-      var check, error;
+      var check;
       //#######################################
       //|
       //|   @params {string}  rule
@@ -356,19 +423,12 @@
       //|
       //#######################################
       check = this._rules[rule];
-      if (!check) {
-        throw `data.Schema.Checker.rule: The rule { ${rule} } hasn't registered yet.`;
-      }
-      try {
+      if (_.isFunction(check)) {
         check(this._data);
-        return this;
-      } catch (error1) {
-        error = error1;
-        if (isString(error) && /^data\.Schema\.Checker\.\w+ >>> /.test(error)) {
-          error += ` <<< the rule { ${rule} }`;
-        }
-        throw error;
+      } else {
+        throw new Error(`The rule '${rule}' hasn't registered yet`);
       }
+      return this;
     }
 
     _displayName() {

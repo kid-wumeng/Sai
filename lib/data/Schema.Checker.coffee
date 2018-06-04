@@ -86,9 +86,10 @@ module.exports = class Checker
 
       if @_data? and !isBool(@_data)
 
-         throw error ? "data.Schema.Checker.bool >>>
-                        Sorry, the data should be a bool,
-                        current is #{@_displayData(@_data)}."
+         error ?= "Sorry, the #{@_displayName()} should be a bool,
+                   current is #{@_displayData()}"
+
+         throw new Error(error)
 
       return @
 
@@ -108,9 +109,10 @@ module.exports = class Checker
 
       if @_data? and !isNumber(@_data)
 
-         throw error ? "data.Schema.Checker.number >>>
-                        Sorry, the data should be a number,
-                        current is #{@_displayData(@_data)}."
+         error ?= "Sorry, the #{@_displayName()} should be a number,
+                   current is #{@_displayData()}"
+
+         throw new Error(error)
 
       return @
 
@@ -130,9 +132,10 @@ module.exports = class Checker
 
       if @_data? and !isString(@_data)
 
-         throw error ? "data.Schema.Checker.string >>>
-                        Sorry, the data should be a string,
-                        current is #{@_displayData(@_data)}."
+         error ?= "Sorry, the #{@_displayName()} should be a string,
+                   current is #{@_displayData()}"
+
+         throw new Error(error)
 
       return @
 
@@ -152,9 +155,10 @@ module.exports = class Checker
 
       if @_data? and !isBuffer(@_data)
 
-         throw error ? "data.Schema.Checker.buffer >>>
-                        Sorry, the data should be a Buffer,
-                        current is #{@_displayData(@_data)}."
+         error ?= "Sorry, the #{@_displayName()} should be a Buffer,
+                   current is #{@_displayData()}"
+
+         throw new Error(error)
 
       return @
 
@@ -174,9 +178,10 @@ module.exports = class Checker
 
       if @_data? and !isDate(@_data)
 
-         throw error ? "data.Schema.Checker.date >>>
-                        Sorry, the data should be a Date,
-                        current is #{@_displayData(@_data)}."
+         error ?= "Sorry, the #{@_displayName()} should be a Date,
+                   current is #{@_displayData()}"
+
+         throw new Error(error)
 
       return @
 
@@ -196,9 +201,10 @@ module.exports = class Checker
 
       if @_data? and !isArray(@_data)
 
-         throw error ? "data.Schema.Checker.array >>>
-                        Sorry, the data should be an Array,
-                        current is #{@_displayData(@_data)}."
+         error ?= "Sorry, the #{@_displayName()} should be an Array,
+                   current is #{@_displayData()}"
+
+         throw new Error(error)
 
       return @
 
@@ -218,9 +224,10 @@ module.exports = class Checker
 
       if @_data? and !isPlainObject(@_data)
 
-         throw error ? "data.Schema.Checker.plainObject >>>
-                        Sorry, the data should be a plain-object,
-                        current is #{@_displayData(@_data)}."
+         error ?= "Sorry, the #{@_displayName()} should be a plain-object,
+                   current is #{@_displayData()}"
+
+         throw new Error(error)
 
       return @
 
@@ -241,9 +248,10 @@ module.exports = class Checker
 
       if @_data? and !( @_data instanceof constructor )
 
-         throw error ? "data.Schema.Checker.is >>>
-                        Sorry, the data should be a < #{constructor.name} >,
-                        current data is #{@_displayData(@_data)}."
+         error ?= "Sorry, the #{@_displayName()} should be a < #{constructor.name} >,
+                   current is #{@_displayData()}"
+
+         throw new Error(error)
 
       return @
 
@@ -266,9 +274,10 @@ module.exports = class Checker
 
          enums = enums.map (e) => @_displayData(e)
 
-         throw error ? "data.Schema.Checker.in >>>
-                        Sorry, the data should be in #{enums.join(', ')},
-                        current is #{@_displayData(@_data)}."
+         error ?= "Sorry, the #{@_displayName()} should be in #{enums.join(', ')},
+                   current is #{@_displayData()}"
+
+         throw new Error(error)
 
       return @
 
@@ -325,40 +334,78 @@ module.exports = class Checker
 
 
    _min_number: ( min, error ) =>
+
       if @_data < min
-         throw error ? "data.Schema.Checker._min_number >>>
-                        Sorry, the number should be ≥ #{min},
-                        current is #{@_data}."
+
+         error ?= "Sorry, the #{@_displayName()} should be ≥ #{min},
+                   current is #{@_data}"
+
+         throw new Error(error)
+
+
+
+
 
    _max_number: ( max, error ) =>
+
       if @_data > max
-         throw error ? "data.Schema.Checker._max_number >>>
-                        Sorry, the number should be ≤ #{max},
-                        current is #{@_data}."
+
+         error ?= "Sorry, the #{@_displayName()} should be ≤ #{max},
+                   current is #{@_data}"
+
+         throw new Error(error)
+
+
+
+
 
    _min_string: ( min, error ) =>
+
       if @_data.length < min
-         throw error ? "data.Schema.Checker._min_string >>>
-                        Sorry, the string's length should be ≥ #{min},
-                        current is #{@_data.length}."
+
+         error ?= "Sorry, the #{@_displayName()} length should be ≥ #{min},
+                   current is #{@_data.length}"
+
+         throw new Error(error)
+
+
+
+
 
    _max_string: ( max, error ) =>
+
       if @_data.length > max
-         throw error ? "data.Schema.Checker._max_string >>>
-                        Sorry, the string's length should be ≤ #{max},
-                        current is #{@_data.length}."
+
+         error ?= "Sorry, the #{@_displayName()} length should be ≤ #{max},
+                   current is #{@_data.length}"
+
+         throw new Error(error)
+
+
+
+
 
    _min_buffer: ( min, error ) =>
+
       if @_data.length < min
-         throw error ? "data.Schema.Checker._min_buffer >>>
-                        Sorry, the buffer's length should be ≥ #{min},
-                        current is #{@_data.length}."
+
+         error ?= "Sorry, the #{@_displayName()} length should be ≥ #{min},
+                   current is #{@_data.length}"
+
+         throw new Error(error)
+
+
+
+
 
    _max_buffer: ( max, error ) =>
+
       if @_data.length > max
-         throw error ? "data.Schema.Checker._max_buffer >>>
-                        Sorry, the buffer's length should be ≤ #{max},
-                        current is #{@_data.length}."
+
+         error ?= "Sorry, the #{@_displayName()} length should be ≤ #{max},
+                   current is #{@_data.length}"
+
+         throw new Error(error)
 
 
 
@@ -383,9 +430,10 @@ module.exports = class Checker
 
             mimes = mimes.map (m) => "'#{m}'"
 
-            throw error ? "data.Schema.Checker.mime >>>
-                           Sorry, the data's mime should be in #{mimes.join(', ')},
-                           current is #{mime}."
+            error ?= "Sorry, the #{@_displayName()} MIME should be in #{mimes.join(', ')},
+                      current is #{mime}"
+
+            throw new Error(error)
 
       return @
 
@@ -404,16 +452,52 @@ module.exports = class Checker
       #|
       ########################################
 
-      check = @_formats[format]
+      if @_data?
 
-      if !check then throw "data.Schema.Checker.format:
-                            The format { #{format} } hasn't registered yet."
 
-      if @_data and check(@_data) isnt true
+         check = @_formats[format]
 
-         throw error ? "data.Schema.Checker.format >>>
-                        Sorry, the data's format should be { #{format} },
-                        current data is #{@_displayData(@_data)}."
+
+         if !_.isFunction(check)
+            throw new Error("The format '#{format}' hasn't registered yet")
+
+
+         if check(@_data) isnt true
+
+            error ?= "Sorry, the #{@_displayName()} format should be '#{format}',
+                      current is #{@_displayData()}"
+
+            throw new Error(error)
+
+
+      return @
+
+
+
+
+
+   check: ( check, error ) =>
+
+      ########################################
+      #|
+      #|   @params {function} check
+      #|   @params {*}        error
+      #|   @errors
+      #|   @return {Checker}  this
+      #|
+      ########################################
+
+      if !_.isFunction(check)
+
+         throw new Error("The check isn't a function")
+
+
+      if check(@_data) isnt true
+
+         error ?= "Sorry, the #{@_displayName()} check fail"
+
+         throw new Error(error)
+
 
       return @
 
@@ -433,17 +517,13 @@ module.exports = class Checker
 
       check = @_rules[rule]
 
-      if !check then throw "data.Schema.Checker.rule:
-                            The rule { #{rule} } hasn't registered yet."
-
-      try
+      if _.isFunction(check)
          check(@_data)
-         return @
 
-      catch error
-         if isString(error) and /^data\.Schema\.Checker\.\w+ >>> /.test(error)
-            error += " <<< the rule { #{rule} }"
-         throw error
+      else
+         throw new Error("The rule '#{rule}' hasn't registered yet")
+
+      return @
 
 
 

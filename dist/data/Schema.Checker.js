@@ -68,7 +68,10 @@
       //|
       //#######################################
       if (isNil(this._data)) {
-        throw error != null ? error : `data.Schema.Checker.required >>> Sorry, the data is required, current is ${this._display(this._data)}.`;
+        if (error == null) {
+          error = `Sorry, the data is required, current is ${this._display(this._data)}.`;
+        }
+        throw new Error(error);
       }
       return this;
     }

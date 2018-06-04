@@ -1,10 +1,10 @@
 <api jade>
    item
-      name bcrypt.compare(data, hash)
+      name await bcrypt.compare(data, hash)
       type -> bool
       desc 使用 Bcrypt 比对数据与哈希是否匹配
    item
-      name bcrypt.encode(data)
+      name await bcrypt.encode(data)
       type -> hash
       desc 使用 Bcrypt 加密
    item

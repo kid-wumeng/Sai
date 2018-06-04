@@ -46,9 +46,10 @@ module.exports = class Checker
 
       if isNil(@_data)
 
-         throw error ? "data.Schema.Checker.required >>>
-                        Sorry, the data is required,
-                        current is #{@_display(@_data)}."
+         error ?= "Sorry, the data is required,
+                   current is #{@_display(@_data)}."
+
+         throw new Error(error)
 
       return @
 

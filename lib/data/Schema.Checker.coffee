@@ -7,7 +7,7 @@ isDate        = require('./isDate')
 isArray       = require('./isArray')
 isObject      = require('./isObject')
 isPlainObject = require('./isPlainObject')
-mime          = require('./mime')
+MIME          = require('./mime')
 
 
 
@@ -418,13 +418,13 @@ module.exports = class Checker
       #|   @params {string[]} mimes
       #|   @params {*}        error
       #|   @errors
-      #|   @return {Checker} this
+      #|   @return {Checker}  this
       #|
       ########################################
 
       if @_data?
 
-         mime = mime(@_data)
+         mime = MIME(@_data)
 
          if !mimes.includes(mime)
 

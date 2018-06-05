@@ -8,7 +8,7 @@ module.exports = encode = ( payload, secret, maxAge = 0 ) =>
    #|
    #|   @params {object} payload
    #|   @params {string} secret
-   #|   @params {number} maxAge
+   #|   @params {number} maxAge ( seconds or https://www.npmjs.com/package/ms )
    #|
    #|   @return {string} token
    #|

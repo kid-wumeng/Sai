@@ -2,15 +2,15 @@
    item
       name await findOne(query, opt)
       type -> doc | null
-      desc 查询单个文档
+      desc 查找单个文档
    item
       name await find(query, opt)
       type -> docs
-      desc 查询多个文档
+      desc 查找多个文档
    item
       name await count(query, opt)
       type -> count
-      desc 查询符合条件的文档数量
+      desc 查找符合条件的文档数量
    item
       name await insertOne(doc)
       type -> { \_id, id, createDate }

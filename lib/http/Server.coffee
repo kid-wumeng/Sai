@@ -211,7 +211,10 @@ module.exports = class Server
       #|
       ########################################
 
-      ctx.res.data = error
+      if typeof(error) is 'object'
+         ctx.res.data = error.stack.toString()
+      else
+         ctx.res.data = error
 
 
 

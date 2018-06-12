@@ -171,6 +171,8 @@ module.exports = class Server
       ########################################
 
       ctx.req.method = ctx.raw.method
+      ctx.req.params = ctx.raw.params ? {}
+      
       ctx.req.data   = @_getRequestData(ctx)
 
       return

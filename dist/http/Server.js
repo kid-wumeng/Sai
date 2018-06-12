@@ -159,12 +159,14 @@
     }
 
     _handleRequest(ctx) {
+      var ref;
       //#######################################
       //|
       //|   @params {object} ctx
       //|
       //#######################################
       ctx.req.method = ctx.raw.method;
+      ctx.req.params = (ref = ctx.raw.params) != null ? ref : {};
       ctx.req.data = this._getRequestData(ctx);
     }
 

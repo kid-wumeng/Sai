@@ -1,3 +1,7 @@
 exports.get    = require('./get')
+exports.post   = require('./post')
+exports.put    = require('./put')
+exports.patch  = require('./patch')
+exports.delete = require('./delete')
 exports.Client = require('./Client')
 exports.Server = require('./Server')

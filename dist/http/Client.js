@@ -14,9 +14,9 @@
       this.url = this.url.bind(this);
       //#######################################
       //|
-      //|   @params {string} path
-      //|   @params {object} data
-      //|   @params {object} opt
+      //|   @params {string}  path
+      //|   @params {object}  data
+      //|   @params {object}  opt
       //|
       //|   @return {Promise} axios-promise
       //|

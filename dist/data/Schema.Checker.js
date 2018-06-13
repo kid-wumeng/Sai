@@ -424,8 +424,10 @@
       //|
       //#######################################
       check = this._rules[rule];
-      if (_.isFunction(check) && (this._data != null)) {
-        check(this._data);
+      if (_.isFunction(check)) {
+        if (this._data != null) {
+          check(this._data);
+        }
       } else {
         throw new Error(`The rule '${rule}' hasn't registered yet`);
       }

@@ -517,8 +517,9 @@ module.exports = class Checker
 
       check = @_rules[rule]
 
-      if _.isFunction(check) and @_data?
-         check(@_data)
+      if _.isFunction(check)
+         if @_data?
+            check(@_data)
 
       else
          throw new Error("The rule '#{rule}' hasn't registered yet")

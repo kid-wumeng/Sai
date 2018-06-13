@@ -171,6 +171,8 @@ module.exports = class Server
       ########################################
 
       ctx.req.method = ctx.raw.method
+      ctx.req.params = ctx.raw.params ? {}
+      
       ctx.req.data   = @_getRequestData(ctx)
 
       return
@@ -211,7 +213,10 @@ module.exports = class Server
       #|
       ########################################
 
-      ctx.res.data = error
+      if typeof(error) is 'object'
+         ctx.res.data = error.stack.toString()
+      else
+         ctx.res.data = error
 
 
 

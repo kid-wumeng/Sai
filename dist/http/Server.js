@@ -29,11 +29,8 @@
       this.mount = this.mount.bind(this);
       this._wrapMiddleware = this._wrapMiddleware.bind(this);
       this._wrapContent = this._wrapContent.bind(this);
-      this._runCallback = this._runCallback.bind(this);
-      this._handleRequest = this._handleRequest.bind(this);
       this._getRequestData = this._getRequestData.bind(this);
-      this._handleError = this._handleError.bind(this);
-      this._handleResponse = this._handleResponse.bind(this);
+      this._runCallback = this._runCallback.bind(this);
       this.listen = this.listen.bind(this);
       //#######################################
       //|
@@ -115,7 +112,7 @@
       //#######################################
       return async(ctx, next) => {
         ctx = this._wrapContent(ctx);
-        return (await this._runCallback(ctx, callback));
+        return (await this._runCallback(ctx, callback, next));
       };
     }
 
@@ -128,46 +125,14 @@
       //|   @return {object} ctx
       //|
       //#######################################
-      ctx = {
-        raw: ctx,
-        req: {},
-        res: {}
-      };
-      Object.assign(ctx, this._mounts);
-      return ctx;
-    }
-
-    async _runCallback(ctx, callback) {
-      var error;
-      try {
-        //#######################################
-        //|
-        //|   Run the callback to handle request and response.
-        //|
-        //|   @params {object}   ctx
-        //|   @params {function} callback(data)
-        //|
-        //#######################################
-        this._handleRequest(ctx);
-        ctx.res.data = (await callback.call(ctx, ctx.req.data));
-      } catch (error1) {
-        error = error1;
-        this._handleError(ctx, error);
-      } finally {
-        this._handleResponse(ctx);
+      if (ctx.nextCount === void 0) {
+        Object.assign(ctx, this._mounts);
+        ctx.data = this._getRequestData(ctx);
+        ctx.nextCount = 1;
+      } else {
+        ctx.nextCount++;
       }
-    }
-
-    _handleRequest(ctx) {
-      var ref;
-      //#######################################
-      //|
-      //|   @params {object} ctx
-      //|
-      //#######################################
-      ctx.req.method = ctx.raw.method;
-      ctx.req.params = (ref = ctx.raw.params) != null ? ref : {};
-      ctx.req.data = this._getRequestData(ctx);
+      return ctx;
     }
 
     _getRequestData(ctx) {
@@ -180,36 +145,32 @@
       //|   @return {object} data
       //|
       //#######################################
-      if (ctx.raw.method === 'GET') {
-        return (ref = ctx.raw.query) != null ? ref : {};
+      if (ctx.method === 'GET') {
+        return (ref = ctx.query) != null ? ref : {};
       } else {
-        return (ref1 = ctx.raw.request.body) != null ? ref1 : {};
+        return (ref1 = ctx.request.body) != null ? ref1 : {};
       }
     }
 
-    _handleError(ctx, error) {
-      //#######################################
-      //|
-      //|   @params {object} ctx
-      //|   @params {*}      error
-      //|
-      //#######################################
-      if (typeof error === 'object') {
-        return ctx.res.data = error.stack.toString();
-      } else {
-        return ctx.res.data = error;
+    async _runCallback(ctx, callback, next) {
+      var body, error;
+      try {
+        //#######################################
+        //|
+        //|   Run the callback to handle request and response.
+        //|
+        //|   @params {object}         ctx
+        //|   @params {function}       callback(data)
+        //|   @params {async-function} next()
+        //|
+        //#######################################
+        if (body = (await callback.call(ctx, ctx.data, next))) {
+          ctx.body = body;
+        }
+      } catch (error1) {
+        error = error1;
+        ctx.error = error;
       }
-    }
-
-    _handleResponse(ctx) {
-      var ref;
-      //#######################################
-      //|
-      //|   @params {object} ctx
-      //|
-      //#######################################
-      ctx.raw.body = ctx.res.data;
-      return ctx.raw.status = (ref = ctx.res.status) != null ? ref : 200;
     }
 
     listen(port = 80) {

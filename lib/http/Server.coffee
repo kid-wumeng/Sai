@@ -61,7 +61,7 @@ module.exports = class Server
 
       mid = @_wrapMiddleware(callback)
 
-      @router[method](path, mid)
+      @router[method]( path, mid )
 
       return
 
@@ -105,7 +105,7 @@ module.exports = class Server
 
          ctx = @_wrapContent(ctx)
 
-         await @_runCallback(ctx, callback)
+         await @_runCallback(ctx, callback, next)
 
 
 
@@ -122,60 +122,15 @@ module.exports = class Server
       #|
       ########################################
 
-      ctx =
-         raw: ctx
-         req: {}
-         res: {}
+      if ctx._hasWrapContext is undefined
 
-      Object.assign(ctx, @_mounts)
+         ctx._hasWrapContext = true
+
+         ctx.data = @_getRequestData(ctx)
+
+         Object.assign(ctx, @_mounts)
 
       return ctx
-
-
-
-
-
-   _runCallback: ( ctx, callback ) =>
-
-      ########################################
-      #|
-      #|   Run the callback to handle request and response.
-      #|
-      #|   @params {object}   ctx
-      #|   @params {function} callback(data)
-      #|
-      ########################################
-
-      try
-         @_handleRequest(ctx)
-         ctx.res.data = await callback.call(ctx, ctx.req.data)
-
-      catch error
-         @_handleError(ctx, error)
-
-      finally
-         @_handleResponse(ctx)
-
-      return
-
-
-
-
-
-   _handleRequest: ( ctx ) =>
-
-      ########################################
-      #|
-      #|   @params {object} ctx
-      #|
-      ########################################
-
-      ctx.req.method = ctx.raw.method
-      ctx.req.params = ctx.raw.params ? {}
-      
-      ctx.req.data   = @_getRequestData(ctx)
-
-      return
 
 
 
@@ -192,46 +147,39 @@ module.exports = class Server
       #|
       ########################################
 
-      if ctx.raw.method is 'GET'
-
-         return ctx.raw.query ? {}
-
+      if ctx.method is 'GET'
+         return ctx.query        ? {}
       else
-
-         return ctx.raw.request.body ? {}
-
-
-
-
-
-   _handleError: ( ctx, error ) =>
-
-      ########################################
-      #|
-      #|   @params {object} ctx
-      #|   @params {*}      error
-      #|
-      ########################################
-
-      if typeof(error) is 'object'
-         ctx.res.data = error.stack.toString()
-      else
-         ctx.res.data = error
+         return ctx.request.body ? {}
 
 
 
 
 
-   _handleResponse: ( ctx ) =>
+   _runCallback: ( ctx, callback, next ) =>
 
       ########################################
       #|
-      #|   @params {object} ctx
+      #|   Run the callback to handle request and response.
+      #|
+      #|   @params {object}         ctx
+      #|   @params {function}       callback(data)
+      #|   @params {async-function} next()
       #|
       ########################################
 
-      ctx.raw.body   = ctx.res.data
-      ctx.raw.status = ctx.res.status ? 200
+      try
+
+         body = await callback.call(ctx, ctx.data, next)
+
+         if ctx._hasReture is undefined
+            ctx._hasReture = true
+            ctx.body = body ? {}
+
+      catch error
+         ctx.error = error
+
+      return
 
 
 

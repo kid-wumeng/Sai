@@ -517,7 +517,7 @@ module.exports = class Checker
 
       check = @_rules[rule]
 
-      if _.isFunction(check)
+      if _.isFunction(check) and @_data?
          check(@_data)
 
       else

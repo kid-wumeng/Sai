@@ -125,12 +125,10 @@
       //|   @return {object} ctx
       //|
       //#######################################
-      if (ctx.nextCount === void 0) {
-        Object.assign(ctx, this._mounts);
+      if (ctx._hasWrapContext === void 0) {
+        ctx._hasWrapContext = true;
         ctx.data = this._getRequestData(ctx);
-        ctx.nextCount = 1;
-      } else {
-        ctx.nextCount++;
+        Object.assign(ctx, this._mounts);
       }
       return ctx;
     }
@@ -164,8 +162,10 @@
         //|   @params {async-function} next()
         //|
         //#######################################
-        if (body = (await callback.call(ctx, ctx.data, next))) {
-          ctx.body = body;
+        body = (await callback.call(ctx, ctx.data, next));
+        if (ctx._hasReture === void 0) {
+          ctx._hasReture = true;
+          ctx.body = body != null ? body : {};
         }
       } catch (error1) {
         error = error1;

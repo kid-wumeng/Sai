@@ -165,7 +165,9 @@
         body = (await callback.call(ctx, ctx.data, next));
         if (ctx._hasReture === void 0) {
           ctx._hasReture = true;
-          ctx.body = body != null ? body : {};
+          if (body) {
+            ctx.body = body;
+          }
         }
       } catch (error1) {
         error = error1;

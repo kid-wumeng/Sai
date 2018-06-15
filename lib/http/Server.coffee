@@ -174,7 +174,9 @@ module.exports = class Server
 
          if ctx._hasReture is undefined
             ctx._hasReture = true
-            ctx.body = body ? {}
+
+            if body
+               ctx.body = body
 
       catch error
          ctx.error = error

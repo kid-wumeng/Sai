@@ -272,9 +272,7 @@ module.exports = class Checker
 
       if @_data? and !enums.includes(@_data)
 
-         enums = enums.map (e) => @_displayData(e)
-
-         error ?= "Sorry, the #{@_displayName()} should be in #{enums.join(', ')},
+         error ?= "Sorry, the #{@_displayName()} should be in [#{enums.join(', ')}],
                    current is #{@_displayData()}"
 
          throw new Error(error)

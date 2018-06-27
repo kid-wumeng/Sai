@@ -238,11 +238,8 @@
       //|
       //#######################################
       if ((this._data != null) && !enums.includes(this._data)) {
-        enums = enums.map((e) => {
-          return this._displayData(e);
-        });
         if (error == null) {
-          error = `Sorry, the ${this._displayName()} should be in ${enums.join(', ')}, current is ${this._displayData()}`;
+          error = `Sorry, the ${this._displayName()} should be in [${enums.join(', ')}], current is ${this._displayData()}`;
         }
         throw new Error(error);
       }

@@ -2,7 +2,7 @@
   "name": "sai.io",
   "version": "0.3.0",
   "author": "KID <kid.wumeng@gmail.com>",
-  "main": "dist",
+  "main": "lib",
   "scripts": {
     "build": "coffee build",
     "test": "mocha --ui tdd --require coffeescript/register test/index.coffee",

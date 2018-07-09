@@ -98,10 +98,9 @@ module.exports = class MongoDB
 
       ########################################
       #|
-      #|   Format and return a mongo's uri, reference:
-      #|      https://docs.mongodb.com/manual/reference/connection-string/
+      #|   Close the database.
       #|
-      #|   @return {string} uri
+      #|   @async-function
       #|
       ########################################
 

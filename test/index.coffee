@@ -1,3 +1,3 @@
 require('chai').should()
 
-require('./string/len')
+require('./is')

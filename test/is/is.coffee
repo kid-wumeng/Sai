@@ -1,3 +1,3 @@
-suite '#indexOf()', =>
-   test 'should return -1 when not present', =>
-      'abc'.should.be.a('string')
+suite "is", ->
+
+   test "is('abc', String)", -> sai.is('abc', String).should.be.true

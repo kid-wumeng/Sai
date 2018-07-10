@@ -5,7 +5,7 @@
   "main": "lib",
   "scripts": {
     "build": "coffee build",
-    "test": "mocha --ui tdd --require coffeescript/register test/index.coffee",
+    "test": "clear && mocha --ui tdd --require coffeescript/register test/index.coffee",
     "dev": "serve -p 8080"
   },
   "dependencies": {

@@ -1,2 +1,2 @@
-module.exports = is_ = ( value, class_ ) =>
-   return 123
+module.exports = is_ = ( value, class_ ) ->
+   return true

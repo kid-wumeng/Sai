@@ -6,7 +6,7 @@ module.exports = type = ( value ) ->
    #|   Get value's type
    #|
    #|   @params {*} value
-   #|   @return {null, undefined, NaN, function} type
+   #|   @return {function, undefined, null, NaN } type
    #|
    ########################################
 

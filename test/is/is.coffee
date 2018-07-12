@@ -17,6 +17,8 @@ suite "is", ->
 
    test "is((=>), Function)",              -> sai.is((=>), Function).should.be.true
    test "is((=> await (=>)), Function)",   -> sai.is((=> await (=>)), Function).should.be.true
+   test "is((=>), Object)",                -> sai.is((=>), Object).should.be.true
+   test "is((=> await (=>)), Object)",     -> sai.is((=> await (=>)), Object).should.be.true
 
    test "is({}, Object)",                  -> sai.is({}, Object).should.be.true
    test "is([], Array)",                   -> sai.is([], Array).should.be.true
@@ -48,12 +50,14 @@ suite "is", ->
    test "is(Object, Object)",            -> sai.is(Object, Object).should.be.true
    test "is(Function, Object)",          -> sai.is(Function, Object).should.be.true
 
-   test "is(undefined, Object)",         -> sai.is(undefined, Object).should.be.false
-   test "is(null, Object)",              -> sai.is(null, Object).should.be.false
-   test "is(NaN, Object)",               -> sai.is(NaN, Object).should.be.false
-   test "is(Infinity, Object)",          -> sai.is(Infinity, Object).should.be.false
+
 
    test "is(true, Object)",              -> sai.is(true, Object).should.be.false
    test "is(1, Object)",                 -> sai.is(1, Object).should.be.false
    test "is('abc', Object)",             -> sai.is('abc', Object).should.be.false
    test "is(Symbol(), Object)",          -> sai.is(Symbol(), Object).should.be.false
+
+   test "is(undefined, Object)",         -> sai.is(undefined, Object).should.be.false
+   test "is(null, Object)",              -> sai.is(null, Object).should.be.false
+   test "is(NaN, Object)",               -> sai.is(NaN, Object).should.be.false
+   test "is(Infinity, Object)",          -> sai.is(Infinity, Object).should.be.false

@@ -9,3 +9,4 @@ suite '~core', ->
 
 suite '~is', ->
    require('./is/is')
+   require('./is/isNaN')

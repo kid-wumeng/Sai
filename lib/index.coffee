@@ -4,4 +4,5 @@ module.exports =
    type: require('./core/type')
 
    # ~is
-   is: require('./is/is')
+   is:    require('./is/is')
+   isNaN: require('./is/isNaN')

@@ -1,4 +1,7 @@
-module.exports = type = ( value ) ->
+isNaN = require('lodash/isNaN')
+
+
+module.exports = ( value ) ->
 
 
    ########################################
@@ -27,12 +30,12 @@ module.exports = type = ( value ) ->
       return Function
 
 
-   if typeof(value) is 'object' and value.constructor is undefined
-      return Object
-
-
-   if isNaN(value) and value.constructor is Number
+   if isNaN(value)
       return NaN
+
+
+   if typeof(value) is 'object' and value.constructor is undefined  # Object.create(null)
+      return Object
 
 
    return value.constructor

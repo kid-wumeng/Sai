@@ -11,4 +11,7 @@ suite '~is', ->
    require('./is/is')
    require('./is/isBoolean')
    require('./is/isNumber')
+   require('./is/isInt')
+   require('./is/isN')
+   require('./is/isID')
    require('./is/isNaN')

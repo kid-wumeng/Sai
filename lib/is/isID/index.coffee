@@ -1,4 +1,4 @@
-isFinite = require('lodash/isFinite')
+isN = require('../isN')
 
 
 module.exports = ( value ) ->
@@ -17,4 +17,4 @@ module.exports = ( value ) ->
          value = value.valueOf()
 
 
-   return isFinite(value)
+   return isN(value) and value isnt 0

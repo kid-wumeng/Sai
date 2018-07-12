@@ -1,4 +1,5 @@
-isFinite = require('lodash/isFinite')
+isInteger = require('lodash/isInteger')
+isNumber  = require('../isNumber')
 
 
 module.exports = ( value ) ->
@@ -17,4 +18,4 @@ module.exports = ( value ) ->
          value = value.valueOf()
 
 
-   return isFinite(value)
+   return isNumber(value) and isInteger(value)

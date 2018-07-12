@@ -6,5 +6,8 @@ module.exports =
    # ~is
    is:        require('./is/is')
    isBoolean: require('./is/isBoolean')
-   isNumber: require('./is/isNumber')
+   isNumber:  require('./is/isNumber')
+   isInt:     require('./is/isInt')
+   isN:       require('./is/isN')
+   isID:      require('./is/isID')
    isNaN:     require('./is/isNaN')

@@ -29,7 +29,6 @@ suite "type", ->
    test "type(Object)",              -> sai.type(Object).should.equal(Function)
    test "type(Function)",            -> sai.type(Function).should.equal(Function)
 
-
    class Animal
    class Monkey extends Animal
    class Person extends Monkey

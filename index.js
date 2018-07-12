@@ -1,4 +1,15 @@
 require('coffeescript/register')
-lib = require('./lib')
 
-console.log(lib)
+
+module.exports = sai = require('./lib')
+
+
+
+
+
+
+
+
+
+
+

@@ -10,4 +10,5 @@ module.exports =
    isInt:     require('./is/isInt')
    isN:       require('./is/isN')
    isID:      require('./is/isID')
+   isString:  require('./is/isString')
    isNaN:     require('./is/isNaN')

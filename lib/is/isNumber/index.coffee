@@ -1,4 +1,4 @@
-isNaN = require('lodash/isNaN')
+isFinite = require('lodash/isFinite')
 
 
 module.exports = ( value ) ->
@@ -12,4 +12,9 @@ module.exports = ( value ) ->
    ########################################
 
 
-   return isNaN(value)
+   if typeof(value) is 'object'
+      if value instanceof Number
+         value = value.valueOf()
+
+
+   return isFinite(value, Number)

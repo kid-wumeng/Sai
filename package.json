@@ -4,9 +4,8 @@
   "author": "KID <kid.wumeng@gmail.com>",
   "main": "lib",
   "scripts": {
-    "build": "coffee build",
     "test": "clear && mocha --ui tdd --require coffeescript/register test/index.coffee",
-    "dev": "serve -p 8080"
+    "dev": "node index"
   },
   "dependencies": {
     "axios": "^0.16.2",

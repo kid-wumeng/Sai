@@ -9,4 +9,6 @@ suite '~core', ->
 
 suite '~is', ->
    require('./is/is')
+   require('./is/isBoolean')
+   require('./is/isNumber')
    require('./is/isNaN')

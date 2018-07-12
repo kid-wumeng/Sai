@@ -1,4 +1,4 @@
-isNaN = require('lodash/isNaN')
+_is = require('../is')
 
 
 module.exports = ( value ) ->
@@ -12,4 +12,4 @@ module.exports = ( value ) ->
    ########################################
 
 
-   return isNaN(value)
+   return _is(value, Boolean)

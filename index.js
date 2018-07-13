@@ -13,9 +13,7 @@ module.exports = sai = require('./lib')
 
 
 
-error = sai.error()
-console.log(error.name);
-console.log(error.message);
+sai.get()
 
 
 

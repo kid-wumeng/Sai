@@ -3,10 +3,11 @@ module.exports =
 
    # ~core
    type:     require('./core/type')
-   error:    require('./core/error')
+   get:      require('./core/get')
    noop:     require('./core/noop')
    sleep:    require('./core/sleep')
    Switcher: require('./core/Switcher')
+   error:    require('./core/error')
 
 
    # ~is

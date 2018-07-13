@@ -11,7 +11,9 @@ module.exports = class Switcher
       #|
       ########################################
 
+
       @_params = params
-      @_result = undefined ? 123
+      @_result = undefined
+
 
       @result = require('./@result')

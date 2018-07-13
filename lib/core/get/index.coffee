@@ -1,4 +1,6 @@
-get = require('lodash/get')
+get      = require('lodash/get')
+isObject = require('../../is/isObject')
+isString = require('../../is/isString')
 
 
 module.exports = ( data, path, defaultValue = undefined ) ->
@@ -6,7 +8,7 @@ module.exports = ( data, path, defaultValue = undefined ) ->
 
    ########################################
    #|
-   #|   Create a native Error object
+   #|   Get data's value by path
    #|
    #|   @params {object} data
    #|   @params {string} path
@@ -17,3 +19,7 @@ module.exports = ( data, path, defaultValue = undefined ) ->
    ########################################
 
 
+   if isObject(data) and isString(path)
+      return get(data, path, defaultValue)
+   else
+      return defaultValue

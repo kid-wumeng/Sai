@@ -1,7 +1,8 @@
 module.exports =
 
    # ~core
-   type: require('./core/type')
+   type:  require('./core/type')
+   error: require('./core/error')
 
    # ~is
    is:              require('./is/is')

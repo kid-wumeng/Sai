@@ -1,8 +1,11 @@
 module.exports =
 
+
    # ~core
    type:  require('./core/type')
    error: require('./core/error')
+   noop:  require('./core/noop')
+
 
    # ~is
    is:              require('./is/is')
@@ -26,3 +29,4 @@ module.exports =
    isPlainObject:   require('./is/isPlainObject')
    isNil:           require('./is/isNil')
    isNaN:           require('./is/isNaN')
+   isAny:           require('./is/isAny')

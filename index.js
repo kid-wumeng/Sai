@@ -5,11 +5,12 @@ lodash = require('lodash')
 module.exports = sai = require('./lib')
 
 
-error = sai.error(['a', 'b', 'c'])
+;(async function(){
 
-console.log(error[0]);
-console.log(error.message);
-console.log(error.stack);
+   await sai.sleep(3000)
+   console.log('--------');
+
+})()
 
 
 // return await sai.switch(args)

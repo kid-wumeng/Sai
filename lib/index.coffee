@@ -5,6 +5,7 @@ module.exports =
    type:  require('./core/type')
    error: require('./core/error')
    noop:  require('./core/noop')
+   sleep: require('./core/sleep')
 
 
    # ~is

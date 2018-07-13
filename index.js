@@ -5,10 +5,22 @@ lodash = require('lodash')
 module.exports = sai = require('./lib')
 
 
-;(async function(){
 
-   await sai.sleep(3000)
-   console.log('--------');
+// switcher = new sai.Switcher(['a', 1, true])
+//
+// console.log(switcher._result)
+// console.log(switcher.result())
+
+
+
+error = sai.error()
+console.log(error.name);
+console.log(error.message);
+
+
+
+
+;(async function(){
 
 })()
 

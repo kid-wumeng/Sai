@@ -100,4 +100,19 @@ suite.only "switch", ->
 
          expect(result).equal(undefined)
 
-      abc(Symbol)
+      abc(Symbol())
+
+
+
+
+   test "switch([Symbol()]).default(throw)", ->
+
+      abc = ->
+         result = sai.switch(arguments)
+            .case(sai.isNil).then('case 1')
+            .case(Number).then('case 2')
+            .case(String).then('case 3')
+            .default(-> throw "this is an error !")
+            .result()
+
+      (-> abc(Symbol())).should.throw('this is an error !')

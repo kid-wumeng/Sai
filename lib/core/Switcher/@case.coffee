@@ -1,5 +1,6 @@
 _is        = require('../../is/is')
 isFunction = require('../../is/isFunction')
+isEqual    = require('../../is/isEqual')
 
 
 
@@ -61,4 +62,3 @@ isMatch = ( param, type ) =>
 isClass       = ( type )          => /^[A-Z]/.test(type.name)
 isBelongClass = ( param, Class )  => _is( param, Class )
 isPassedCheck = ( param, check )  => check( param )
-isEqual       = ( param, value )  => param is value

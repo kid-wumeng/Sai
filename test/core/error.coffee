@@ -7,7 +7,6 @@ suite "error", ->
    test "error(message).message", -> error1.message.should.equal("this is an error !")
 
 
-
    INVALID_PARAMS = Symbol()
    error2 = sai.error({ name: INVALID_PARAMS, message: "this is an error !" })
 

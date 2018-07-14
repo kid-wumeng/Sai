@@ -1,19 +1,5 @@
 suite.only "switch", ->
 
-
-
-   test "switch()", ->
-      (-> sai.switch()).should.throw()
-
-
-
-
-   test "switch({})", ->
-      (-> sai.switch({})).should.throw()
-
-
-
-
    test "switch(['a', 1, 'c', -2])", ->
 
       abc = ->

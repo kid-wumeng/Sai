@@ -1,3 +1,9 @@
+errors      = require('../../errors')
+isArrayLike = require('../../is/isArrayLike')
+error       = require('../error')
+
+
+
 module.exports = class Switcher
 
    constructor: ( params ) ->
@@ -8,6 +14,12 @@ module.exports = class Switcher
       #|   @return {sai.Switcher} switcher
       #|
       ########################################
+
+      if !isArrayLike( params )
+          throw error({
+             name: errors.INVALID_PARAMS
+             message: "`params` should be an Array-like."
+          })
 
       @_params  = params
       @_matched = false       # if true, means current @case is matched

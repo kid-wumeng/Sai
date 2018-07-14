@@ -6,6 +6,7 @@ global.sai    = require('../')
 suite '~core', ->
    require('./core/type')
    require('./core/get')
+   require('./core/switch')
    require('./core/error')
 
 

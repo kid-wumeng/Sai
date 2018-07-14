@@ -12,12 +12,11 @@ module.exports = ( valueOrCallback ) ->
    ########################################
 
    if !@_over
-      if @_matched
-         @_over = true
+       @_over = true
 
-         if isFunction(valueOrCallback)
-            @_result = valueOrCallback(@_params)
-         else
-            @_result = valueOrCallback
+       if isFunction(valueOrCallback)
+          @_result = valueOrCallback(@_params)
+       else
+          @_result = valueOrCallback
 
    return @

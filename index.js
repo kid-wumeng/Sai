@@ -21,10 +21,10 @@ module.exports = sai = require('./lib')
 })()
 
 
-switcher = new sai.Switcher(['a', 'b'])
+switcher = new sai.Switcher(['a', 'b', 'c'])
 
 
-switcher.case(String, 'b')
+switcher.case(String, 'b', 'c')
 
 
-console.log(switcher._caseMatched);
+console.log(switcher.result());

@@ -3,6 +3,7 @@ isFunction = require('../../is/isFunction')
 
 
 
+
 module.exports = ( types... ) ->
 
    ########################################
@@ -14,21 +15,20 @@ module.exports = ( types... ) ->
    #|
    ########################################
 
-   @_types       = []
-   @_restMatched = false
-
-   if @_waitMatched
-      if isMatchCount(@_params, types)
-         if isMatchAll(@_params, types)
-            @_types = types
-            @_caseMatched = true
+   if !@_over
+      if isMatchCount(@_params, types) and isMatchAll(@_params, types)
+         @_matched = true
+      else
+         @_matched = false
 
    return @
 
 
 
+
 isMatchCount = ( params, types ) =>
-   return params.length >= types.length
+   return params.length is types.length
+
 
 
 
@@ -44,6 +44,7 @@ isMatchAll = ( params, types ) =>
 
 
 
+
 isMatch = ( param, type ) =>
 
    if isFunction(type)
@@ -53,6 +54,7 @@ isMatch = ( param, type ) =>
           return isPassedCheck( param, type )
 
    return isEqual( param, type )
+
 
 
 

@@ -8,7 +8,7 @@ module.exports = ( data, path, defaultValue = undefined ) ->
 
    ########################################
    #|
-   #|   Get data's value by path
+   #|   Get data's value by path.
    #|
    #|   @params {object} data
    #|   @params {string} path

@@ -13,22 +13,18 @@ module.exports = sai = require('./lib')
 
 
 
-sai.get()
-
-
 
 
 ;(async function(){
 
+
 })()
 
 
-// return await sai.switch(args)
-//    .case(String, 'length').then(_lenByModeLength)
-//    .case([1, 2, 3], 1).rest().then(_lenByModeLength)
-//    .case(sai.has('name'), 'cjk').then(_lenByModeCJK)
-//    .default(error({
-//       name: errors.INVALID_PARAMS
-//       message: "this"
-//    }))
-//    .result()
+switcher = new sai.Switcher(['a', 'b'])
+
+
+switcher.case(String, 'b')
+
+
+console.log(switcher._caseMatched);

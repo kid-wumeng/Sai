@@ -6,7 +6,7 @@ module.exports = ( data ) ->
 
    ########################################
    #|
-   #|   Create a native Error object
+   #|   Create a native Error object.
    #|
    #|   @params {*}     data
    #|   @return {Error} error

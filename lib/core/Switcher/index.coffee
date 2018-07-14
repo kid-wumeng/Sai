@@ -12,8 +12,14 @@ module.exports = class Switcher
       ########################################
 
 
-      @_params = params
-      @_result = undefined
+      @_params      = params
+      @_types       = []
+      @_waitMatched = true
+      @_caseMatched = true
+      @_restMatched = true
+      @_result      = undefined
 
 
+      @case   = require('./@case')
+      @then   = require('./@then')
       @result = require('./@result')

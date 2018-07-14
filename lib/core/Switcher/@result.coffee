@@ -3,10 +3,9 @@ module.exports = ->
 
    ########################################
    #|
-   #|   Create a native Error object
+   #|   Return result by sure route.
    #|
-   #|   @params {*}     data
-   #|   @return {Error} error
+   #|   @return {*} result
    #|
    ########################################
 

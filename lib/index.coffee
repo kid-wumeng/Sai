@@ -35,3 +35,4 @@ module.exports =
    isNaN:           require('./is/isNaN')
    isAny:           require('./is/isAny')
    isEqual:         require('./is/isEqual')
+   isMatch:         require('./is/isMatch')

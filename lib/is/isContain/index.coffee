@@ -1,5 +1,5 @@
 isMatch     = require('lodash/isMatch')
-index       = require('../../core/index')
+index       = require('../../core/index_')
 isString    = require('../isString')
 isArrayLike = require('../isArrayLike')
 isObject    = require('../isObject')

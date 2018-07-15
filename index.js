@@ -1,5 +1,5 @@
 require('coffeescript/register')
-lodash = require('lodash')
+_ = require('lodash')
 
 
 
@@ -12,6 +12,10 @@ module.exports = sai = require('./lib')
 ;(async function(){
 
    try {
+
+      aaa = sai.indexOf([{name: 'kid'}, {name: 'kid'}], {name: 'kid'}, 1)
+
+      console.log(aaa);
 
 
    } catch (error) {

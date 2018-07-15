@@ -4,6 +4,7 @@ module.exports =
    # ~core
    type:     require('./core/type')
    get:      require('./core/get')
+   index:    require('./core/index')
    switch:   require('./core/switch')
    Switcher: require('./core/Switcher')
    error:    require('./core/error')
@@ -36,3 +37,4 @@ module.exports =
    isAny:           require('./is/isAny')
    isEqual:         require('./is/isEqual')
    isMatch:         require('./is/isMatch')
+   isContain:       require('./is/isContain')

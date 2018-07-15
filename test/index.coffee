@@ -3,5 +3,5 @@ global.expect = require('chai').expect
 global.sai    = require('../')
 
 
-require('./core')
-require('./is')
+require('./core/@')
+require('./is/@')

@@ -23,3 +23,4 @@ suite '~is', ->
    require('./isNaN')
    require('./isEqual')
    require('./isMatch')
+   require('./isContain')

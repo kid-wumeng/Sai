@@ -3,11 +3,11 @@ isArrayLike = require('../../is/isArrayLike')
 equal       = require('../equal')
 
 
-module.exports = ( arrayLike, value, fromIndex = 0 ) ->
+module.exports = ( array, value, fromIndex = 0 ) ->
 
    ########################################
    #|
-   #|   @params {Array-like} arrayLike
+   #|   @params {Array-like} array
    #|   @params {*}          value
    #|   @params {0, int+}    [fromIndex = 0]
    #|
@@ -15,14 +15,12 @@ module.exports = ( arrayLike, value, fromIndex = 0 ) ->
    #|
    ########################################
 
-   if isString(arrayLike) and isString(value)
-      return arrayLike.indexOf(value, fromIndex)
+   if isString(array) and isString(value)
+      return array.indexOf(value, fromIndex)
 
-   if isArrayLike(arrayLike)
-
-      arrayLike = [].slice.call(arrayLike, fromIndex)
-
-      for item, i in arrayLike
+   if isArrayLike(array)
+      array = [].slice.call(array, fromIndex)
+      for item, i in array
           if equal(item, value)
              return fromIndex + i
 

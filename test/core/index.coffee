@@ -9,6 +9,7 @@ suite '~core', ->
 
    # → Array-like
    require('./index_')
+   require('./contain')
 
    # → String
    require('./match')

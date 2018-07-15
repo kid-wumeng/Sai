@@ -7,7 +7,6 @@ suite "index", ->
    test "index('ababa', 'ab')",    -> sai.index('ababa', 'ab').should.equal(0)
    test "index('ababa', 'ab', 1)", -> sai.index('ababa', 'ab', 1).should.equal(2)
 
-
    array = [{a: b: [1]}, 'abc', [1, 2, 3], 'abc']
    child = a: b: [1]
 

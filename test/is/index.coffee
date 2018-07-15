@@ -21,4 +21,3 @@ suite '~is', ->
    require('./isPlainObject')
    require('./isNil')
    require('./isNaN')
-   require('./isContain')

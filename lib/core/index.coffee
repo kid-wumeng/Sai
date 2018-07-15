@@ -8,7 +8,8 @@ module.exports =
    get: require('./get')
 
    # → Array-like
-   index: require('./index_')
+   index:   require('./index_')
+   contain: require('./contain')
 
    # → String
    match: require('./match')

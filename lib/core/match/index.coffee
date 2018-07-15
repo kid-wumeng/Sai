@@ -1,5 +1,5 @@
-isString = require('../isString')
-isRegExp = require('../isRegExp')
+isString = require('../../is/isString')
+isRegExp = require('../../is/isRegExp')
 
 
 module.exports = ( value, pattern, attributes ) ->

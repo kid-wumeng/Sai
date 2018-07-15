@@ -1,11 +1,23 @@
 module.exports =
 
-   type:     require('./type')
-   equal:    require('./equal')
-   get:      require('./get')
-   index:    require('./index_')
+   # → Common
+   type:  require('./type')
+   equal: require('./equal')
+
+   # → Object
+   get: require('./get')
+
+   # → Array-like
+   index: require('./index_')
+
+   # → String
+   match: require('./match')
+
+   # → Function
    switch:   require('./switch')
    Switcher: require('./Switcher')
-   error:    require('./error')
-   sleep:    require('./sleep')
-   noop:     require('./noop')
+
+   # → Others
+   error: require('./error')
+   sleep: require('./sleep')
+   noop:  require('./noop')

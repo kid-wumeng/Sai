@@ -1,6 +1,7 @@
 module.exports =
 
    type:     require('./type')
+   equal:    require('./equal')
    get:      require('./get')
    index:    require('./index_')
    switch:   require('./switch')

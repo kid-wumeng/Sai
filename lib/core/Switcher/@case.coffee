@@ -1,6 +1,6 @@
 _is        = require('../../is/is')
 isFunction = require('../../is/isFunction')
-isEqual    = require('../../is/isEqual')
+equal      = require('../equal')
 
 
 
@@ -54,7 +54,7 @@ isMatch = ( param, type ) =>
       else
           return isPassedCheck( param, type )
 
-   return isEqual( param, type )
+   return equal( param, type )
 
 
 

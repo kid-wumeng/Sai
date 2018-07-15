@@ -1,6 +1,6 @@
 isString    = require('../../is/isString')
 isArrayLike = require('../../is/isArrayLike')
-isEqual     = require('../../is/isEqual')
+equal       = require('../equal')
 
 
 module.exports = ( arrayLike, value, fromIndex = 0 ) ->
@@ -23,7 +23,7 @@ module.exports = ( arrayLike, value, fromIndex = 0 ) ->
       arrayLike = [].slice.call(arrayLike, fromIndex)
 
       for item, i in arrayLike
-          if isEqual(item, value)
+          if equal(item, value)
              return fromIndex + i
 
    return -1

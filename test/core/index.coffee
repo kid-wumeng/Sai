@@ -1,6 +1,7 @@
 suite '~core', ->
 
    require('./type')
+   require('./equal')
    require('./get')
    require('./index_')
    require('./Switcher')

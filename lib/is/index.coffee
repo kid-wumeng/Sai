@@ -22,6 +22,5 @@ module.exports =
    isNil:           require('./isNil')
    isNaN:           require('./isNaN')
    isAny:           require('./isAny')
-   isEqual:         require('./isEqual')
    isMatch:         require('./isMatch')
    isContain:       require('./isContain')

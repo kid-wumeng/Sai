@@ -3,18 +3,18 @@ isString    = require('../../is/isString')
 isArrayLike = require('../../is/isArrayLike')
 
 
-module.exports = ( array, child ) ->
+module.exports = ( array, item ) ->
 
    ########################################
    #|
    #|   @params {Array-like} array
-   #|   @params {*}          child
+   #|   @params {*}          item
    #|
    #|   @return {boolean}    result
    #|
    ########################################
 
    if isArrayLike(array)
-      return index(array, child) > -1
+      return index(array, item) > -1
 
    return false

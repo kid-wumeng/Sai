@@ -13,9 +13,12 @@ module.exports = sai = require('./lib')
 
    try {
 
-      aaa = sai.indexOf([{name: 'kid'}, {name: 'kid'}], {name: 'kid'}, 1)
 
-      console.log(aaa);
+      protocol = 'http'
+
+      console.log(sai.match('http://google.com', `^${protocol}://google.com$`))
+      console.log(sai.match('file://google.com', `^${protocol}://google.com$`))
+
 
 
    } catch (error) {

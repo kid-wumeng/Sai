@@ -15,8 +15,8 @@ suite "match", ->
    protocol = 'http'
    domain   = 'google.com'
 
-   test "match('http://google.com', '#{protocol}:\/\/#{domain}')", ->
-     sai.match('http://google.com', "#{protocol}:\/\/#{domain}").should.be.true
+   test "match('http://google.com', '#{protocol}://#{domain}')", ->
+     sai.match('http://google.com', "#{protocol}://#{domain}").should.be.true
 
-   test "match('file://google.com', '#{protocol}:\/\/#{domain}')", ->
-     sai.match('file://google.com', "#{protocol}:\/\/#{domain}").should.be.false
+   test "match('file://google.com', '#{protocol}://#{domain}')", ->
+     sai.match('file://google.com', "#{protocol}://#{domain}").should.be.false

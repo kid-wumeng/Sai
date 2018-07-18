@@ -19,8 +19,6 @@ module.exports = ( types... ) ->
    if !@_over
       if isMatchCount(@_params, types) and isMatchAll(@_params, types)
          @_matched = true
-      else
-         @_matched = false
 
    return @
 

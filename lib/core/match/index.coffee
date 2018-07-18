@@ -2,25 +2,25 @@ isString = require('../../is/isString')
 isRegExp = require('../../is/isRegExp')
 
 
-module.exports = ( value, pattern, attributes ) ->
+module.exports = ( string, pattern, flags = '' ) ->
 
    ########################################
    #|
-   #|   @params {*}              value
+   #|   @params {string}         string
    #|   @params {string, RegExp} pattern
-   #|   @params {string}         [attributes]
+   #|   @params {string}         [flags]
    #|
    #|   @return {boolean}        result
    #|
    ########################################
 
    if isString(pattern)
-      if isString(attributes) and /^[igm]*$/.test(attributes)
-         pattern = new RegExp(pattern, attributes)
+      if isString(flags) and isString(flags)
+         pattern = new RegExp(pattern, flags)
       else
          pattern = new RegExp(pattern)
 
-   if isString(value) and isRegExp(pattern)
-      return pattern.test(value)
+   if isString(string) and isRegExp(pattern)
+      return pattern.test(string)
    else
       return false

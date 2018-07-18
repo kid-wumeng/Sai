@@ -27,3 +27,14 @@ suite "Switcher@case", ->
          .result()
 
    test "case(arguments)", -> func('abc', 123, { name: 'abc' }).should.equal('case 2')
+
+
+
+   func2 = ->
+      return sai.switch(arguments)
+         .case(1)
+         .case(2)
+         .case(3).then('success')
+         .result()
+
+   test "case(Boolean).case(Number).case(String)", -> func2(2).should.equal('success')

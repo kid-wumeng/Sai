@@ -6,6 +6,9 @@ module.exports =
    equal: require('./equal')
    clone: require('./clone')
 
+   # → Number
+   random: require('./random')
+
    # → Object
    get: require('./get')
 

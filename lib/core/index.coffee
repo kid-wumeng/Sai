@@ -10,6 +10,9 @@ module.exports =
    # → Array-like
    index:   require('./index_')
    contain: require('./contain')
+   first:   require('./first')
+   last:    require('./last')
+   concat:  require('./concat')
 
    # → String
    match: require('./match')

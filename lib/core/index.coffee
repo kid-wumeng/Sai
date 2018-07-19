@@ -2,6 +2,7 @@ module.exports =
 
    # → Common
    type:  require('./type')
+   len:   require('./len')
    equal: require('./equal')
    clone: require('./clone')
 

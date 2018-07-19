@@ -2,6 +2,7 @@ suite '~core', ->
 
    # → Common
    require('./type')
+   require('./len')
    require('./equal')
    require('./clone')
 

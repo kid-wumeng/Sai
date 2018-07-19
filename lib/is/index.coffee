@@ -1,5 +1,6 @@
 module.exports =
 
+   # → is Type
    is:              require('./is')
    isBoolean:       require('./isBoolean')
    isNumber:        require('./isNumber')
@@ -22,3 +23,6 @@ module.exports =
    isNil:           require('./isNil')
    isNaN:           require('./isNaN')
    isAny:           require('./isAny')
+
+   # → is String-Format
+   isSpace: require('./isSpace')

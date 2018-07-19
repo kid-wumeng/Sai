@@ -1,5 +1,6 @@
 suite '~is', ->
 
+   # → is Type
    require('./is')
    require('./isBoolean')
    require('./isNumber')
@@ -21,3 +22,6 @@ suite '~is', ->
    require('./isPlainObject')
    require('./isNil')
    require('./isNaN')
+
+   # → is String-Format
+   require('./isSpace')

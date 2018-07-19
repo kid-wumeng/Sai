@@ -13,7 +13,7 @@ module.exports = sai = require('./lib')
 
    try {
 
-      console.log(_.cloneDeep(new Error));
+      console.log(sai.isSpace('　'));
 
    } catch (error) {
       console.log(error.name)

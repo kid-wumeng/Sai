@@ -3,6 +3,7 @@ module.exports =
    # → Common
    type:  require('./type')
    equal: require('./equal')
+   clone: require('./clone')
 
    # → Object
    get: require('./get')

@@ -3,6 +3,7 @@ suite '~core', ->
    # → Common
    require('./type')
    require('./equal')
+   require('./clone')
 
    # → Object
    require('./get')

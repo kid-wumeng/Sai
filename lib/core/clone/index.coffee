@@ -1,13 +1,13 @@
 cloneDeep = require('lodash/cloneDeep')
 
 
-module.exports = ( value ) ->
+module.exports = ( data ) ->
 
    ########################################
    #|
-   #|   @params {*} value
-   #|   @return {*} value
+   #|   @params {*} data
+   #|   @return {*} data
    #|
    ########################################
 
-   return cloneDeep(value)
+   return cloneDeep(data)

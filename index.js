@@ -13,6 +13,8 @@ module.exports = sai = require('./lib')
 
    try {
 
+      console.log(_.cloneDeep(new Error));
+
    } catch (error) {
       console.log(error.name)
       console.log(error.message)

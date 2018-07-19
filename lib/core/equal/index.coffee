@@ -1,15 +1,15 @@
 isEqual = require('lodash/isEqual')
 
 
-module.exports = ( value, otherValue ) ->
+module.exports = ( data1, data2 ) ->
 
    ########################################
    #|
-   #|   @params {*}       value
-   #|   @params {*}       otherValue
+   #|   @params {*}       data1
+   #|   @params {*}       data2
    #|
    #|   @return {boolean} result
    #|
    ########################################
 
-   return isEqual(value, otherValue)
+   return isEqual(data1, data2)

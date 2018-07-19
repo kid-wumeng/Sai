@@ -23,6 +23,9 @@ module.exports = ( args... ) ->
 
 
 _random = ( min, max ) ->
-   min = parseInt(min)
-   max = parseInt(max)
-   return lodashRandom(min, max)
+   if min > max
+      return 0
+   else
+      min = parseInt(min)
+      max = parseInt(max)
+      return lodashRandom(min, max)

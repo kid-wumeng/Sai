@@ -26,3 +26,5 @@ module.exports =
 
    # → is String-Format
    isSpace: require('./isSpace')
+   isEmail: require('./isEmail')
+   isURL:   require('./isURL')

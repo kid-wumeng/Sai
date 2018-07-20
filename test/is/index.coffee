@@ -25,3 +25,5 @@ suite '~is', ->
 
    # → is String-Format
    require('./isSpace')
+   require('./isEmail')
+   require('./isURL')

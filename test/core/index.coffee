@@ -1,17 +1,18 @@
 suite '~core', ->
 
-   # → Common
+   # → Base
    require('./type')
-   require('./len')
    require('./equal')
    require('./clone')
 
    # → Object
+   require('./len')
    require('./has')
    require('./get')
    require('./set')
    require('./del')
    require('./merge')
+   require('./count')
 
    # → Array-like
    require('./index_')

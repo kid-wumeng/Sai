@@ -1,8 +1,7 @@
 module.exports =
 
-   # → Common
+   # → Base
    type:  require('./type')
-   len:   require('./len')
    equal: require('./equal')
    clone: require('./clone')
 
@@ -10,11 +9,13 @@ module.exports =
    random: require('./random')
 
    # → Object
+   len:   require('./len')
    has:   require('./has')
    get:   require('./get')
    set:   require('./set')
    del:   require('./del')
    merge: require('./merge')
+   count: require('./count')
 
    # → Array-like
    index:   require('./index_')

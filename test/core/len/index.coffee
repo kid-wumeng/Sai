@@ -21,6 +21,20 @@ suite "len", ->
       map.set('c', 3)
       sai.len(map).should.equal(3)
 
+   test "len(set, callback)", ->
+      set = new Set
+      set.add('a')
+      set.add('b')
+      set.add('c')
+      sai.len(set, (value) -> 2).should.equal(6)
+
+   test "len(map, callback)", ->
+      map = new Map
+      map.set('a', 1)
+      map.set('b', 2)
+      map.set('c', 3)
+      sai.len(map, (value) -> value).should.equal(6)
+
 
 
    test "len(data)", ->

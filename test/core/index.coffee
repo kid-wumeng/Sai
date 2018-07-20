@@ -7,7 +7,10 @@ suite '~core', ->
    require('./clone')
 
    # → Object
+   require('./has')
    require('./get')
+   require('./set')
+   require('./del')
 
    # → Array-like
    require('./index_')

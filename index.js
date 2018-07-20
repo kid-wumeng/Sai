@@ -13,7 +13,7 @@ module.exports = sai = require('./lib')
 
    try {
 
-      console.log(sai.random(20000, -20000));
+      console.log(_.hasIn());
 
    } catch (error) {
       console.log(error.name)

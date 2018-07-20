@@ -11,6 +11,7 @@ suite '~core', ->
    require('./get')
    require('./set')
    require('./del')
+   require('./merge')
 
    # → Array-like
    require('./index_')

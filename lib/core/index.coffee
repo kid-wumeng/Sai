@@ -10,10 +10,11 @@ module.exports =
    random: require('./random')
 
    # → Object
-   has: require('./has')
-   get: require('./get')
-   set: require('./set')
-   del: require('./del')
+   has:   require('./has')
+   get:   require('./get')
+   set:   require('./set')
+   del:   require('./del')
+   merge: require('./merge')
 
    # → Array-like
    index:   require('./index_')

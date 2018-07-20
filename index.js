@@ -13,7 +13,7 @@ module.exports = sai = require('./lib')
 
    try {
 
-      console.log(_.hasIn());
+      console.log(sai.merge({}, 'abc'));
 
    } catch (error) {
       console.log(error.name)

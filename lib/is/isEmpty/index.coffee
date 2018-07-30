@@ -1,5 +1,4 @@
-isURL    = require('validator/lib/isURL')
-isString = require('../isString')
+isEmpty = require('lodash/isEmpty')
 
 
 module.exports = ( value ) ->
@@ -13,4 +12,4 @@ module.exports = ( value ) ->
    ########################################
 
 
-   return isString(value) and isURL(value)
+   return isEmpty(value)

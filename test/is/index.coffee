@@ -22,6 +22,7 @@ suite '~is', ->
    require('./isPlainObject')
    require('./isNil')
    require('./isNaN')
+   require('./isEmpty')
 
    # → is String-Format
    require('./isSpace')

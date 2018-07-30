@@ -2,15 +2,15 @@ isEmail  = require('validator/lib/isEmail')
 isString = require('../isString')
 
 
-module.exports = ( string ) ->
+module.exports = ( value ) ->
 
 
    ########################################
    #|
-   #|   @params {*}       string
+   #|   @params {*}       value
    #|   @return {boolean} result
    #|
    ########################################
 
 
-   return isString(string) and isEmail(string)
+   return isString(value) and isEmail(value)

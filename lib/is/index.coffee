@@ -23,6 +23,7 @@ module.exports =
    isNil:           require('./isNil')
    isNaN:           require('./isNaN')
    isAny:           require('./isAny')
+   isEmpty:         require('./isEmpty')
 
    # → is String-Format
    isSpace: require('./isSpace')

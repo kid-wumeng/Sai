@@ -12,11 +12,11 @@ module.exports = sai = require('./lib')
    try {
 
       schema = new sai.Schema
-      tester = new sai.Tester({name: null}, 'name')
+      tester = new sai.Tester({name: 6}, 'name')
       tester.name('测试用户名')
       tester.schema(schema)
 
-      tester.required()
+      tester.required().in(['6', 7, 8])
 
    } catch (error) {
       console.log(error.name)

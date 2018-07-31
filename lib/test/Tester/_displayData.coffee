@@ -5,15 +5,14 @@ isPlainObject = require('../../is/isPlainObject')
 isObject      = require('../../is/isObject')
 
 
-module.exports = ->
+module.exports = ( data ) ->
 
    ########################################
    #|
-   #|   @return {string} displayData
+   #|   @params {*}      data
+   #|   @return {string} data
    #|
    ########################################
-
-   data = @_data
 
    switch
       when isBoolean(data)     then "{ " + data + " }"

@@ -1,64 +1,64 @@
 isNaN = require('../isNaN')
 
 
-module.exports = ( value, Class ) ->
+module.exports = ( value, type ) ->
 
 
    ########################################
    #|
    #|   @params {*}                  value
-   #|   @params {function, nil, NaN} Class
+   #|   @params {function, nil, NaN} type
    #|
    #|   @return {boolean} result
    #|
    ########################################
 
 
-   if Class is undefined
+   if type is undefined
       return value is undefined
 
 
-   if Class is null
+   if type is null
       return value is null
 
 
-   if Class is Boolean
+   if type is Boolean
       if typeof(value) is 'object'
          return value instanceof Boolean
       else
          return typeof(value) is 'boolean'
 
 
-   if Class is Number
+   if type is Number
       if typeof(value) is 'object'
          return value instanceof Number
       else
          return typeof(value) is 'number'
 
 
-   if Class is String
+   if type is String
       if typeof(value) is 'object'
          return value instanceof String
       else
          return typeof(value) is 'string'
 
 
-   if Class is Symbol
+   if type is Symbol
       return typeof(value) is 'symbol'
 
 
-   if Class is Function
+   if type is Function
       return typeof(value) is 'function'
 
 
-   if isNaN(Class)
+   if isNaN(type)
       if isNaN(value)
          return true
       else
          return false
 
 
-   if typeof(Class) is 'function'
+   if typeof(type) is 'function'
 
       if value is null
          return false
@@ -67,10 +67,10 @@ module.exports = ( value, Class ) ->
          if value.constructor is undefined  # Object.create(null)
             return true
          else
-            return value instanceof Class
+            return value instanceof type
 
       if typeof(value) is 'function'
-         return value instanceof Class
+         return value instanceof type
 
 
    return false

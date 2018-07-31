@@ -18,9 +18,15 @@ module.exports = class Tester
       @_path = path
       @_name = ''
 
-      @_displayData = require('./@_displayData')
-      @_displayName = require('./@_displayName')
-
-      @name     = require('./@name')
-      @schema   = require('./@schema')
-      @required = require('./@required')
+      @name        = require('./@name')
+      @schema      = require('./@schema')
+      @required    = require('./@required')
+      @in          = require('./@in')
+      @is          = require('./@is')
+      @boolean     = require('./@boolean')
+      @number      = require('./@number')
+      @string      = require('./@string')
+      @buffer      = require('./@buffer')
+      @date        = require('./@date')
+      @array       = require('./@array')
+      @plainObject = require('./@plainObject')

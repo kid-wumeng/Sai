@@ -1,8 +1,9 @@
-module.exports = ->
+module.exports = ( name ) ->
 
    ########################################
    #|
-   #|   @return {string} `name` | data
+   #|   @params {string} name
+   #|   @return {string} name
    #|
    ########################################
 

@@ -1,3 +1,4 @@
 module.exports =
 
    INVALID_PARAMS: 'INVALID_PARAMS'
+   INVALID_DATA:   'INVALID_DATA'

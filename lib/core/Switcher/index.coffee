@@ -10,18 +10,15 @@ module.exports = class Switcher
 
       ########################################
       #|
-      #|   @params {Array-like}   params
-      #|   @params {*}            context
+      #|   @params {Array-like} params
+      #|   @params {*}          context
       #|
-      #|   @return {sai.Switcher} switcher
+      #|   @return {sai.Switcher}
       #|
       ########################################
 
       if !isArrayLike( params )
-          throw error({
-             name: errors.INVALID_PARAMS
-             message: "`params` should be an Array-like."
-          })
+         throw error({ name: errors.INVALID_PARAMS, message: "`params` should be an Array-like." })
 
       @_params  = params
       @_context = context

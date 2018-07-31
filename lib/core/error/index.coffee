@@ -1,26 +1,22 @@
-isObject = require('../../is/isObject')
+isObject   = require('../../is/isObject')
+isFunction = require('../../is/isFunction')
 
 
-module.exports = ( data ) ->
-
+module.exports = ( error, others... ) ->
 
    ########################################
    #|
    #|   Create a native Error object.
    #|
-   #|   @params {*}     data
+   #|   @params {*}     error
    #|   @return {Error} error
    #|
    ########################################
 
+   if isFunction(error)
+      error = error(others...)
 
-   error = new Error
-
-
-   if isObject(data)
-      Object.assign(error, data)
+   if isObject(error)
+      return Object.assign(new Error(), error)
    else
-      error.message = "#{data}"
-
-
-   return error
+      return Object.assign(new Error(), { message: "#{error}" })

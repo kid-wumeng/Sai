@@ -11,7 +11,8 @@ module.exports = sai = require('./lib')
 
    try {
 
-      sai.test({name: 'ddddabc'}, 'name').required().int()
+      schema = new sai.Schema
+      schema.test({name: 'ddddabc'}, 'name').required().int()
 
    } catch (error) {
       console.log(error.name)

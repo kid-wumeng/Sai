@@ -1,4 +1,3 @@
 suite '~is', ->
 
-   # → Schema
-   require('./')
+   require('./Tester@name')

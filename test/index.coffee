@@ -5,3 +5,4 @@ global.sai    = require('../')
 
 require('./core')
 require('./is')
+require('./test')

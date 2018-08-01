@@ -1,9 +1,19 @@
-module.exports = ->
+Tester = require('../Tester')
+
+
+module.exports = ( data, path ) ->
 
    ########################################
    #|
-   #|   @return {sai.Tester} tester
+   #|   @params {*}      data
+   #|   @params {string} [path]
+   #|
+   #|   @return {sai.Tester}
    #|
    ########################################
 
-   return 123
+   tester = new Tester(data, path)
+
+   tester.schema(@)
+
+   return tester

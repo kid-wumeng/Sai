@@ -3,7 +3,6 @@ error_       = require('../../core/error')
 isArray      = require('../../is/isArray')
 _displayData = require('./_displayData')
 _displayName = require('./_displayName')
-_displayType = require('./_displayType')
 
 
 module.exports = ( enums, error ) ->

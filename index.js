@@ -12,13 +12,11 @@ module.exports = sai = require('./lib')
    try {
 
       schema = new sai.Schema
-      tester = new sai.Tester({name: 6}, 'name')
+      tester = new sai.Tester({name: 'ddddabc'}, 'name')
       tester.name('测试用户名')
       tester.schema(schema)
 
-      console.log(sai.isMin('768uuu', 6));
-
-      // tester.required().check((data)=>{data > 78}, '应该大于78')
+      tester.required().max(5)
 
    } catch (error) {
       console.log(error.name)

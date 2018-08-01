@@ -30,4 +30,6 @@ module.exports = class Tester
       @date        = require('./@date')
       @array       = require('./@array')
       @plainObject = require('./@plainObject')
+      @min         = require('./@min')
+      @max         = require('./@max')
       @check       = require('./@check')

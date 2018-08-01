@@ -3,7 +3,6 @@ error_       = require('../../core/error')
 isFunction   = require('../../is/isFunction')
 _displayData = require('./_displayData')
 _displayName = require('./_displayName')
-_displayType = require('./_displayType')
 
 
 module.exports = ( check, error ) ->

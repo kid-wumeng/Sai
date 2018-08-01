@@ -7,7 +7,7 @@ module.exports = ( name ) ->
    #|
    ########################################
 
-   if @_name
-      return "`" + @_name + "`"
+   if name
+      return "`" + name + "`"
    else
       return "data"

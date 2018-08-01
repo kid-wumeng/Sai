@@ -16,7 +16,9 @@ module.exports = sai = require('./lib')
       tester.name('测试用户名')
       tester.schema(schema)
 
-      tester.required().check((data)=>{data > 78}, '应该大于78')
+      console.log(sai.isMin('768uuu', 6));
+
+      // tester.required().check((data)=>{data > 78}, '应该大于78')
 
    } catch (error) {
       console.log(error.name)

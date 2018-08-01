@@ -24,6 +24,8 @@ module.exports =
    isNaN:           require('./isNaN')
    isAny:           require('./isAny')
    isEmpty:         require('./isEmpty')
+   isMin:           require('./isMin')
+   isMax:           require('./isMax')
 
    # → is String-Format
    isSpace: require('./isSpace')

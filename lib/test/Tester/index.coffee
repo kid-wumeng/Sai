@@ -35,3 +35,4 @@ module.exports = class Tester
       @max         = require('./@max')
       @check       = require('./@check')
       @format      = require('./@format')
+      @rule        = require('./@rule')

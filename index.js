@@ -16,7 +16,11 @@ module.exports = sai = require('./lib')
       tester.name('测试用户名')
       tester.schema(schema)
 
-      tester.required().format('email')
+      schema.rule('user.name', function(data){
+         tester.number()
+      })
+
+      tester.required().rule('user.name', ({rule})=>rule + ' err')
 
    } catch (error) {
       console.log(error.name)

@@ -1,0 +1,4 @@
+suite '~is', ->
+
+   # → Schema
+   require('./')

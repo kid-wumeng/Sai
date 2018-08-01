@@ -1,40 +1,40 @@
 errors       = require('../../errors')
 error_       = require('../../core/error')
-isArray      = require('../../is/isArray')
+isFunction   = require('../../is/isFunction')
 _displayData = require('./_displayData')
 _displayName = require('./_displayName')
 _displayType = require('./_displayType')
 
 
-module.exports = ( enums, error ) ->
+module.exports = ( check, error ) ->
 
 
    ########################################
    #|
-   #|   @params {Array} enums
-   #|   @params {*}    [error]
+   #|   @params {function} check
+   #|   @params {*}       [error]
    #|
    #|   @return {sai.Tester} @
    #|
    ########################################
 
 
-   if !isArray(enums)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`enums` should be an Array." })
+   if !isFunction(check)
+      throw error_({ name: errors.INVALID_PARAMS, message: "`check` should be a function." })
 
 
-   error ?= ({ data, path, name, enums }) =>
+   error ?= ({ data, path, name, check }) =>
       name: errors.INVALID_DATA
-      message: "Sorry, the #{_displayName(name)} should be in [#{enums.map(_displayData).join(', ')}],
+      message: "Sorry, the #{_displayName()} check failed,
                 current is #{_displayData(data)}"
 
 
-   if @_data? and !enums.includes(@_data)
+   if !check(@_data)
       throw error_(error, {
          data: @_data
          path: @_path
          name: @_name
-         enums: enums
+         check: check
       })
 
 

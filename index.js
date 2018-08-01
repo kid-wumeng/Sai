@@ -16,7 +16,7 @@ module.exports = sai = require('./lib')
       tester.name('测试用户名')
       tester.schema(schema)
 
-      tester.required().in(['6', 7, 8])
+      tester.required().check((data)=>{data > 78}, '应该大于78')
 
    } catch (error) {
       console.log(error.name)

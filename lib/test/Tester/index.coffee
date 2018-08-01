@@ -30,3 +30,4 @@ module.exports = class Tester
       @date        = require('./@date')
       @array       = require('./@array')
       @plainObject = require('./@plainObject')
+      @check       = require('./@check')

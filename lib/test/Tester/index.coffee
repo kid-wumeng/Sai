@@ -14,9 +14,10 @@ module.exports = class Tester
       #|
       ########################################
 
-      @_data = if path then get(data, path) else data
-      @_path = path
-      @_name = ''
+      @_data   = if path then get(data, path) else data
+      @_path   = path
+      @_name   = ''
+      @_schema = null
 
       @name        = require('./@name')
       @schema      = require('./@schema')
@@ -33,3 +34,4 @@ module.exports = class Tester
       @min         = require('./@min')
       @max         = require('./@max')
       @check       = require('./@check')
+      @format      = require('./@format')

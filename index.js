@@ -16,7 +16,7 @@ module.exports = sai = require('./lib')
       tester.name('测试用户名')
       tester.schema(schema)
 
-      tester.required().max(5)
+      tester.required().format('email')
 
    } catch (error) {
       console.log(error.name)

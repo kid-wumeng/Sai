@@ -17,10 +17,10 @@ module.exports = sai = require('./lib')
       tester.schema(schema)
 
       schema.rule('user.name', function(data){
-         tester.number()
+         tester.natural()
       })
 
-      tester.required().rule('user.name', ({rule})=>rule + ' err')
+      tester.required().rule('user.name')
 
    } catch (error) {
       console.log(error.name)

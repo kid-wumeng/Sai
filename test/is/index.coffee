@@ -23,6 +23,8 @@ suite '~is', ->
    require('./isNil')
    require('./isNaN')
    require('./isEmpty')
+   require('./isMin')
+   require('./isMax')
 
    # → is String-Format
    require('./isSpace')

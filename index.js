@@ -11,8 +11,11 @@ module.exports = sai = require('./lib')
 
    try {
 
-      schema = new sai.Schema
-      schema.test({name: 'ddddabc'}, 'name').required().int()
+
+      result = await sai.isDir('./test/file/_assets')
+
+      console.log(result);
+
 
    } catch (error) {
       console.log(error.name)

@@ -1,8 +1,13 @@
-path_ = require('path')
-fs    = require('fs')
+path_    = require('path')
+fs       = require('fs')
+errors   = require('../../errors')
+error    = require('../../core/error')
+isString = require('../../is/isString')
+
 
 
 module.exports = ( path ) ->
+
 
    ########################################
    #|
@@ -11,7 +16,13 @@ module.exports = ( path ) ->
    #|
    ########################################
 
+
+   if !isString( path )
+      throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string." })
+
+
    path = path_.normalize( path )
+
 
    return new Promise (resolve, reject) =>
       fs.stat path, (error, stats) =>

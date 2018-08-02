@@ -1,5 +1,5 @@
 path_    = require('path')
-fs       = require('fs')
+fs       = require('fs-extra-promise')
 errors   = require('../../errors')
 error    = require('../../core/error')
 isString = require('../../is/isString')
@@ -11,8 +11,8 @@ module.exports = ( path ) ->
 
    ########################################
    #|
-   #|   @params {string}  path
-   #|   @return {boolean} result
+   #|   @params {string} path
+   #|   @return {buffer} file
    #|
    ########################################
 
@@ -24,9 +24,7 @@ module.exports = ( path ) ->
    path = path_.normalize( path )
 
 
-   return new Promise (resolve, reject) =>
-      fs.stat path, (error, stats) =>
-         if error
-            resolve(false)
-         else
-            resolve(stats.isFile())
+   try
+      return await fs.readFileAsync( path )
+   catch errorRaw
+      throw error({ name: errors.FILE_NOT_FOUND, message: "`#{path}` not found or isn't a file." })

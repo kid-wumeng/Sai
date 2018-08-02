@@ -1,4 +1,5 @@
 require('coffeescript/register')
+require('colors')
 _ = require('lodash')
 
 
@@ -12,14 +13,14 @@ module.exports = sai = require('./lib')
    try {
 
 
-      result = await sai.isDir('./test/file/_assets')
+      result = await sai.readJSON('./test/file/_assets/test.json')
 
-      console.log(result);
+      console.log(typeof result);
 
 
    } catch (error) {
-      console.log(error.name)
-      console.log(error.message)
+      console.log(error.name.red)
+      console.log(error.message.red)
    }
 
 })()

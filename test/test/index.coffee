@@ -2,6 +2,8 @@ suite '~test', ->
 
    require('./Tester@name')
    require('./Tester@required')
+   require('./Tester@in')
+   require('./Tester@is')
    require('./Tester@boolean')
    require('./Tester@number')
    require('./Tester@int')
@@ -12,3 +14,6 @@ suite '~test', ->
    require('./Tester@date')
    require('./Tester@array')
    require('./Tester@plainObject')
+   require('./Tester@min')
+   require('./Tester@max')
+   require('./Tester@check')

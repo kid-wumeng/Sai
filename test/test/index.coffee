@@ -17,3 +17,5 @@ suite '~test', ->
    require('./Tester@min')
    require('./Tester@max')
    require('./Tester@check')
+   require('./Tester@format')
+   require('./Tester@rule')

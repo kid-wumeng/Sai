@@ -37,7 +37,7 @@ module.exports = ( format, error ) ->
                 current is #{_displayData(data)}"
 
 
-   if !check(@_data)
+   if @_data? and !check(@_data)
       throw error_(error, {
          data:   @_data
          path:   @_path

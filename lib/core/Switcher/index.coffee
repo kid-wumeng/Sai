@@ -1,5 +1,5 @@
-errors      = require('../../errors')
 isArrayLike = require('../../is/isArrayLike')
+errors      = require('../../errors')
 error       = require('../error')
 
 
@@ -18,7 +18,7 @@ module.exports = class Switcher
       ########################################
 
       if !isArrayLike( params )
-         throw error({ name: errors.INVALID_PARAMS, message: "`params` should be an Array-like." })
+         throw error({ name: errors.INVALID_PARAMS, message: "`params` should be an Array-like" })
 
       @_params  = params
       @_context = context

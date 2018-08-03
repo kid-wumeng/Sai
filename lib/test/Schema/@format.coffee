@@ -20,10 +20,10 @@ module.exports = ( name, check ) ->
    ########################################
 
    if !isString(name)
-      throw error({ name: errors.INVALID_PARAMS, message: "`name` should be a string." })
+      throw error({ name: errors.INVALID_PARAMS, message: "`name` should be a string" })
 
    if check and !isFunction(check)
-      throw error({ name: errors.INVALID_PARAMS, message: "`check` should be a function." })
+      throw error({ name: errors.INVALID_PARAMS, message: "`check` should be a function" })
 
    if check
       @_formats[name] = check

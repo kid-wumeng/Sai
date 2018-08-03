@@ -19,10 +19,10 @@ module.exports = ( path, encoding = 'utf8' ) ->
 
 
    if !isString( path )
-      throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string." })
+      throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string" })
 
    if encoding and !isString( encoding )
-      throw error({ name: errors.INVALID_PARAMS, message: "`encoding` should be a string." })
+      throw error({ name: errors.INVALID_PARAMS, message: "`encoding` should be a string" })
 
 
    try

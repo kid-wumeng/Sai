@@ -16,10 +16,7 @@ module.exports = ( file ) ->
 
 
    if !isBuffer( file )
-       throw error({
-          name: errors.INVALID_PARAMS
-          message: "`file` should be a buffer"
-       })
+      throw error({ name: errors.INVALID_PARAMS, message: "`file` should be a buffer"})
 
 
    return fileType(file)?.mime ? ''

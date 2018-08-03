@@ -23,4 +23,4 @@ module.exports = ( path, encoding ) ->
    try
       return JSON.parse(text)
    catch errorRaw
-      throw error({ name: errors.TEXT_PARSE_FAIL, message: "`#{path}` isn't a valid JSON." })
+      throw error({ name: errors.TEXT_PARSE_FAIL, message: "`#{path}` isn't a valid JSON" })

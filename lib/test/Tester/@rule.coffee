@@ -22,13 +22,13 @@ module.exports = ( rule, error ) ->
 
 
    if !isString(rule)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`rule` should be a string." })
+      throw error_({ name: errors.INVALID_PARAMS, message: "`rule` should be a string" })
 
    if !is_(@_schema, Schema)
-      throw error_({ name: errors.INVALID_PARAMS, message: "the tester has not a schema." })
+      throw error_({ name: errors.INVALID_PARAMS, message: "the tester has not a schema" })
 
    if !isFunction(check = @_schema.rule(rule))
-      throw error_({ name: errors.INVALID_PARAMS, message: "the rule '#{rule}' is not found." })
+      throw error_({ name: errors.INVALID_PARAMS, message: "the rule '#{rule}' is not found" })
 
 
    try

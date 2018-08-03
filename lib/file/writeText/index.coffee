@@ -18,13 +18,13 @@ module.exports = ( path, text = '', encoding = 'utf8' ) ->
 
 
    if !isString( path )
-      throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string." })
+      throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string" })
 
    if !isString( text )
-      throw error({ name: errors.INVALID_PARAMS, message: "`text` should be a string." })
+      throw error({ name: errors.INVALID_PARAMS, message: "`text` should be a string" })
 
    if encoding and !isString( encoding )
-      throw error({ name: errors.INVALID_PARAMS, message: "`encoding` should be a string." })
+      throw error({ name: errors.INVALID_PARAMS, message: "`encoding` should be a string" })
 
 
    await fs.ensureFileAsync( path )

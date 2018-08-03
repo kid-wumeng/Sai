@@ -17,7 +17,7 @@ module.exports = ( path ) ->
 
 
    if !isString( path )
-      throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string." })
+      throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string" })
 
 
    return new Promise (resolve, reject) =>

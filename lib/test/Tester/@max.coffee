@@ -25,7 +25,7 @@ module.exports = ( max, error ) ->
 
 
    if !isNumber(max)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`max` should be a number." })
+      throw error_({ name: errors.INVALID_PARAMS, message: "`max` should be a number" })
 
 
 

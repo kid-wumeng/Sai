@@ -17,7 +17,7 @@ module.exports = ( name ) ->
    ########################################
 
    if name and !isString(name)
-      throw error({ name: errors.INVALID_PARAMS, message: "`name` should be a string." })
+      throw error({ name: errors.INVALID_PARAMS, message: "`name` should be a string" })
 
    if name
       @_name = name

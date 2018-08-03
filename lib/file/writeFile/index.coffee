@@ -18,10 +18,10 @@ module.exports = ( path, file ) ->
 
 
    if !isString( path )
-      throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string." })
+      throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string" })
 
    if !isBuffer( file )
-      throw error({ name: errors.INVALID_PARAMS, message: "`file` should be a buffer." })
+      throw error({ name: errors.INVALID_PARAMS, message: "`file` should be a buffer" })
 
 
    await fs.ensureFileAsync( path )

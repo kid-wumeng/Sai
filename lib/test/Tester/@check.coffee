@@ -19,7 +19,7 @@ module.exports = ( check, error ) ->
 
 
    if !isFunction(check)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`check` should be a function." })
+      throw error_({ name: errors.INVALID_PARAMS, message: "`check` should be a function" })
 
 
    error ?= ({ data, path, name, check }) =>

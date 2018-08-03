@@ -25,7 +25,7 @@ module.exports = ( min, error ) ->
 
 
    if !isNumber(min)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`min` should be a number." })
+      throw error_({ name: errors.INVALID_PARAMS, message: "`min` should be a number" })
 
 
 

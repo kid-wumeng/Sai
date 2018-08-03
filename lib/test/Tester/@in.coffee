@@ -19,7 +19,7 @@ module.exports = ( enums, error ) ->
 
 
    if !isArray(enums)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`enums` should be an Array." })
+      throw error_({ name: errors.INVALID_PARAMS, message: "`enums` should be an Array" })
 
 
    error ?= ({ data, path, name, enums }) =>

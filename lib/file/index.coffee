@@ -8,3 +8,6 @@ module.exports =
    readFile: require('./readFile')
    readText: require('./readText')
    readJSON: require('./readJSON')
+
+   # → read
+   writeFile: require('./writeFile')

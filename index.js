@@ -13,9 +13,10 @@ module.exports = sai = require('./lib')
    try {
 
 
-      result = await sai.readJSON('./test/file/_assets/test.json')
+      file = await sai.readFile('./test/file/_assets/test.png')
+      await sai.writeFile('./test/file/_assets/test2.png', file)
 
-      console.log(typeof result);
+      console.log(file);
 
 
    } catch (error) {

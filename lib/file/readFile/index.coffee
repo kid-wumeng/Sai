@@ -1,4 +1,3 @@
-path_    = require('path')
 fs       = require('fs-extra-promise')
 errors   = require('../../errors')
 error    = require('../../core/error')
@@ -19,9 +18,6 @@ module.exports = ( path ) ->
 
    if !isString( path )
       throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string." })
-
-
-   path = path_.normalize( path )
 
 
    try

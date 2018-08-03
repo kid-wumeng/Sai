@@ -6,6 +6,9 @@ module.exports =
    readDir:   require('./readDir')
    ensureDir: require('./ensureDir')
    emptyDir:  require('./emptyDir')
+   move:      require('./move')
+   copy:      require('./copy')
+   remove:    require('./remove')
    mime:      require('./mime')
 
    # → read

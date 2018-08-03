@@ -21,7 +21,7 @@ module.exports = ( path ) ->
 
 
    if await isFile( path )
-      throw error({ name: errors.DIR_NOT_FOUND, message: "`#{path}` is already a file" })
+      throw error({ name: errors.INVALID_PARAMS, message: "`#{path}` is already a file" })
 
 
    if await isDir( path )

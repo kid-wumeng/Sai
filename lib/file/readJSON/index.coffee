@@ -4,7 +4,7 @@ readText = require('../readText')
 
 
 
-module.exports = ( path, encoding = 'utf8' ) ->
+module.exports = ( path, encoding ) ->
 
 
    ########################################

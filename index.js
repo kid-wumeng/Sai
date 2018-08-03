@@ -13,10 +13,10 @@ module.exports = sai = require('./lib')
    try {
 
 
-      text = await sai.readText('./test/file/_assets/test.txt')
-      await sai.writeText('./test/file/_assets/test2.txt', text)
+      data = await sai.readJSON('./test/file/_assets/test.json')
+      await sai.writeJSON('./test/file/_assets/test2.json', ['a', 1, {name: 'kid'}, undefined])
 
-      console.log(text);
+      console.log(data);
 
 
    } catch (error) {

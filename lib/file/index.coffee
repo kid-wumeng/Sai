@@ -12,3 +12,4 @@ module.exports =
    # → read
    writeFile: require('./writeFile')
    writeText: require('./writeText')
+   writeJSON: require('./writeJSON')

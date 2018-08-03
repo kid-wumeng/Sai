@@ -1,10 +1,11 @@
 module.exports =
 
    # → Base
-   isFile:  require('./isFile')
-   isDir:   require('./isDir')
-   readDir: require('./readDir')
-   mime:    require('./mime')
+   isFile:    require('./isFile')
+   isDir:     require('./isDir')
+   readDir:   require('./readDir')
+   ensureDir: require('./ensureDir')
+   mime:      require('./mime')
 
    # → read
    readFile: require('./readFile')

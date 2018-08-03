@@ -13,9 +13,7 @@ module.exports = sai = require('./lib')
    try {
 
 
-      children = await sai.readDir('./test/file/_assets/', { mode: 'data' })
-
-      console.log(children);
+      await sai.ensureDir('./test/file/_assets/test.txt')
 
 
    } catch (error) {

@@ -7,7 +7,6 @@ isObject = require('../../is/isObject')
 isDir    = require('../isDir')
 
 
-
 module.exports = ( path, options = {} ) ->
 
 

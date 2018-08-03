@@ -5,15 +5,14 @@ isString = require('../../is/isString')
 
 
 
-module.exports = ( path, encoding = 'utf8' ) ->
+module.exports = ( path, text = '', encoding = 'utf8' ) ->
 
 
    ########################################
    #|
    #|   @params {string} path
+   #|   @params {string} text
    #|   @params {string} [encoding]
-   #|
-   #|   @return {string} text
    #|
    ########################################
 
@@ -21,11 +20,12 @@ module.exports = ( path, encoding = 'utf8' ) ->
    if !isString( path )
       throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string." })
 
+   if !isString( text )
+      throw error({ name: errors.INVALID_PARAMS, message: "`text` should be a string." })
+
    if encoding and !isString( encoding )
       throw error({ name: errors.INVALID_PARAMS, message: "`encoding` should be a string." })
 
 
-   try
-      return await fs.readFileAsync( path, encoding )
-   catch errorRaw
-      throw error({ name: errors.FILE_NOT_FOUND, message: "`#{path}` not found or isn't a file." })
+   await fs.ensureFileAsync( path )
+   await fs.writeFileAsync( path, text, encoding )

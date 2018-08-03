@@ -13,10 +13,10 @@ module.exports = sai = require('./lib')
    try {
 
 
-      file = await sai.readFile('./test/file/_assets/test.png')
-      await sai.writeFile('./test/file/_assets/test2.png', file)
+      text = await sai.readText('./test/file/_assets/test.txt')
+      await sai.writeText('./test/file/_assets/test2.txt', text)
 
-      console.log(file);
+      console.log(text);
 
 
    } catch (error) {

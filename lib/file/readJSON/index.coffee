@@ -10,6 +10,8 @@ module.exports = ( path, encoding = 'utf8' ) ->
    ########################################
    #|
    #|   @params {string} path
+   #|   @params {string} [encoding]
+   #|
    #|   @return {object} json
    #|
    ########################################

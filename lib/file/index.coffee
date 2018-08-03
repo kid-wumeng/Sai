@@ -3,6 +3,7 @@ module.exports =
    # → Base
    isFile: require('./isFile')
    isDir:  require('./isDir')
+   mime:   require('./mime')
 
    # → read
    readFile: require('./readFile')

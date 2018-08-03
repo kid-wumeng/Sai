@@ -13,10 +13,9 @@ module.exports = sai = require('./lib')
    try {
 
 
-      data = await sai.readJSON('./test/file/_assets/test.json')
-      await sai.writeJSON('./test/file/_assets/test2.json', ['a', 1, {name: 'kid'}, undefined])
+      data = await sai.readFile('./test/file/_assets/test.png')
 
-      console.log(data);
+      console.log(sai.mime(''));
 
 
    } catch (error) {

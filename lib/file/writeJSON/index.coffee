@@ -17,10 +17,10 @@ module.exports = ( path, data, encoding ) ->
 
 
    if !isObject(data)
-      throw error({
-         name: errors.INVALID_PARAMS
-         message: "`data` should be a object."
-      })
+       throw error({
+          name: errors.INVALID_PARAMS
+          message: "`data` should be a object."
+       })
 
 
    text = JSON.stringify(data, null, 4)

@@ -13,9 +13,9 @@ module.exports = sai = require('./lib')
    try {
 
 
-      data = await sai.readFile('./test/file/_assets/test.png')
+      children = await sai.readDir('./test/file/_assets/', { mode: 'data' })
 
-      console.log(sai.mime(''));
+      console.log(children);
 
 
    } catch (error) {

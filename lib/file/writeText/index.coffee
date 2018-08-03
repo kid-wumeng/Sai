@@ -23,7 +23,7 @@ module.exports = ( path, text = '', encoding = 'utf8' ) ->
    if !isString( text )
       throw error({ name: errors.INVALID_PARAMS, message: "`text` should be a string" })
 
-   if encoding and !isString( encoding )
+   if encoding? and !isString( encoding )
       throw error({ name: errors.INVALID_PARAMS, message: "`encoding` should be a string" })
 
 

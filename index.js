@@ -13,7 +13,7 @@ module.exports = sai = require('./lib')
    try {
 
 
-      await sai.ensureDir('./test/file/_assets/test.txt')
+      await sai.emptyDir('./test/file/_assets/test.json')
 
 
    } catch (error) {

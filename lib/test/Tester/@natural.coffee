@@ -18,7 +18,7 @@ module.exports = ( error ) ->
 
    error ?= ({ data, path, name }) =>
       name: errors.INVALID_DATA
-      message: "Sorry, the #{_displayName(name)} should be a natural number,
+      message: "Sorry, the #{_displayName(name)} should be a natural-number,
                 current is #{_displayData(data)}"
 
 

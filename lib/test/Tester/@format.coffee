@@ -22,13 +22,13 @@ module.exports = ( format, error ) ->
 
 
    if !isString(format)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`format` should be a string." })
+      throw error_({ name: errors.INVALID_PARAMS, message: "`format` should be a string" })
 
    if !is_(@_schema, Schema)
-      throw error_({ name: errors.INVALID_PARAMS, message: "the tester has not a schema." })
+      throw error_({ name: errors.INVALID_PARAMS, message: "the tester has not a schema" })
 
    if !isFunction(check = @_schema.format(format))
-      throw error_({ name: errors.INVALID_PARAMS, message: "the format '#{format}' is not found." })
+      throw error_({ name: errors.INVALID_PARAMS, message: "the format '#{format}' is not found" })
 
 
    error ?= ({ data, path, name, format }) =>

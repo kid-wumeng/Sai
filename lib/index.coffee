@@ -3,4 +3,5 @@ module.exports = Object.assign({},
    require('./is')
    require('./test')
    require('./file')
+   require('./code')
 )

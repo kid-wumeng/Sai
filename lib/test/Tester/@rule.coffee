@@ -32,7 +32,7 @@ module.exports = ( rule, error ) ->
 
 
    try
-      check(@_data)
+      @_data? and check(@_data)
    catch errorInRule
       if error
          throw error_(error, {

@@ -27,6 +27,6 @@ suite '~is', ->
    require('./isMax')
 
    # → is String-Format
-   require('./isSpace')
    require('./isEmail')
    require('./isURL')
+   require('./isSpace')

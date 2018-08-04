@@ -1,4 +1,4 @@
 suite '~code', ->
 
-   # → Bcrypt
    require('./bcrypt')
+   require('./jwt')

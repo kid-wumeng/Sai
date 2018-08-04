@@ -13,12 +13,10 @@ module.exports = sai = require('./lib')
    try {
 
 
-      salt = await sai.bcrypt.salt(10)
-      console.log(salt);
-      hash = await sai.bcrypt.hash('12345678', salt)
-      console.log(hash);
-      result = await sai.bcrypt.compare('12345678', hash)
-      console.log(result);
+      token = sai.jwt.encode({id: 1, name: 'kid'}, 'secret')
+      data = sai.jwt.verify(token, 'secret')
+
+      console.log(data);
 
 
    } catch (error) {

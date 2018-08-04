@@ -1,6 +1,6 @@
 suite "bcrypt", ->
 
-   test "encode & compare", ->
+   test "bcrypt", ->
 
       salt   = await sai.bcrypt.salt(10)
       hash   = await sai.bcrypt.hash('12345678', salt)

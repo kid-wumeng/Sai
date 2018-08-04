@@ -1,6 +1,7 @@
 errors       = require('../../errors')
 error_       = require('../../core/error')
-isArray      = require('../../is/isArray')
+contain      = require('../../core/contain')
+isArrayLike  = require('../../is/isArrayLike')
 _displayData = require('./_displayData')
 _displayName = require('./_displayName')
 
@@ -10,16 +11,16 @@ module.exports = ( enums, error ) ->
 
    ########################################
    #|
-   #|   @params {Array} enums
-   #|   @params {*}    [error]
+   #|   @params {Array-like} enums
+   #|   @params {*}         [error]
    #|
    #|   @return {sai.Tester} @
    #|
    ########################################
 
 
-   if !isArray(enums)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`enums` should be an Array" })
+   if !isArrayLike(enums)
+      throw error_({ name: errors.INVALID_PARAMS, message: "`enums` should be an Array-like" })
 
 
    error ?= ({ data, path, name, enums }) =>
@@ -28,7 +29,7 @@ module.exports = ( enums, error ) ->
                 current is #{_displayData(data)}"
 
 
-   if @_data? and !enums.includes(@_data)
+   if @_data? and !contain(enums, @_data)
       throw error_(error, {
          data: @_data
          path: @_path

@@ -13,7 +13,7 @@ module.exports = sai = require('./lib')
    try {
 
 
-      await sai.remove('./test/file/aaaaa')
+      // await sai.remove('./test/file/aaaaa')
 
 
    } catch (error) {

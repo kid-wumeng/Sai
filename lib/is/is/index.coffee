@@ -6,8 +6,8 @@ module.exports = ( value, type ) ->
 
    ########################################
    #|
-   #|   @params {*}                  value
-   #|   @params {function, nil, NaN} type
+   #|   @params {*} value
+   #|   @params {*} type
    #|
    #|   @return {boolean} result
    #|

@@ -71,10 +71,12 @@ module.exports = class DB
       @_cols   = {}
 
 
-      @uri     = require('./@uri')
-      @connect = require('./@connect')
-      @col     = require('./@col')
-      @raw     = require('./@raw')
+      @uri      = require('./@uri')
+      @connect  = require('./@connect')
+      @col      = require('./@col')
+      @raw      = require('./@raw')
+      @isAutoID = require('./@isAutoID')
+      @makeIDs  = require('./@makeIDs')
 
 
       @_ensureAutoIDStore = require('./@_ensureAutoIDStore')

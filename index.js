@@ -14,16 +14,20 @@ module.exports = sai = require('./lib')
 
 
       db = new sai.mongo.DB({
-
+         autoID: true,
+         autoIDStore: 'xxx'
       })
 
       await db.connect()
 
       db.col('users').hide('id')
-      users = await db.col('users').findOneAndUpdate({}, {age: 333})
+      users = await db.col('users').insertMany([
+         {name: 'ark4', id: 6},
+         {name: 'ark5'},
+         {name: 'ark6'}
+      ])
 
       console.log(users);
-
 
 
    } catch (error) {

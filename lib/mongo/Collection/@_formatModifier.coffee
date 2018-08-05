@@ -19,7 +19,9 @@ module.exports = ( modifier = {} ) ->
    modifier = clone(modifier)
 
    modifier.$set ?= {}
-   modifier.$set.updateDate = new Date()
+
+   if modifier.$set.updateDate is undefined
+      modifier.$set.updateDate = new Date()
 
    for name, value of modifier
       if name[0] isnt '$'

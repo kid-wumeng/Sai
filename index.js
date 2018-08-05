@@ -21,11 +21,7 @@ module.exports = sai = require('./lib')
       await db.connect()
 
       db.col('users').hide('id')
-      users = await db.col('users').insertMany([
-         {name: 'ark4', id: 6},
-         {name: 'ark5'},
-         {name: 'ark6'}
-      ])
+      users = await db.col('users').deleteMany()
 
       console.log(users);
 

@@ -43,6 +43,8 @@ module.exports = class Collection
       @insertMany       = require('./@insertMany')
       @updateOne        = require('./@updateOne')
       @updateMany       = require('./@updateMany')
+      @deleteOne        = require('./@deleteOne')
+      @deleteMany       = require('./@deleteMany')
       @hide             = require('./@hide')
 
 

@@ -45,7 +45,7 @@ module.exports = class Collection
       @updateMany       = require('./@updateMany')
       @deleteOne        = require('./@deleteOne')
       @deleteMany       = require('./@deleteMany')
-      @aggregate        = require('./aggregate')
+      @aggregate        = require('./@aggregate')
       @hide             = require('./@hide')
 
 

@@ -73,6 +73,8 @@ module.exports = class DB
 
       @uri      = require('./@uri')
       @connect  = require('./@connect')
+      @close    = require('./@close')
+      @drop     = require('./@drop')
       @col      = require('./@col')
       @raw      = require('./@raw')
       @isAutoID = require('./@isAutoID')

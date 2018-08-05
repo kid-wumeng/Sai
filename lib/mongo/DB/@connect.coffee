@@ -1,7 +1,7 @@
 mongodb  = require('mongodb')
 errors   = require('../../errors')
 error    = require('../../core/error')
-isObject = require('../../is/isObject')
+isString = require('../../is/isString')
 
 
 module.exports = ->
@@ -21,6 +21,9 @@ module.exports = ->
       await @_ensureAutoIDStore()
 
    catch message
-      throw error({ name: errors.MONGO_DB_CONNECT_FAIL, message })
+      if isString(message)
+         throw error({ name: errors.MONGO_DB_CONNECT_FAIL, message })
+      else
+         throw message
 
    return

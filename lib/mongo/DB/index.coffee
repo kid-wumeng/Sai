@@ -68,6 +68,7 @@ module.exports = class DB
 
       @_client = null
       @_db     = null
+      @_cols   = {}
 
 
       @uri     = require('./@uri')

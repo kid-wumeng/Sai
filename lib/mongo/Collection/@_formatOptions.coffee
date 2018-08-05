@@ -66,7 +66,7 @@ _formatSkipAndPageAndSize = ( options, rawOptions ) ->
    if !isN( skip )
       throw error({ name: errors.INVALID_PARAMS, message: "`options.skip` should be a natural-number" })
 
-   rawOptions.kip  = skip + ( page - 1 ) * size
+   rawOptions.skip  = skip + ( page - 1 ) * size
    rawOptions.limit = size
 
 
@@ -77,6 +77,7 @@ _formatPickAndOmitAndHide = ( options, rawOptions ) ->
    pick = options.pick ? []
    omit = options.omit ? []
    hide = options.hide ? false
+
 
    if !isArray( pick )
       throw error({ name: errors.INVALID_PARAMS, message: "`options.pick` should be an Array" })
@@ -90,12 +91,18 @@ _formatPickAndOmitAndHide = ( options, rawOptions ) ->
    if pick.length and omit.length
       throw error({ name: errors.INVALID_PARAMS, message: "Can't set `options.pick` and `options.omit` at the same time" })
 
+
    if !hide and !pick.length and @_hides.length
       omit = omit.concat(@_hides)
 
+
    if pick.length
-      rawOptions.projection = pick.join(' ')
+      rawOptions.projection = {}
+      for name in pick
+          rawOptions.projection[name] = 1
+
 
    if omit.length
-      omit = omit.map (name) => '-' + name
-      rawOptions.projection = omit.join(' ')
+      rawOptions.projection = {}
+      for name in omit
+          rawOptions.projection[name] = 0

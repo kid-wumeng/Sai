@@ -31,6 +31,7 @@ module.exports = class Collection
 
       @findOne = require('./@findOne')
       @find    = require('./@find')
+      @count   = require('./@count')
       @hide    = require('./@hide')
 
       @_formatQueries = require('./@_formatQueries')

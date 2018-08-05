@@ -19,11 +19,10 @@ module.exports = sai = require('./lib')
 
       await db.connect()
 
-      col = db.col('users')
+      db.col('users').hide('id')
+      users = await db.col('users').find()
 
-      console.log(await col.findOne({}, {
-         desc: true
-      }));
+      console.log(users);
 
 
 

@@ -13,10 +13,18 @@ module.exports = sai = require('./lib')
    try {
 
 
-      token = sai.jwt.encode({id: 1, name: 'kid'}, 'secret')
-      data = sai.jwt.verify(token, 'secret')
+      db = new sai.mongo.DB({
 
-      console.log(data);
+      })
+
+      await db.connect()
+
+      col = db.col('users')
+
+      console.log(await col.findOne({}, {
+         desc: true
+      }));
+
 
 
    } catch (error) {

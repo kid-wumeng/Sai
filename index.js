@@ -20,7 +20,7 @@ module.exports = sai = require('./lib')
       await db.connect()
 
       db.col('users').hide('id')
-      users = await db.col('users').find()
+      users = await db.col('users').updateMany({}, {age: 222})
 
       console.log(users);
 

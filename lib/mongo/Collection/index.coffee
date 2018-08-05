@@ -29,10 +29,13 @@ module.exports = class Collection
       @_col   = db.raw().collection(name)
       @_hides = []
 
-      @findOne = require('./@findOne')
-      @find    = require('./@find')
-      @count   = require('./@count')
-      @hide    = require('./@hide')
+      @findOne    = require('./@findOne')
+      @find       = require('./@find')
+      @count      = require('./@count')
+      @updateOne  = require('./@updateOne')
+      @updateMany = require('./@updateMany')
+      @hide       = require('./@hide')
 
-      @_formatQueries = require('./@_formatQueries')
-      @_formatOptions = require('./@_formatOptions')
+      @_formatQueries  = require('./@_formatQueries')
+      @_formatOptions  = require('./@_formatOptions')
+      @_formatModifier = require('./@_formatModifier')

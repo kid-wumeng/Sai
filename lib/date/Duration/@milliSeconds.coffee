@@ -2,7 +2,7 @@ module.exports = ->
 
    #######################################
    #|
-   #|   @return {int ≥ 0} allMilliSeconds
+   #|   @return {int ≥ 0} milliSeconds
    #|
    ########################################
 

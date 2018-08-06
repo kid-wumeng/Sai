@@ -6,4 +6,4 @@ module.exports = ->
    #|
    ########################################
 
-   return parseInt(@allMilliSeconds() / 1000 / 60 / 60 / 24)
+   return parseInt(@hours(true) / 24)

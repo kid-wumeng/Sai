@@ -25,7 +25,10 @@ suite "Duration", ->
 
    test "milliSeconds()", -> duration.milliSeconds().should.eql(68060436877)
 
-   # test "milliSeconds",    -> duration.milliSeconds().should.eql(877)
-   # test "seconds",         -> duration.seconds().should.eql(36)
-   # test "minutes",         -> duration.minutes().should.eql(40)
-   # test "hours",           -> duration.hours().should.eql(17)
+   test "yearsBit()",      -> duration.yearsBit().should.eql(2)
+   test "monthsBit()",     -> duration.monthsBit().should.eql(1)
+   test "daysBit()",       -> duration.daysBit().should.eql(27)
+   test "hoursBit",        -> duration.hoursBit().should.eql(17)
+   test "minutesBit",      -> duration.minutesBit().should.eql(40)
+   test "secondsBit",      -> duration.secondsBit().should.eql(36)
+   test "milliSecondsBit", -> duration.milliSecondsBit().should.eql(877)

@@ -19,7 +19,7 @@ module.exports = sai = require('./lib')
 
       duration = new sai.Duration(from, to)
 
-      console.log(typeof duration.allMinutes(true).toFixed(2));
+      console.log(duration.monthsBit());
 
 
    } catch (error) {

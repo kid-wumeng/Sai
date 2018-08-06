@@ -4,11 +4,12 @@ error     = require('../../core/error')
 isBoolean = require('../../is/isBoolean')
 
 
-module.exports = ( float = false )->
+module.exports = ( float = false ) ->
 
    #######################################
    #|
-   #|   @return {number ≥ 0} allMinutes
+   #|   @params {boolean}     float
+   #|   @return {number ≥ 0} minutes
    #|
    ########################################
 

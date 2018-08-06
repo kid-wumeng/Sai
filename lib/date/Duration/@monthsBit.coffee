@@ -2,8 +2,8 @@ module.exports = ->
 
    #######################################
    #|
-   #|   @return {int ≥ 0} seconds
+   #|   @return {int ≥ 0} months
    #|
    ########################################
 
-   return parseInt(@seconds(true) % 60)
+   return parseInt(@months(true) % 12)

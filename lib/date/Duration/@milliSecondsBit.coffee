@@ -6,4 +6,4 @@ module.exports = ->
    #|
    ########################################
 
-   return @allMilliSeconds() % 1000
+   return @milliSeconds() % 1000

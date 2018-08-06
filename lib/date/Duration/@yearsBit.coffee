@@ -2,11 +2,8 @@ module.exports = ->
 
    #######################################
    #|
-   #|   @return {int ≥ 0} seconds
+   #|   @return {int ≥ 0} years
    #|
    ########################################
 
-   fromTime = @_from.getTime()
-   toTime   = @_to.getTime()
-
-   return toTime - fromYear
+   return @years()

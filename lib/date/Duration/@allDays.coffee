@@ -1,9 +1,21 @@
-module.exports = ->
+moment    = require('moment')
+errors    = require('../../errors')
+error     = require('../../core/error')
+isBoolean = require('../../is/isBoolean')
+
+
+module.exports = ( float = false )->
 
    #######################################
    #|
-   #|   @return {int ≥ 0} allDays
+   #|   @return {number ≥ 0} allDays
    #|
    ########################################
 
-   return Math.ceil(@allHours() / 24)
+   if !isBoolean( float )
+      throw error({ name: errors.INVALID_PARAMS, message: "`float` should be a boolean" })
+
+   from = moment(@_from)
+   to   = moment(@_to)
+
+   return to.diff(from, 'days', float)

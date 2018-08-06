@@ -13,12 +13,12 @@ module.exports = sai = require('./lib')
    try {
 
 
-      from = new Date(2018, 2, 20, 23, 2)
-      to   = new Date(2018, 2, 20, 23, 2)
+      from = new Date(2016, 3, 15, 12, 35, 8, 789)
+      to   = new Date(2018, 5, 12, 6, 15, 45, 666)
 
       duration = new sai.Duration(from, to)
 
-      console.log(duration.allYears());
+      console.log(typeof duration.allMinutes(true).toFixed(2));
 
 
    } catch (error) {

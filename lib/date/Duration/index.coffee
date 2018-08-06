@@ -33,10 +33,16 @@ module.exports = class Duration
       @_to   = to
 
 
-      @allMilliSeconds = require('./@allMilliSeconds')
-      @allSeconds      = require('./@allSeconds')
-      @allMinutes      = require('./@allMinutes')
-      @allHours        = require('./@allHours')
-      @allDays         = require('./@allDays')
-      @allMonths       = require('./@allMonths')
       @allYears        = require('./@allYears')
+      @allMonths       = require('./@allMonths')
+      @allDays         = require('./@allDays')
+      @allHours        = require('./@allHours')
+      @allMinutes      = require('./@allMinutes')
+      @allSeconds      = require('./@allSeconds')
+      @allMilliSeconds = require('./@allMilliSeconds')
+
+      # @milliSeconds    = require('./@milliSeconds')
+      # @seconds         = require('./@seconds')
+      # @minutes         = require('./@minutes')
+      # @hours           = require('./@hours')
+      # @years           = require('./@years')

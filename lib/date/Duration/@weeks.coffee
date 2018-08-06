@@ -9,7 +9,7 @@ module.exports = ( float = false ) ->
    ########################################
    #|
    #|   @params {boolean}     float
-   #|   @return {number ≥ 0} days
+   #|   @return {number ≥ 0} weeks
    #|
    ########################################
 
@@ -19,4 +19,4 @@ module.exports = ( float = false ) ->
    from = moment(@_from)
    to   = moment(@_to)
 
-   return to.diff(from, 'days', float)
+   return to.diff(from, 'weeks', float)

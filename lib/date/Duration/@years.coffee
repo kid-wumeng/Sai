@@ -6,7 +6,7 @@ isBoolean = require('../../is/isBoolean')
 
 module.exports = ( float = false ) ->
 
-   #######################################
+   ########################################
    #|
    #|   @params {boolean}     float
    #|   @return {number ≥ 0} years

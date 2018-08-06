@@ -1,5 +1,6 @@
 module.exports =
 
+   date:        require('./date')
    year:        require('./year')
    month:       require('./month')
    day:         require('./day')

@@ -6,4 +6,4 @@ module.exports = ->
    #|
    ########################################
 
-   return parseInt(@seconds(true) % 60)
+   return parseInt(@weeks(true) % 7)

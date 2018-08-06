@@ -40,6 +40,7 @@ module.exports = class Duration
       @minutes      = require('./@minutes')
       @seconds      = require('./@seconds')
       @milliSeconds = require('./@milliSeconds')
+      @weeks        = require('./@weeks')
 
       @yearsBit        = require('./@yearsBit')
       @monthsBit       = require('./@monthsBit')
@@ -48,3 +49,4 @@ module.exports = class Duration
       @minutesBit      = require('./@minutesBit')
       @secondsBit      = require('./@secondsBit')
       @milliSecondsBit = require('./@milliSecondsBit')
+      @weeksBit        = require('./@weeksBit')

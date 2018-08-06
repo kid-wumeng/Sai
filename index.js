@@ -13,7 +13,7 @@ module.exports = sai = require('./lib')
    try {
 
 
-      value = sai.ms('666 day')
+      value = sai.ms('5 days')
       console.log(value);
 
 

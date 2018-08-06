@@ -13,7 +13,7 @@ module.exports = sai = require('./lib')
    try {
 
 
-      value = sai.ms('5 days')
+      value = sai.formatDate(new Date, 'YYYY-MM-DD HH:II:SS')
       console.log(value);
 
 

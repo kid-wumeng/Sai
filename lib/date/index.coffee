@@ -10,3 +10,4 @@ module.exports =
    week:        require('./week')
    time:        require('./time')
    ms:          require('./ms')
+   formatDate:  require('./formatDate')

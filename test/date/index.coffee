@@ -10,3 +10,4 @@ suite '~date', ->
    require('./week')
    require('./time')
    require('./ms')
+   require('./formatDate')

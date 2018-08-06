@@ -11,3 +11,4 @@ suite '~date', ->
    require('./time')
    require('./ms')
    require('./formatDate')
+   require('./Duration')

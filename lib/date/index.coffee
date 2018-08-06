@@ -11,3 +11,4 @@ module.exports =
    time:        require('./time')
    ms:          require('./ms')
    formatDate:  require('./formatDate')
+   Duration:    require('./Duration')

@@ -5,25 +5,25 @@ suite "Duration", ->
 
    duration = new sai.Duration(from, to)
 
-   test "allYears()",        -> duration.allYears().should.eql(2)
-   test "allYears(true)",    -> duration.allYears(true).toFixed(2).should.eql('2.16')
+   test "years()",        -> duration.years().should.eql(2)
+   test "years(true)",    -> duration.years(true).toFixed(2).should.eql('2.16')
 
-   test "allMonths()",       -> duration.allMonths().should.eql(25)
-   test "allMonths(true)",   -> duration.allMonths(true).toFixed(2).should.eql('25.89')
+   test "months()",       -> duration.months().should.eql(25)
+   test "months(true)",   -> duration.months(true).toFixed(2).should.eql('25.89')
 
-   test "allDays()",         -> duration.allDays().should.eql(787)
-   test "allDays(true)",     -> duration.allDays(true).toFixed(2).should.eql('787.74')
+   test "days()",         -> duration.days().should.eql(787)
+   test "days(true)",     -> duration.days(true).toFixed(2).should.eql('787.74')
 
-   test "allHours()",        -> duration.allHours().should.eql(18905)
-   test "allHours(true)",    -> duration.allHours(true).toFixed(2).should.eql('18905.68')
+   test "hours()",        -> duration.hours().should.eql(18905)
+   test "hours(true)",    -> duration.hours(true).toFixed(2).should.eql('18905.68')
 
-   test "allMinutes()",      -> duration.allMinutes().should.eql(1134340)
-   test "allMinutes(true)",  -> duration.allMinutes(true).toFixed(2).should.eql('1134340.61')
+   test "minutes()",      -> duration.minutes().should.eql(1134340)
+   test "minutes(true)",  -> duration.minutes(true).toFixed(2).should.eql('1134340.61')
 
-   test "allSeconds()",      -> duration.allSeconds().should.eql(68060436)
-   test "allSeconds(true)",  -> duration.allSeconds(true).toFixed(2).should.eql('68060436.88')
+   test "seconds()",      -> duration.seconds().should.eql(68060436)
+   test "seconds(true)",  -> duration.seconds(true).toFixed(2).should.eql('68060436.88')
 
-   test "allMilliSeconds()", -> duration.allMilliSeconds().should.eql(68060436877)
+   test "milliSeconds()", -> duration.milliSeconds().should.eql(68060436877)
 
    # test "milliSeconds",    -> duration.milliSeconds().should.eql(877)
    # test "seconds",         -> duration.seconds().should.eql(36)

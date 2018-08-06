@@ -2,8 +2,8 @@ module.exports = ->
 
    #######################################
    #|
-   #|   @return {int ≥ 0} allMilliSeconds
+   #|   @return {int ≥ 0} milliSeconds
    #|
    ########################################
 
-   return @_to.getTime() - @_from.getTime()
+   return @allMilliSeconds() % 1000

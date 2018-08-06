@@ -1,5 +1,6 @@
 require('coffeescript/register')
 require('colors')
+moment = require('moment')
 _ = require('lodash')
 
 

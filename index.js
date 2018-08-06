@@ -13,18 +13,8 @@ module.exports = sai = require('./lib')
    try {
 
 
-      db = new sai.mongo.DB({
-         autoID: true,
-         autoIDStore: 'xxx'
-      })
-
-      await db.connect()
-      await db.drop()
-
-      db.col('users').hide('id')
-      users = await db.col('users').insertOne({ name: 'kid' })
-
-      console.log(users);
+      value = sai.time(new Date)
+      console.log(value);
 
 
    } catch (error) {

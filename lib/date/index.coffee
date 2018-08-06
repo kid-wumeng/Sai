@@ -9,3 +9,4 @@ module.exports =
    milliSecond: require('./milliSecond')
    week:        require('./week')
    time:        require('./time')
+   ms:          require('./ms')

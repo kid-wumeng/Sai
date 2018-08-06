@@ -1,3 +1,4 @@
-suite "month", ->
+suite "ms", ->
 
-   test "month(date)", -> sai.month(new Date(2018, 3, 12, 6, 15, 45, 666)).should.eql(4)
+   test "ms(number)", -> sai.ms(5 * 24 * 60 * 60 * 1000).should.eql('5 days')
+   test "ms(string)", -> sai.ms('5 days').should.eql(5 * 24 * 60 * 60 * 1000)

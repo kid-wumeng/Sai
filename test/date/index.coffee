@@ -9,3 +9,4 @@ suite '~date', ->
    require('./milliSecond')
    require('./week')
    require('./time')
+   require('./ms')

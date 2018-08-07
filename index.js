@@ -15,11 +15,11 @@ module.exports = sai = require('./lib')
 
 
       client = new sai.http.Client({
-         urlBase: 'http://www.baidu.com/'
+         urlBase: 'http://www.baidu.com'
       })
 
-      res = await client.send()
-      console.log(res.status);
+      res = await client.post('s', {wd: 'hjk'})
+      console.log(res.data);
 
 
    } catch (error) {

@@ -31,5 +31,10 @@ module.exports = class Client
          throw error({ name: errors.INVALID_PARAMS, message: "`options.urlBase` should be a string" })
 
 
-      @url  = require('./@url')
-      @send = require('./@send')
+      @url    = require('./@url')
+      @send   = require('./@send')
+      @get    = require('./@get')
+      @post   = require('./@post')
+      @put    = require('./@put')
+      @patch  = require('./@patch')
+      @delete = require('./@delete')

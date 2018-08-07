@@ -1,13 +1,13 @@
-errors    = require('../../errors')
-error     = require('../../core/error')
-isObject  = require('../../is/isObject')
-isString  = require('../../is/isString')
+errors   = require('../../errors')
+error    = require('../../core/error')
+isObject = require('../../is/isObject')
+isString = require('../../is/isString')
 
 
 module.exports = class Client
 
 
-   constructor: ( options = {} )->
+   constructor: ( options = {} ) ->
 
 
       ########################################

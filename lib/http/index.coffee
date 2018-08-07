@@ -6,4 +6,6 @@ module.exports =
       put:    require('./put')
       patch:  require('./patch')
       delete: require('./delete')
+
       Client: require('./Client')
+      Server: require('./Server')

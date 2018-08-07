@@ -14,8 +14,8 @@ module.exports = sai = require('./lib')
    try {
 
 
-      res = await sai.http.get('http://www.baidu.com/s', {wd: 'hjk'})
-      console.log(res.data);
+      server = new sai.http.Server
+      server.listen(5555)
 
 
    } catch (error) {

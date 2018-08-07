@@ -19,8 +19,7 @@ module.exports = sai = require('./lib')
 
       duration = new sai.Duration(from, to)
 
-      console.log(duration.weeks());
-      console.log(duration.weeksBit());
+      console.log(duration.formatBit('剩余 mm 月 dd 天 高考'));
 
 
    } catch (error) {

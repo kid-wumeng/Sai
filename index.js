@@ -14,12 +14,12 @@ module.exports = sai = require('./lib')
    try {
 
 
-      from = new Date(2016, 3, 7, 12, 35, 8, 789)
-      to   = new Date(2018, 5, 12, 6, 15, 45, 666)
+      client = new sai.http.Client({
+         urlBase: 'http://www.baidu.com/'
+      })
 
-      duration = sai.between(from, to)
-
-      console.log(duration.formatBit('剩余 mm 月 dd 天 高考'));
+      res = await client.send()
+      console.log(res.status);
 
 
    } catch (error) {

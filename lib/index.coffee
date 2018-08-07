@@ -4,6 +4,7 @@ module.exports = Object.assign({},
    require('./test')
    require('./date')
    require('./file')
+   require('./http')
    require('./code')
    require('./mongo')
 )

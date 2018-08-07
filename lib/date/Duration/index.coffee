@@ -32,7 +32,6 @@ module.exports = class Duration
       @_from = from
       @_to   = to
 
-
       @years        = require('./@years')
       @months       = require('./@months')
       @days         = require('./@days')

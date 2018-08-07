@@ -17,7 +17,7 @@ module.exports = sai = require('./lib')
       from = new Date(2016, 3, 7, 12, 35, 8, 789)
       to   = new Date(2018, 5, 12, 6, 15, 45, 666)
 
-      duration = new sai.Duration(from, to)
+      duration = sai.between(from, to)
 
       console.log(duration.formatBit('剩余 mm 月 dd 天 高考'));
 

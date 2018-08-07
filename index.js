@@ -14,11 +14,7 @@ module.exports = sai = require('./lib')
    try {
 
 
-      client = new sai.http.Client({
-         urlBase: 'http://www.baidu.com'
-      })
-
-      res = await client.post('s', {wd: 'hjk'})
+      res = await sai.http.get('http://www.baidu.com/s', {wd: 'hjk'})
       console.log(res.data);
 
 

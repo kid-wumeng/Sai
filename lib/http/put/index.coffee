@@ -1,8 +1,11 @@
-module.exports = ( path, data, config ) ->
+Client = require('../Client')
+
+
+module.exports = ( url, data, config ) ->
 
    #######################################
    #|
-   #|   @params {string} path
+   #|   @params {string} url
    #|   @params {object} data
    #|   @params {object} config
    #|
@@ -10,4 +13,6 @@ module.exports = ( path, data, config ) ->
    #|
    ########################################
 
-   return await @send({ method: 'get', path, data, config })
+   client = new Client
+
+   return await client.put( url, data, config )

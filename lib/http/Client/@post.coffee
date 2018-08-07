@@ -2,10 +2,12 @@ module.exports = ( path, data, config ) ->
 
    #######################################
    #|
-   #|   @params {string} options.path
-   #|   @params {object} options.data
-   #|   @params {object} options.config
+   #|   @params {string} path
+   #|   @params {object} data
+   #|   @params {object} config
+   #|
+   #|   @return {object} response
    #|
    ########################################
 
-   return @send({ method: 'post', path, data, config })
+   return await @send({ method: 'post', path, data, config })

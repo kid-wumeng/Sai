@@ -17,6 +17,8 @@ module.exports = ( options = {} ) ->
    #|           {object} options.data
    #|           {object} options.config
    #|
+   #|   @return {object} response
+   #|
    ########################################
 
 
@@ -31,16 +33,16 @@ module.exports = ( options = {} ) ->
 
 
    if !isString( method )
-      throw error({ name: errors.INVALID_PARAMS, message: "`options.method` should be a string" })
+      throw error({ name: errors.INVALID_PARAMS, message: "`method` should be a string" })
 
    if !isString( path )
-      throw error({ name: errors.INVALID_PARAMS, message: "`options.path` should be a string" })
+      throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string" })
 
    if !isObject( data )
-      throw error({ name: errors.INVALID_PARAMS, message: "`options.data` should be an object" })
+      throw error({ name: errors.INVALID_PARAMS, message: "`data` should be an object" })
 
    if !isObject( config )
-      throw error({ name: errors.INVALID_PARAMS, message: "`options.config` should be an object" })
+      throw error({ name: errors.INVALID_PARAMS, message: "`config` should be an object" })
 
 
    url = @url( path )
@@ -56,4 +58,4 @@ module.exports = ( options = {} ) ->
    options = merge({ method, url, data, params }, config)
 
 
-   return axios(options)
+   return await axios(options)

@@ -15,9 +15,4 @@ module.exports = ( path = '' ) ->
    if !isString( path )
       throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string" })
 
-   base = @_urlBase + '/'
-
-   base = base.replace(/\/+$/, '')
-   path = path.replace(/^\/+/, '')
-
-   return "#{base}/#{path}"
+   return @_urlBase + path

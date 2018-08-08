@@ -2,8 +2,8 @@ axios    = require('axios')
 errors   = require('../../errors')
 error    = require('../../core/error')
 merge    = require('../../core/merge')
-isString = require('../../is/isString')
 isObject = require('../../is/isObject')
+isString = require('../../is/isString')
 
 
 module.exports = ( options = {} ) ->

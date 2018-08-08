@@ -1,10 +1,7 @@
-Koa        = require('koa')
 bodyParser = require('koa-bodyparser')
 cors       = require('koa2-cors')
-Router     = require('koa-router')
 errors     = require('../../errors')
 error      = require('../../core/error')
-merge      = require('../../core/merge')
 isN        = require('../../is/isN')
 
 
@@ -23,9 +20,9 @@ module.exports = ( port = 80 ) ->
 
    # @TODO To handle by opt.cors and more opt.
 
-   # @_app.use(cors())
-   # @_app.use(bodyParser())
-   # @_app.use(@router.routes())
+   @_app.use(cors())
+   @_app.use(bodyParser())
+   @_app.use(@_router.routes())
 
    @_app.listen( port )
 

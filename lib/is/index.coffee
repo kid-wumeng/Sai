@@ -28,6 +28,8 @@ module.exports =
    isMax:           require('./isMax')
 
    # → is String-Format
-   isEmail: require('./isEmail')
-   isURL:   require('./isURL')
-   isSpace: require('./isSpace')
+   isEmail:         require('./isEmail')
+   isURL:           require('./isURL')
+   isBooleanString: require('./isBooleanString')
+   isNumberString:  require('./isNumberString')
+   isSpace:         require('./isSpace')

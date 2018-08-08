@@ -14,27 +14,12 @@ module.exports = sai = require('./lib')
    try {
 
 
-      server = new sai.http.Server({
-         paramCastNumber: true
-      })
+      array = ['a', 'b', 'c']
 
-      server.all('*', async function(data){
-         console.log(111);
-         try{
-            await this.next()
-         }catch(error){
-            return error
-         }
-         console.log(333);
-      })
+      item = sai.randomItem(array, isPop = true)
 
-      server.get(':id', async function(data){
-         await sai.sleep(1000)
-         console.log(222);
-         return 123;
-      })
-
-      server = server.listen(5555)
+      console.log(item);
+      console.log(array);
 
 
    } catch (error) {

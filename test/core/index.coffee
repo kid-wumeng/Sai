@@ -20,6 +20,8 @@ suite '~core', ->
    require('./first')
    require('./last')
    require('./concat')
+   require('./randomItem')
+   require('./deleteItem')
 
    # → String
    require('./match')

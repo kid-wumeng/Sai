@@ -58,12 +58,12 @@ module.exports = class Server
 
 
       @all    = require('./@all')
+      @get    = require('./@get')
+      @post   = require('./@post')
+      @put    = require('./@put')
+      @patch  = require('./@patch')
+      @delete = require('./@delete')
       @listen = require('./@listen')
 
-      # @get    = require('./@get')
-      # @post   = require('./@post')
-      # @put    = require('./@put')
-      # @patch  = require('./@patch')
-      # @delete = require('./@delete')
 
       @_addRoute = require('./@_addRoute')

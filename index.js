@@ -31,7 +31,7 @@ module.exports = sai = require('./lib')
          console.log(333);
       })
 
-      server.all(':id', async function(data){
+      server.get(':id', async function(data){
          await sai.sleep(1000)
          console.log(222);
          return data;

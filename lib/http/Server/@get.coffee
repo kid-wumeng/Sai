@@ -1,13 +1,12 @@
-module.exports = ( path, data, config ) ->
+module.exports = ( path, callback ) ->
 
    #######################################
    #|
-   #|   @params {string} path
-   #|   @params {object} data
-   #|   @params {object} config
+   #|   @params {string}   path
+   #|           {function} callback
    #|
-   #|   @return {object} response
+   #|   @return {sai.http.Server} this
    #|
    ########################################
 
-   return await @send({ method: 'get', path, data, config })
+   return @_addRoute({ method: 'get', path, callback })

@@ -15,10 +15,7 @@ module.exports = sai = require('./lib')
 
 
       server = new sai.http.Server({
-         paramCastBoolean: true,
-         paramCastNumber:  true,
-         queryCastBoolean: true,
-         queryCastNumber:  true
+         paramCastNumber: true
       })
 
       server.all('*', async function(data){
@@ -34,10 +31,10 @@ module.exports = sai = require('./lib')
       server.get(':id', async function(data){
          await sai.sleep(1000)
          console.log(222);
-         return data;
+         return 123;
       })
 
-      server.listen(5555)
+      server = server.listen(5555)
 
 
    } catch (error) {

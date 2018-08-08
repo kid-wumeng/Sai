@@ -12,7 +12,6 @@ module.exports = ( port = 80 ) ->
    #|   Use common middlewares and start server.
    #|
    #|   @params {number} port
-   #|   @return {node.http.Server} server
    #|
    ########################################
 
@@ -25,4 +24,6 @@ module.exports = ( port = 80 ) ->
    @_app.use(bodyParser())
    @_app.use(@_router.routes())
 
-   return @_app.listen( port )
+   @_app.listen( port )
+
+   return

@@ -13,7 +13,8 @@ module.exports = sai = require('./lib')
    try {
 
 
-      await sai.writeJSON('test/file/_assets/test2.json', 'abc')
+      data = await sai.readJSON('test/file/_assets/test2.json')
+      console.log(data);
 
 
    } catch (error) {

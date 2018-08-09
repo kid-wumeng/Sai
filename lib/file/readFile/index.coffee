@@ -6,6 +6,7 @@ isString = require('../../is/isString')
 
 module.exports = ( path ) ->
 
+
    ########################################
    #|
    #|   @params {string} path
@@ -13,8 +14,10 @@ module.exports = ( path ) ->
    #|
    ########################################
 
+
    if !isString( path )
       throw error({ name: errors.INVALID_PARAMS, message: "`path` should be a string" })
+
 
    try
       return await fs.readFileAsync( path )

@@ -10,7 +10,7 @@ module.exports = ( path, encoding ) ->
    #|   @params {string} path
    #|   @params {string} [encoding]
    #|
-   #|   @return {object} data
+   #|   @return {object|boolean|number|string} data
    #|
    ########################################
 

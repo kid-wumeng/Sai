@@ -5,7 +5,6 @@ isString = require('../../is/isString')
 isBuffer = require('../../is/isBuffer')
 
 
-
 module.exports = ( path, file ) ->
 
 

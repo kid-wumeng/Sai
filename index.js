@@ -13,7 +13,7 @@ module.exports = sai = require('./lib')
    try {
 
 
-      await sai.writeYAML('test/file/_assets/test2.yaml', {user: {name: 'kid'}})
+      await sai.writeJSON('test/file/_assets/test2.json', 'abc')
 
 
    } catch (error) {

@@ -4,7 +4,6 @@ error    = require('../../core/error')
 isString = require('../../is/isString')
 
 
-
 module.exports = ( path, text = '', encoding = 'utf8' ) ->
 
 

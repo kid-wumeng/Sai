@@ -18,7 +18,9 @@ module.exports =
    readCSON: require('./readCSON')
    readYAML: require('./readYAML')
 
-   # → read
+   # → write
    writeFile: require('./writeFile')
    writeText: require('./writeText')
    writeJSON: require('./writeJSON')
+   writeCSON: require('./writeCSON')
+   writeYAML: require('./writeYAML')

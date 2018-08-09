@@ -13,8 +13,7 @@ module.exports = sai = require('./lib')
    try {
 
 
-      data = await sai.readYAML('test/file/_assets/test.yaml')
-      console.log(data);
+      await sai.writeYAML('test/file/_assets/test2.yaml', {user: {name: 'kid'}})
 
 
    } catch (error) {

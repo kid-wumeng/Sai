@@ -7,6 +7,7 @@ module.exports =
    isInt:           require('./isInt')
    isN:             require('./isN')
    isID:            require('./isID')
+   isFloat:         require('./isFloat')
    isString:        require('./isString')
    isSymbol:        require('./isSymbol')
    isFunction:      require('./isFunction')

@@ -7,6 +7,7 @@ suite '~is', ->
    require('./isInt')
    require('./isN')
    require('./isID')
+   require('./isFloat')
    require('./isString')
    require('./isSymbol')
    require('./isFunction')

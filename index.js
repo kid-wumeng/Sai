@@ -14,11 +14,9 @@ module.exports = sai = require('./lib')
    try {
 
 
-      array = ['a', 1, 6.4]
+      file = await sai.readFile('./test/file/_assets/test.png')
 
-      sum = sai.sum(array)
-
-      console.log(1.2 - 3.2 + 2.4);
+      console.log(sai.isMIME(file, 'image/jpeg'));
 
 
    } catch (error) {

@@ -27,6 +27,7 @@ module.exports =
    isEmpty:         require('./isEmpty')
    isMin:           require('./isMin')
    isMax:           require('./isMax')
+   isMIME:          require('./isMIME')
 
    # → is String-Format
    isEmail:         require('./isEmail')

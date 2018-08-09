@@ -14,10 +14,7 @@ module.exports = sai = require('./lib')
    try {
 
 
-      file = await sai.readFile('./test/file/_assets/test.png')
-
-      sai.test(file).mime(['image/jpeg', 'image/png'])
-
+      console.log(sai.max(12, 4, -2.6, 3.2));
 
 
    } catch (error) {

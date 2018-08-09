@@ -5,6 +5,10 @@ suite '~core', ->
    require('./equal')
    require('./clone')
 
+   # → Number
+   require('./min')
+   require('./max')
+
    # → Object
    require('./len')
    require('./has')

@@ -6,6 +6,8 @@ module.exports =
    clone: require('./clone')
 
    # → Number
+   min:    require('./min')
+   max:    require('./max')
    random: require('./random')
 
    # → Object

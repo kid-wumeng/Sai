@@ -25,7 +25,7 @@ module.exports = ( enums, error ) ->
 
    error ?= ({ data, path, name, enums }) =>
       name: errors.INVALID_DATA
-      message: "Sorry, the #{_displayName(name)} should be in [#{enums.map(_displayData).join(', ')}],
+      message: "Sorry, the #{_displayName(name)} should be in [#{[].map.call(enums, _displayData).join(', ')}],
                 current is #{_displayData(data)}"
 
 

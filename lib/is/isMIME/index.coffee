@@ -1,3 +1,4 @@
+contain  = require('../../core/contain')
 mime_    = require('../../file/mime')
 isArray  = require('../isArray')
 isString = require('../isString')
@@ -8,10 +9,10 @@ module.exports = ( value, mimes ) ->
 
    ########################################
    #|
-   #|   @params {*}        value
-   #|   @params {string[]} mimes
+   #|   @params {*}          value
+   #|   @params {Array-like} mimes
    #|
-   #|   @return {boolean}  result
+   #|   @return {boolean}    result
    #|
    ########################################
 
@@ -23,4 +24,4 @@ module.exports = ( value, mimes ) ->
    if !isArray(mimes)
       return false
 
-   return isBuffer(value) and mimes.includes(mime_(value))
+   return isBuffer(value) and contain(mimes, mime_(value))

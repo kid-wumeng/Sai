@@ -36,6 +36,7 @@ module.exports = class Tester
       @plainObject = require('./@plainObject')
       @min         = require('./@min')
       @max         = require('./@max')
+      @mime        = require('./@mime')
       @check       = require('./@check')
       @format      = require('./@format')
       @rule        = require('./@rule')

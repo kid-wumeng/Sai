@@ -16,7 +16,8 @@ module.exports = sai = require('./lib')
 
       file = await sai.readFile('./test/file/_assets/test.png')
 
-      console.log(sai.isMIME(file, ['image/gif', 'image/jpeg']));
+      sai.test(file).mime(['image/jpeg', 'image/png'])
+
 
 
    } catch (error) {

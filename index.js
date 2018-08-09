@@ -1,6 +1,5 @@
 require('coffeescript/register')
 require('colors')
-moment = require('moment')
 _ = require('lodash')
 
 
@@ -14,7 +13,9 @@ module.exports = sai = require('./lib')
    try {
 
 
-      console.log(sai.max(12, 4, -2.6, 3.2));
+      str = sai.yaml.stringify(true)
+      console.log(str);
+      console.log(sai.yaml.parse(str));
 
 
    } catch (error) {

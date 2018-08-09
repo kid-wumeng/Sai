@@ -1,5 +1,15 @@
 module.exports =
 
+   # → CSON
+   cson:
+      stringify: require('./cson.stringify')
+      parse:     require('./cson.parse')
+
+   # → YAML
+   yaml:
+      stringify: require('./yaml.stringify')
+      parse:     require('./yaml.parse')
+
    # → Bcrypt
    bcrypt:
       salt:    require('./bcrypt.salt')

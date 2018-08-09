@@ -1,6 +1,6 @@
 bcrypt   = require('bcrypt')
 errors   = require('../../errors')
-error_   = require('../../core/error')
+error    = require('../../core/error')
 isString = require('../../is/isString')
 genSalt  = require('../bcrypt.salt')
 
@@ -19,11 +19,11 @@ module.exports = ( data, salt = '' ) ->
 
 
    if !isString(data)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`data` should be a string" })
+      throw error({ name: errors.INVALID_PARAMS, message: "`data` should be a string" })
 
 
    if salt? and !isString(salt)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`salt` should be a string" })
+      throw error({ name: errors.INVALID_PARAMS, message: "`salt` should be a string" })
 
 
    if !salt

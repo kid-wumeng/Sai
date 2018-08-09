@@ -13,7 +13,12 @@ module.exports = sai = require('./lib')
    try {
 
 
-      str = sai.yaml.stringify(true)
+      str = sai.yaml.stringify({
+         user: {
+            name: 'kid',
+            age: 18
+         }
+      })
       console.log(str);
       console.log(sai.yaml.parse(str));
 

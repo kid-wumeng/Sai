@@ -13,14 +13,8 @@ module.exports = sai = require('./lib')
    try {
 
 
-      str = sai.yaml.stringify({
-         user: {
-            name: 'kid',
-            age: 18
-         }
-      })
-      console.log(str);
-      console.log(sai.yaml.parse(str));
+      data = await sai.readYAML('test/file/_assets/test.yaml')
+      console.log(data);
 
 
    } catch (error) {

@@ -14,10 +14,10 @@ module.exports = ( array, i ) ->
    ########################################
 
    if !isArrayLike(array)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`array` should be an Array-like" })
+      throw error({ name: errors.INVALID_PARAMS, message: "`array` should be an Array-like" })
 
    if !isN(i)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`i` should be a natural-number" })
+      throw error({ name: errors.INVALID_PARAMS, message: "`i` should be a natural-number" })
 
    [].splice.call(array, i, 1)
 

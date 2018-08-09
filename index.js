@@ -14,12 +14,11 @@ module.exports = sai = require('./lib')
    try {
 
 
-      array = ['a', 'b', 'c']
+      array = ['a', 1, 6.4]
 
-      item = sai.randomItem(array, isPop = true)
+      sum = sai.sum(array)
 
-      console.log(item);
-      console.log(array);
+      console.log(1.2 - 3.2 + 2.4);
 
 
    } catch (error) {

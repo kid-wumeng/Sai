@@ -16,6 +16,7 @@ module.exports =
    del:   require('./del')
    merge: require('./merge')
    count: require('./count')
+   sum:   require('./sum')
 
    # → Array-like
    index:      require('./index_')

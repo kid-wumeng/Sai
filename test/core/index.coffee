@@ -13,6 +13,7 @@ suite '~core', ->
    require('./del')
    require('./merge')
    require('./count')
+   require('./sum')
 
    # → Array-like
    require('./index_')

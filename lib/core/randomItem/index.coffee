@@ -12,16 +12,18 @@ module.exports = ( array, isPop = false ) ->
    ########################################
    #|
    #|   @params {Array-like} array
+   #|   @params {boolean}    isPop
+   #|
    #|   @return {*}          item
    #|
    ########################################
 
 
    if !isArrayLike(array)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`array` should be an Array-like" })
+      throw error({ name: errors.INVALID_PARAMS, message: "`array` should be an Array-like" })
 
    if !isBoolean(isPop)
-      throw error_({ name: errors.INVALID_PARAMS, message: "`isPop` should be a boolean" })
+      throw error({ name: errors.INVALID_PARAMS, message: "`isPop` should be a boolean" })
 
 
    if array.length

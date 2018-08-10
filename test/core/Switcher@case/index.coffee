@@ -23,10 +23,10 @@ suite "Switcher@case", ->
 
       func = ->
          return sai.switch(arguments)
-         .case(String, sai.isString, { name: 'abc' }).then('case 1')
-         .case(String, sai.isNumber, { name: 'abc' }).then('case 2')
-         .case(String, sai.isNumber, { name: '123' }).then('case 3')
-         .result()
+            .case(String, sai.isString, { name: 'abc' }).then('case 1')
+            .case(String, sai.isNumber, { name: 'abc' }).then('case 2')
+            .case(String, sai.isNumber, { name: '123' }).then('case 3')
+            .result()
 
       func('abc', 123, { name: 'abc' }).should.equal('case 2')
 
@@ -36,9 +36,9 @@ suite "Switcher@case", ->
 
       func = ->
          return sai.switch(arguments)
-         .case(1)
-         .case(2)
-         .case(3).then('success')
-         .result()
+            .case(1)
+            .case(2)
+            .case(3).then('success')
+            .result()
 
       func(2).should.equal('success')

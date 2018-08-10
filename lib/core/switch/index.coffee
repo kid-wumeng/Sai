@@ -1,15 +1,15 @@
 Switcher = require('../Switcher')
 
 
-module.exports = ( params, context ) ->
+module.exports = ( args, context ) ->
 
    ########################################
    #|
-   #|   @params {Array-like}   params
+   #|   @params {Array-like}   args
    #|   @params {*}            context
    #|
    #|   @return {sai.Switcher} switcher
    #|
    ########################################
 
-   return new Switcher( params, context )
+   return new Switcher( args, context )

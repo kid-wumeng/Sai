@@ -1,6 +1,6 @@
 {
   "name": "sai.io",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "KID <kid.wumeng@gmail.com>",
   "scripts": {
     "test": "clear && mocha --ui tdd --require coffeescript/register test/index.coffee",

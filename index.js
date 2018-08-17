@@ -4,7 +4,7 @@ require('coffeescript/register')
 
 
 
-module.exports = sai = require('./lib')
+module.exports = require('./lib')
 
 
 

@@ -17,7 +17,7 @@ module.exports =
       verify: require('./jwt.verify')
 
    # → Bcrypt
-   bcrypt:
-      salt:    require('./bcrypt.salt')
-      hash:    require('./bcrypt.hash')
-      compare: require('./bcrypt.compare')
+   # bcrypt:
+   #    salt:    require('./bcrypt.salt')
+   #    hash:    require('./bcrypt.hash')
+   #    compare: require('./bcrypt.compare')
